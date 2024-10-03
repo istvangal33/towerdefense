@@ -390,6 +390,7 @@
 "Assets/Scripts/Node.cs"
 "Assets/Scripts/PlayerControlller.cs"
 "Assets/Scripts/RotationScript.cs"
+"Assets/Scripts/Shop.cs"
 "Assets/Scripts/Tower.cs"
 "Assets/Scripts/WaveSpawner.cs"
 -langversion:9.0

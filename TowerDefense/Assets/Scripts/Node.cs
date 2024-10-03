@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
@@ -14,14 +15,23 @@ public class Node : MonoBehaviour
 
     private Color startColor;
 
+    BuildManager buildManager;
+
     void Start()
     {
         render = GetComponent<Renderer>();
         startColor = render.material.color;
+
+        buildManager = BuildManager.instance;
     }
 
     void OnMouseDown ()
     {
+        if(buildManager.GetTurretToBuild() == null) 
+        {
+            return;
+        }
+
         if (turret != null) 
         {
             Debug.Log("Nem lehetséges odaépíteni");
@@ -29,13 +39,22 @@ public class Node : MonoBehaviour
 
         }
 
-        GameObject turretToBuild = BuildManager.instance.GetTurretToBuild();
+        GameObject turretToBuild = buildManager.GetTurretToBuild();
         turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
     }
     
     void OnMouseEnter()
     {
-        render.material.color = hoverColor;
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
+
+        if (buildManager.GetTurretToBuild() == null)
+        {
+            return;
+        }
+            render.material.color = hoverColor;
     }
 
     void OnMouseExit ()
