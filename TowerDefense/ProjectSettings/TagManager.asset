@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - Tower
   - Bullet
+  - Road
+  - Enviro
   layers:
   - Default
   - TransparentFX
@@ -21,9 +23,9 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Road
+  - Enviro
+  - Placementareas
   - 
   - 
   - 

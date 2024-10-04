@@ -4,22 +4,24 @@ public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
 
-    void Awake()
+    void Awake ()
     {
         if (instance != null)
         {
-            Debug.LogError("Több mint egy buildmanager");
+            Debug.LogError("More than 1 BuildManager");
             return;
         }
         instance = this;
     }
 
-    public GameObject Tower1;
-    public GameObject Tower2;
-    public GameObject Tower3;
+    public GameObject standardTurretPrefab;
+    public GameObject anotherTurretPrefab;
 
-
+    
+    
     private GameObject turretToBuild;
+
+
 
     public GameObject GetTurretToBuild()
     {

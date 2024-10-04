@@ -124,6 +124,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6393244824223203640}
   - component: {fileID: 1230134663175504696}
+  - component: {fileID: -2519046389118479443}
   m_Layer: 0
   m_Name: MachineTower
   m_TagString: Tower
@@ -165,6 +166,27 @@ MonoBehaviour:
   fireRate: 1
   bulletPrefab: {fileID: 8081575154044244640, guid: 86e352dd7587dac419b68596e497f643, type: 3}
   firePoint: {fileID: 1954744691732647413}
+--- !u!65 &-2519046389118479443
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429872818905852461}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8800530077254035719
 GameObject:
   m_ObjectHideFlags: 0

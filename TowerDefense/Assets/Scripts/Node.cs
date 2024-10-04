@@ -1,64 +1,52 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
-    public Vector3 positionOffset;
-
-    private Renderer render;
-
 
     private GameObject turret;
 
+    public Vector3 positionOffSet;
 
 
+
+    private Renderer rend;
     private Color startColor;
 
     BuildManager buildManager;
 
     void Start()
     {
-        render = GetComponent<Renderer>();
-        startColor = render.material.color;
+        rend = GetComponent<Renderer>();
+        startColor = rend.material.color;
 
-        buildManager = BuildManager.instance;
-    }
-
-    void OnMouseDown ()
-    {
-        if(buildManager.GetTurretToBuild() == null) 
-        {
-            return;
-        }
-
-        if (turret != null) 
-        {
-            Debug.Log("Nem lehetséges odaépíteni");
-            return;
-
-        }
-
-        GameObject turretToBuild = buildManager.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffset, transform.rotation);
+        buildManager = BuildManager.instance; 
     }
     
+    void OnMouseDown()
+    {
+        if (buildManager.GetTurretToBuild() == null)
+            return;
+
+        if (turret != null)
+        {
+            Debug.Log("Cant build there");
+            return;
+        }
+        GameObject turretToBuild = buildManager.GetTurretToBuild();
+        turret = (GameObject)Instantiate(turretToBuild, transform.position + positionOffSet, transform.rotation);
+    }
+
     void OnMouseEnter()
     {
-        if (EventSystem.current.IsPointerOverGameObject())
-        {
-            return;
-        }
-
         if (buildManager.GetTurretToBuild() == null)
-        {
             return;
-        }
-            render.material.color = hoverColor;
+        rend.material.color = hoverColor;
     }
 
-    void OnMouseExit ()
+    void OnMouseExit()
     {
-        render.material.color = startColor;
+        rend.material.color = startColor;
     }
+
 }
