@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6531106835759160828}
   - component: {fileID: 676288345727914120}
   - component: {fileID: 8383341105136333388}
-  - component: {fileID: 4262063947137857929}
+  - component: {fileID: 5285367142326093759}
+  - component: {fileID: -6717406448682865403}
   m_Layer: 0
   m_Name: Player1.2
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 4879253914144054267}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -10.42, y: 8.42, z: 8.62}
+  m_LocalPosition: {x: -10.42, y: 9.1, z: 8.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -107,7 +108,28 @@ NavMeshAgent:
   m_BaseOffset: 0.2306668
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &4262063947137857929
+--- !u!65 &5285367142326093759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4879253914144054267}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.2003167, y: 0.4613336, z: 1.2361495}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6717406448682865403
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -116,11 +138,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4879253914144054267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56be6e4f42e76c84385f4d61457c34e1, type: 3}
+  m_Script: {fileID: 11500000, guid: 651886dd199439f4d8e224a2c5b0de94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   agent: {fileID: 8383341105136333388}
-  startPoint: {fileID: 0}
-  endPoint: {fileID: 0}
-  branchPoints: []
-  towerPrefab: {fileID: 0}
+  heightOffset: 0.7
