@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public TurretBlueprint Machinegun;
+    public TurretBlueprint RocketTower;
+    public TurretBlueprint LaserTower;
+
     BuildManager buildManager;
 
     void Start()
@@ -9,22 +13,22 @@ public class Shop : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    public void Tower1()
+    public void SelectTower1()
     {
         Debug.Log("Machine gun selected");
-        buildManager.SetTurretToBuild(buildManager.Tower1);
+        buildManager.SelectTurretToBuild(Machinegun);
     }
 
-    public void Tower2()
+    public void SelectTower2()
     {
         Debug.Log("Rocket tower selected");
-        buildManager.SetTurretToBuild(buildManager.Tower2);
+        buildManager.SelectTurretToBuild(RocketTower);
     }
 
-    public void Tower3()
+    public void SelectTower3()
     {
         Debug.Log("Laser tower selected");
-        buildManager.SetTurretToBuild(buildManager.Tower3);
+        buildManager.SelectTurretToBuild(LaserTower);
     }
 
 

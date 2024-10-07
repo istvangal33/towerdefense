@@ -389,10 +389,12 @@
 "Assets/Scripts/EnemyAI.cs"
 "Assets/Scripts/GridCreator.cs"
 "Assets/Scripts/Node.cs"
+"Assets/Scripts/PlayerStats.cs"
 "Assets/Scripts/RotationScript.cs"
 "Assets/Scripts/Shop.cs"
 "Assets/Scripts/Tower.cs"
 "Assets/Scripts/TowerBasedPathDecision.cs"
+"Assets/Scripts/TurretBlueprint.cs"
 "Assets/Scripts/WaveSpawner.cs"
 -langversion:9.0
 /deterministic

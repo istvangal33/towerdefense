@@ -47,10 +47,6 @@ public class Tower : MonoBehaviour
                 fireCountdown = 1f / fireRate;
             }
         }
-        else
-        {
-            Debug.Log("Nincs célpont az Update-ben.");
-        }
 
         // Csak akkor csökkenti a visszaszámlálást, ha már lõhet
         if (fireCountdown > 0f)
@@ -58,7 +54,6 @@ public class Tower : MonoBehaviour
             fireCountdown -= Time.deltaTime;
         }
     }
-
 
     void Shoot()
     {
@@ -68,7 +63,6 @@ public class Tower : MonoBehaviour
         if (bullet != null)
         {
             bullet.Seek(target);
-            Debug.Log("Lövedék kilõve: " + bullet.name + ", célpont: " + target.name);
         }
         else
         {
@@ -83,12 +77,9 @@ public class Tower : MonoBehaviour
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
-        Debug.Log("Talált ellenségek száma: " + enemies.Length);  // Kiírja, hány ellenséget talált a pályán
-
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
-            Debug.Log("Távolság az ellenségtõl: " + distanceToEnemy);  // Kiírja az ellenség távolságát
 
             if (distanceToEnemy < shortestDistance && distanceToEnemy <= range)
             {
@@ -100,16 +91,12 @@ public class Tower : MonoBehaviour
         if (nearestEnemy != null)
         {
             target = nearestEnemy.transform;
-            Debug.Log("Célpont megtalálva: " + target.name); // Ellenõrzés célponttal
         }
         else
         {
             target = null;
-            Debug.Log("Nincs célpont a hatótávban.");
         }
     }
-
-
 
     // Megjelenítéshez (gizmos) a torony hatótávja
     private void OnDrawGizmosSelected()
