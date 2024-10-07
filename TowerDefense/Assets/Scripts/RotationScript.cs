@@ -2,20 +2,13 @@ using UnityEngine;
 
 public class RotationScript : MonoBehaviour
 {
-    [SerializeField] private float rotationAngle = 45f; // A forgatás szöge
-    [SerializeField] private Vector3 rotationAxis = Vector3.up; // Forgatási tengely, alapértelmezetten Y tengely
+    [SerializeField] private float rotationSpeed = 5f; // Forgatási sebesség
 
-    // Elindításkor végrehajtott forgatás
-    void Start()
+    // Forgatás egy adott irányba (Vector3 direction)
+    public void RotateObjectTowards(Vector3 direction)
     {
-        // Forgatás a megadott szögben és tengely körül
-        RotateObject(rotationAngle, rotationAxis);
-    }
-
-    // Metódus, amely elvégzi a forgatást
-    public void RotateObject(float angle, Vector3 axis)
-    {
-        // A GameObject forgatása a megadott tengely és szög szerint
-        transform.rotation = Quaternion.AngleAxis(angle, axis);
+        // Forgatás a megadott irányba (csak az Y tengelyen)
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * rotationSpeed);
     }
 }

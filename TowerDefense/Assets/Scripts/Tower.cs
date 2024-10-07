@@ -13,9 +13,24 @@ public class Tower : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
+    // Hozzáadjuk a forgatás scriptet
+    private RotationScript rotationScript;
+
+    void Start()
+    {
+        // Forgatás script komponens keresése
+        rotationScript = GetComponent<RotationScript>();
+    }
+
     void Update()
     {
-        FindTarget();  // Ellenfél keresése
+        FindTarget();  // Célpont keresése
+
+        if (rotationScript == null)
+        {
+            Debug.LogError("Nincs RotationScript komponens a tornyon!");
+            return;
+        }
 
         if (target != null)
         {
@@ -23,15 +38,18 @@ public class Tower : MonoBehaviour
             Vector3 direction = target.position - transform.position;
             direction.y = 0; // Nem akarjuk, hogy a torony fel-le is forduljon
 
-            Quaternion lookRotation = Quaternion.LookRotation(direction);
-            transform.rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+            rotationScript.RotateObjectTowards(direction);
 
-            // Csak akkor lõ, ha van célpont
+            // Csak akkor lõ, ha van célpont és a visszaszámlálás lejárt
             if (fireCountdown <= 0f)
             {
                 Shoot();
                 fireCountdown = 1f / fireRate;
             }
+        }
+        else
+        {
+            Debug.Log("Nincs célpont az Update-ben.");
         }
 
         // Csak akkor csökkenti a visszaszámlálást, ha már lõhet
@@ -65,9 +83,13 @@ public class Tower : MonoBehaviour
         float shortestDistance = Mathf.Infinity;
         GameObject nearestEnemy = null;
 
+        Debug.Log("Talált ellenségek száma: " + enemies.Length);  // Kiírja, hány ellenséget talált a pályán
+
         foreach (GameObject enemy in enemies)
         {
             float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+            Debug.Log("Távolság az ellenségtõl: " + distanceToEnemy);  // Kiírja az ellenség távolságát
+
             if (distanceToEnemy < shortestDistance && distanceToEnemy <= range)
             {
                 shortestDistance = distanceToEnemy;
@@ -78,12 +100,16 @@ public class Tower : MonoBehaviour
         if (nearestEnemy != null)
         {
             target = nearestEnemy.transform;
+            Debug.Log("Célpont megtalálva: " + target.name); // Ellenõrzés célponttal
         }
         else
         {
             target = null;
+            Debug.Log("Nincs célpont a hatótávban.");
         }
     }
+
+
 
     // Megjelenítéshez (gizmos) a torony hatótávja
     private void OnDrawGizmosSelected()

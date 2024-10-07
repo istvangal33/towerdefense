@@ -14,11 +14,12 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject standardTurretPrefab;
-    public GameObject anotherTurretPrefab;
+    public GameObject Tower1;
+    public GameObject Tower2;
+    public GameObject Tower3;
 
-    
-    
+
+
     private GameObject turretToBuild;
 
 

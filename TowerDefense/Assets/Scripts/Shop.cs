@@ -9,16 +9,22 @@ public class Shop : MonoBehaviour
         buildManager = BuildManager.instance;
     }
 
-    public void PurchaseStandardTurret()
+    public void Tower1()
     {
-        Debug.Log("Standard turret purchased");
-        buildManager.SetTurretToBuild(buildManager.standardTurretPrefab);
+        Debug.Log("Machine gun selected");
+        buildManager.SetTurretToBuild(buildManager.Tower1);
     }
 
-    public void PurchaseAnotherTurret()
+    public void Tower2()
     {
-        Debug.Log("Another turret purchased");
-        buildManager.SetTurretToBuild(buildManager.anotherTurretPrefab);
+        Debug.Log("Rocket tower selected");
+        buildManager.SetTurretToBuild(buildManager.Tower2);
+    }
+
+    public void Tower3()
+    {
+        Debug.Log("Laser tower selected");
+        buildManager.SetTurretToBuild(buildManager.Tower3);
     }
 
 
