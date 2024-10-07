@@ -1,0 +1,7 @@
+# Enforce LF for all text files
+* text=auto
+*.cs text eol=lf
+*.shader text eol=lf
+*.json text eol=lf
+*.unity text eol=lf
+*.prefab text eol=lf
