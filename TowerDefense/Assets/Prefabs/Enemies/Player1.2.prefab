@@ -143,3 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 8383341105136333388}
   heightOffset: 0.7
+  deathParticles: {fileID: 4058335979342002349, guid: d172f6b4ed1199649b5e2bd9ccd728ed, type: 3}

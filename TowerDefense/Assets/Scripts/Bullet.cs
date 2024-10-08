@@ -5,8 +5,9 @@ public class Bullet : MonoBehaviour
     private Transform target;
 
     public float speed = 200f;
-
+    public int damage = 50;
     public GameObject impactEffect;
+
 
     public void Seek(Transform _target)
     {
@@ -25,9 +26,6 @@ public class Bullet : MonoBehaviour
         Vector3 dir = target.position - transform.position;
         float distanceThisFrame = speed * Time.deltaTime;
 
-        Debug.Log("Lövedék távolság a célhoz: " + dir.magnitude);
-        Debug.Log("Lövedék mozgási távolság: " + distanceThisFrame);
-
         if (dir.magnitude <= distanceThisFrame)
         {
             HitTarget();
@@ -43,21 +41,25 @@ public class Bullet : MonoBehaviour
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
 
-        // Elpusztítjuk az ellenséget
-        Destroy(target.gameObject);
+        // Sebzést okozunk az ellenségnek
+        if (target != null)
+        {
+            Damage(target);
+        }
 
         // Elpusztítjuk a lövedéket
         Destroy(gameObject);
     }
 
-    // Ütközés érzékelése
-    private void OnCollisionEnter(Collision collision)
+    void Damage(Transform enemy)
     {
-        Debug.Log("Ütközés történt az: " + collision.transform.name);
+        // Az ellenség keresése az EnemyAI osztály alapján
+        EnemyAI e = enemy.GetComponent<EnemyAI>();
 
-        if (collision.transform == target)
+        if (e != null)
         {
-            HitTarget();  // Ha az ütközés az ellenséggel történt, meghívjuk a találatot kezelõ metódust
+            e.TakeDamage(damage); // Itt átadjuk a 'damage' értéket az 'amount' paraméterhez
         }
     }
+
 }

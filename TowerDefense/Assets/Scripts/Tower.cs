@@ -16,6 +16,9 @@ public class Tower : MonoBehaviour
     // Hozzáadjuk a forgatás scriptet
     private RotationScript rotationScript;
 
+    public float rotationSpeed = 5f; // Forgás sebessége
+    public float angleThreshold = 5f; // Ha a szögkülönbség ennél kisebb, akkor lõhet
+
     void Start()
     {
         // Forgatás script komponens keresése
@@ -38,13 +41,20 @@ public class Tower : MonoBehaviour
             Vector3 direction = target.position - transform.position;
             direction.y = 0; // Nem akarjuk, hogy a torony fel-le is forduljon
 
+            // Forgatás az ellenség felé
             rotationScript.RotateObjectTowards(direction);
 
-            // Csak akkor lõ, ha van célpont és a visszaszámlálás lejárt
-            if (fireCountdown <= 0f)
+            // Ellenõrizzük, hogy a torony eléggé ráfordult-e az ellenségre
+            float angleToTarget = Vector3.Angle(transform.forward, direction);
+
+            if (angleToTarget < angleThreshold)
             {
-                Shoot();
-                fireCountdown = 1f / fireRate;
+                // Csak akkor lõ, ha a torony eléggé ráfordult az ellenségre és a visszaszámlálás lejárt
+                if (fireCountdown <= 0f)
+                {
+                    Shoot();
+                    fireCountdown = 1f / fireRate;
+                }
             }
         }
 

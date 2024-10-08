@@ -126,6 +126,7 @@ GameObject:
   - component: {fileID: 1230134663175504696}
   - component: {fileID: -2519046389118479443}
   - component: {fileID: -9113849082893022205}
+  - component: {fileID: -5817252155004541685}
   m_Layer: 0
   m_Name: MachineTower
   m_TagString: Tower
@@ -142,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 2429872818905852461}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -27.25, y: 8.87, z: 17.86}
+  m_LocalPosition: {x: -27.25, y: 0, z: 17.86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -167,6 +168,8 @@ MonoBehaviour:
   fireRate: 1
   bulletPrefab: {fileID: 8081575154044244640, guid: 86e352dd7587dac419b68596e497f643, type: 3}
   firePoint: {fileID: 1954744691732647413}
+  rotationSpeed: 5
+  angleThreshold: 5
 --- !u!65 &-2519046389118479443
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -201,6 +204,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
+--- !u!114 &-5817252155004541685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2429872818905852461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e68ab8b3af673f498af55f3f2d38a28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 2429872818905852461}
+  gridManager: {fileID: 0}
 --- !u!1 &8800530077254035719
 GameObject:
   m_ObjectHideFlags: 0
