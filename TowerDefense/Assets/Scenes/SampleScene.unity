@@ -1188,7 +1188,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650144957564660298, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 600
+      value: 770.99976
       objectReference: {fileID: 0}
     - target: {fileID: 2650144957564660298, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4558,7 +4558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650144957564660298, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 1000
+      value: 1170.9998
       objectReference: {fileID: 0}
     - target: {fileID: 2650144957564660298, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -5511,7 +5511,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6788175d786026440a528a0c71ec9e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Tower1: {fileID: 2429872818905852461, guid: e9b0eb001ab49fd489cf507da0913787, type: 3}
+  Tower1: {fileID: 7256431272251314829, guid: e9b0eb001ab49fd489cf507da0913787, type: 3}
   Tower2: {fileID: 8597285425103371000, guid: 8bd54da7a2f163a4e838e56e025cf089, type: 3}
   Tower3: {fileID: 2429872818905852461, guid: 2fc704700a4bd8845b61109628772635, type: 3}
 --- !u!114 &773209443
@@ -5526,7 +5526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5542ed58cdbfc6479da6c414ebf9452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 10
+  startMoney: 20
   startLives: 1
 --- !u!114 &773209444
 MonoBehaviour:
@@ -8159,10 +8159,10 @@ RectTransform:
   - {fileID: 1770645850}
   m_Father: {fileID: 978242643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 462.75, y: 50}
-  m_SizeDelta: {x: 45.5, y: 100}
+  m_AnchoredPosition: {x: -186, y: 50}
+  m_SizeDelta: {x: 1548.5, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1225889346
 MonoBehaviour:
@@ -10475,10 +10475,10 @@ RectTransform:
   - {fileID: 1256855802}
   m_Father: {fileID: 978242643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -625, y: 350}
-  m_SizeDelta: {x: -1250, y: -700}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 70, y: -73}
+  m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1503118533
 MonoBehaviour:
@@ -11781,7 +11781,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddcba8f3f49fe214ea3d875540297316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 2429872818905852461, guid: e9b0eb001ab49fd489cf507da0913787, type: 3}
+  prefab: {fileID: 7256431272251314829, guid: e9b0eb001ab49fd489cf507da0913787, type: 3}
   cost: 4
 --- !u!1 &1705393495
 GameObject:
@@ -16377,7 +16377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2650144957564660298, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 200
+      value: 371
       objectReference: {fileID: 0}
     - target: {fileID: 2650144957564660298, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
       propertyPath: m_AnchoredPosition.y

@@ -141,6 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651886dd199439f4d8e224a2c5b0de94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  value: 1
   agent: {fileID: 8383341105136333388}
   heightOffset: 0.7
-  deathParticles: {fileID: 4058335979342002349, guid: d172f6b4ed1199649b5e2bd9ccd728ed, type: 3}
+  arrivalThreshold: 0.5
+  deathEffect: {fileID: 6508035348012161879, guid: 7fea61db9497d7d4594c2432880c86b1, type: 3}

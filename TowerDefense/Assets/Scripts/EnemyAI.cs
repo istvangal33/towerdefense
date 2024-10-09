@@ -10,6 +10,8 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float arrivalThreshold = 0.5f; // Ekkora távolság esetén tekintjük célba értnek
     private Transform target;
 
+    public GameObject deathEffect;
+
     private void Start()
     {
         // Keressük meg az "End" nevû GameObjectet a pályán
@@ -38,6 +40,9 @@ public class EnemyAI : MonoBehaviour
     void Die()
     {
         PlayerStats.Money += value;
+        GameObject effect = (GameObject)Instantiate(deathEffect, transform.position, Quaternion.identity);
+        Destroy(effect, 5f);
+        
         // Megsemmisítjük az ellenséget, ha elfogy az életereje
         Destroy(gameObject);
     }
