@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public GameObject[] enemyTypes;  // Az ellenség típusok listája
+    public GameObject[] easyEnemies;  // Könnyű ellenségek listája
+    public GameObject[] mediumEnemies; // Közepes ellenségek listája
+    public GameObject[] hardEnemies;   // Nehéz ellenségek listája
     public Transform spawnPoint;
     public float timeBetweenWaves = 5f;
     private float countdown = 2f;
@@ -37,7 +39,7 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        // Az ellenségtípust a nehézségi szint alapján választja ki
+        // Az ellenségtípust az AI dönti el
         GameObject enemyType = ChooseEnemyType();
         Instantiate(enemyType, spawnPoint.position, spawnPoint.rotation);
     }
@@ -50,9 +52,28 @@ public class WaveSpawner : MonoBehaviour
 
     GameObject ChooseEnemyType()
     {
-        // Az AI kiválaszt egy ellenségtípust a hullám nehézségi szintjéhez igazítva
-        int index = waveNumber % enemyTypes.Length;  // Egyszerű logika, ami az ellenségtípusokat körforgásban váltogatja
-        return enemyTypes[index];
+        // AI alapú döntés, hogy melyik ellenséget spawnolja, figyelembe véve a hullámot és a játékos pontszámát
+        if (playerScore < 20 && waveNumber < 5)
+        {
+            // Ha a játékos még nem teljesített jól, könnyű ellenségeket spawnolunk
+            return GetRandomEnemy(easyEnemies);
+        }
+        else if (playerScore < 50 && waveNumber < 10)
+        {
+            // Ha a játékos teljesítménye nő, közepes ellenségeket adunk
+            return GetRandomEnemy(mediumEnemies);
+        }
+        else
+        {
+            // Ha a játékos jól teljesít, nehéz ellenségeket spawnolunk
+            return GetRandomEnemy(hardEnemies);
+        }
+    }
+
+    GameObject GetRandomEnemy(GameObject[] enemyArray)
+    {
+        int randomIndex = Random.Range(0, enemyArray.Length);
+        return enemyArray[randomIndex];
     }
 
     // A játékos teljesítménye alapján növeli a pontszámot, ami befolyásolja a hullámok nehézségét

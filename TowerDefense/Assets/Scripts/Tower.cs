@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    public float range = 5.0f;      // Torony hatótávolsága
-    private Transform target;       // Az aktuális célpont (ellenség)
+    public float range = 5.0f;  // Torony hatótávolsága
+    private Transform target;   // Az aktuális célpont (ellenség)
 
     public float fireRate = 2f;
     private float fireCountdown = 0f;
@@ -13,27 +13,22 @@ public class Tower : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    // Hozzáadjuk a forgatás scriptet
-    private RotationScript rotationScript;
+    public Transform rotatingPart;  // Ez lesz az a rész, ami mozog/forog
 
     public float rotationSpeed = 5f; // Forgás sebessége
     public float angleThreshold = 5f; // Ha a szögkülönbség ennél kisebb, akkor lõhet
 
     void Start()
     {
-        // Forgatás script komponens keresése
-        rotationScript = GetComponent<RotationScript>();
+        if (rotatingPart == null)
+        {
+            Debug.LogError("A forgó rész nincs hozzárendelve a toronyhoz!");
+        }
     }
 
     void Update()
     {
         FindTarget();  // Célpont keresése
-
-        if (rotationScript == null)
-        {
-            Debug.LogError("Nincs RotationScript komponens a tornyon!");
-            return;
-        }
 
         if (target != null)
         {
@@ -41,11 +36,11 @@ public class Tower : MonoBehaviour
             Vector3 direction = target.position - transform.position;
             direction.y = 0; // Nem akarjuk, hogy a torony fel-le is forduljon
 
-            // Forgatás az ellenség felé
-            rotationScript.RotateObjectTowards(direction);
+            // Forgatjuk a rotatingPart-ot az ellenség felé
+            RotateTowards(direction);
 
             // Ellenõrizzük, hogy a torony eléggé ráfordult-e az ellenségre
-            float angleToTarget = Vector3.Angle(transform.forward, direction);
+            float angleToTarget = Vector3.Angle(rotatingPart.forward, direction);
 
             if (angleToTarget < angleThreshold)
             {
@@ -63,6 +58,14 @@ public class Tower : MonoBehaviour
         {
             fireCountdown -= Time.deltaTime;
         }
+    }
+
+    void RotateTowards(Vector3 direction)
+    {
+        // Forgatás csak a rotatingPart-ra alkalmazva
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(rotatingPart.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
+        rotatingPart.rotation = Quaternion.Euler(0f, rotation.y, 0f);  // Csak az y tengelyen forgatjuk
     }
 
     void Shoot()

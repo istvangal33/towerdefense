@@ -27,11 +27,11 @@ Transform:
   m_GameObject: {fileID: 2945018991578493531}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.48, z: 0}
+  m_LocalPosition: {x: 0, y: 0.43599987, z: 0}
   m_LocalScale: {x: 2.226377, y: 2.226377, z: 2.226377}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5197423071104014937}
+  m_Father: {fileID: 3385460455784850765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5893531859357022728
 MeshFilter:
@@ -93,7 +93,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3385460455784850765}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Rotate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +111,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7016802532617042250}
+  - {fileID: 2027967336987991304}
   m_Father: {fileID: 5197423071104014937}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7347241663130184296
@@ -222,11 +224,11 @@ Transform:
   m_GameObject: {fileID: 8357148412239408977}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.01, y: 1.126, z: 1.24}
+  m_LocalPosition: {x: -0.010000349, y: 1.1260004, z: 1.2399999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5197423071104014937}
+  m_Father: {fileID: 3385460455784850765}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8597285425103371000
 GameObject:
@@ -261,9 +263,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2797855345436388951}
-  - {fileID: 7016802532617042250}
   - {fileID: 3385460455784850765}
-  - {fileID: 2027967336987991304}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &8564210045011370416
@@ -282,6 +282,7 @@ MonoBehaviour:
   fireRate: 0.5
   bulletPrefab: {fileID: 8081575154044244640, guid: 1afc8c1b89ef89d479668d99102c84ce, type: 3}
   firePoint: {fileID: 2027967336987991304}
+  rotatingPart: {fileID: 3385460455784850765}
   rotationSpeed: 5
   angleThreshold: 5
 --- !u!65 &-6290148055414276891
