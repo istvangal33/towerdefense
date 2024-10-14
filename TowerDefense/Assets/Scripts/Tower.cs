@@ -1,59 +1,79 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    public float range = 5.0f;  // Torony hatÛt·vols·ga
-    private Transform target;   // Az aktu·lis cÈlpont (ellensÈg)
+    private Transform target;   // Az aktu√°lis c√©lpont (ellens√©g)
+
+    public float range = 5.0f;  // Torony hat√≥t√°vols√°ga
 
     public float fireRate = 2f;
     private float fireCountdown = 0f;
 
+    [Header("Bullet Settings")]
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-    public Transform rotatingPart;  // Ez lesz az a rÈsz, ami mozog/forog
+    [Header("Laser Settings")]
+    public bool useLaser = false;  // D√∂ntsd el, hogy l√©zert vagy goly√≥kat haszn√°ljon-e
+    public LineRenderer lineRenderer;  // LineRenderer a l√©zerhez
+    public float laserDamagePerSecond = 10f;  // A l√©zer sebz√©se
 
-    public float rotationSpeed = 5f; // Forg·s sebessÈge
-    public float angleThreshold = 5f; // Ha a szˆgk¸lˆnbsÈg ennÈl kisebb, akkor lıhet
+    [Header("General Settings")]
+    public Transform rotatingPart;  // Ez lesz az a r√©sz, ami mozog/forog
+    public float rotationSpeed = 5f; // Forg√°s sebess√©ge
+    public float angleThreshold = 5f; // Ha a sz√∂gk√ºl√∂nbs√©g enn√©l kisebb, akkor l√µhet
 
     void Start()
     {
         if (rotatingPart == null)
         {
-            Debug.LogError("A forgÛ rÈsz nincs hozz·rendelve a toronyhoz!");
+            Debug.LogError("A forg√≥ r√©sz nincs hozz√°rendelve a toronyhoz!");
+        }
+
+        // Kapcsold ki a LineRenderer-t, ha nem haszn√°lunk l√©zert
+        if (lineRenderer != null)
+        {
+            lineRenderer.enabled = false;
         }
     }
 
     void Update()
     {
-        FindTarget();  // CÈlpont keresÈse
+        FindTarget();  // C√©lpont keres√©se
 
         if (target != null)
         {
-            // Forgat·s az ellenfÈl ir·ny·ba (csak az y tengelyen)
+            // Forgat√°s az ellenf√©l ir√°ny√°ba (csak az y tengelyen)
             Vector3 direction = target.position - transform.position;
             direction.y = 0; // Nem akarjuk, hogy a torony fel-le is forduljon
 
-            // Forgatjuk a rotatingPart-ot az ellensÈg felÈ
+            // Forgatjuk a rotatingPart-ot az ellens√©g fel√©
             RotateTowards(direction);
 
-            // Ellenırizz¸k, hogy a torony elÈggÈ r·fordult-e az ellensÈgre
-            float angleToTarget = Vector3.Angle(rotatingPart.forward, direction);
-
-            if (angleToTarget < angleThreshold)
+            if (useLaser)
             {
-                // Csak akkor lı, ha a torony elÈggÈ r·fordult az ellensÈgre Ès a visszasz·ml·l·s lej·rt
-                if (fireCountdown <= 0f)
+                Laser(); // L√©zer haszn√°lata
+            }
+            else
+            {
+                // Ellen√µrizz√ºk, hogy a torony el√©gg√© r√°fordult-e az ellens√©gre
+                float angleToTarget = Vector3.Angle(rotatingPart.forward, direction);
+
+                if (angleToTarget < angleThreshold)
                 {
-                    Shoot();
-                    fireCountdown = 1f / fireRate;
+                    // Csak akkor l√µ, ha a torony el√©gg√© r√°fordult az ellens√©gre √©s a visszasz√°ml√°l√°s lej√°rt
+                    if (fireCountdown <= 0f)
+                    {
+                        Shoot();
+                        fireCountdown = 1f / fireRate;
+                    }
                 }
             }
         }
 
-        // Csak akkor csˆkkenti a visszasz·ml·l·st, ha m·r lıhet
+        // Csak akkor cs√∂kkenti a visszasz√°ml√°l√°st, ha m√°r l√µhet
         if (fireCountdown > 0f)
         {
             fireCountdown -= Time.deltaTime;
@@ -62,7 +82,7 @@ public class Tower : MonoBehaviour
 
     void RotateTowards(Vector3 direction)
     {
-        // Forgat·s csak a rotatingPart-ra alkalmazva
+        // Forgat√°s csak a rotatingPart-ra alkalmazva
         Quaternion lookRotation = Quaternion.LookRotation(direction);
         Vector3 rotation = Quaternion.Lerp(rotatingPart.rotation, lookRotation, Time.deltaTime * rotationSpeed).eulerAngles;
         rotatingPart.rotation = Quaternion.Euler(0f, rotation.y, 0f);  // Csak az y tengelyen forgatjuk
@@ -79,11 +99,35 @@ public class Tower : MonoBehaviour
         }
         else
         {
-            Debug.LogError("A lˆvedÈk prefab nem tartalmaz Bullet komponenst!");
+            Debug.LogError("A l√∂ved√©k prefab nem tartalmaz Bullet komponenst!");
         }
     }
 
-    // CÈlpont keresÈse
+    void Laser()
+    {
+        // Ha nincs c√©lpont, akkor kapcsoljuk ki a l√©zert
+        if (target == null)
+        {
+            lineRenderer.enabled = false;
+            return;
+        }
+
+        // Ha van c√©lpont, kapcsoljuk be a l√©zert
+        lineRenderer.enabled = true;
+        lineRenderer.SetPosition(0, firePoint.position);
+        lineRenderer.SetPosition(1, target.position);
+
+        // Sebz√©s az ellens√©gre (ha l√©zer sebz√©st szeretn√©l)
+        EnemyAI enemyAI = target.GetComponent<EnemyAI>();  // Haszn√°ljuk az EnemyAI oszt√°lyt
+        if (enemyAI != null)
+        {
+            enemyAI.TakeDamage(laserDamagePerSecond * Time.deltaTime); // Sebz√©s id≈ë alap√∫
+        }
+    }
+
+
+
+    // C√©lpont keres√©se
     void FindTarget()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
@@ -111,7 +155,7 @@ public class Tower : MonoBehaviour
         }
     }
 
-    // MegjelenÌtÈshez (gizmos) a torony hatÛt·vja
+    // Megjelen√≠t√©shez (gizmos) a torony hat√≥t√°vja
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

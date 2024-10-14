@@ -4714,7 +4714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5613825375326688421, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
       propertyPath: m_Name
-      value: RocketTower (1)
+      value: LaserTower
+      objectReference: {fileID: 0}
+    - target: {fileID: 5613825375326688421, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9464,7 +9468,7 @@ MonoBehaviour:
   hardEnemies:
   - {fileID: 6759861183001786440, guid: d231b7f046701df408bb99930cf7f709, type: 3}
   spawnPoint: {fileID: 1373740606}
-  timeBetweenWaves: 10
+  timeBetweenWaves: 6
 --- !u!1 &1384863729
 GameObject:
   m_ObjectHideFlags: 0

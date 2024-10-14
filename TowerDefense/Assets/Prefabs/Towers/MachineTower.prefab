@@ -196,8 +196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 10
-  fireRate: 4
   bulletPrefab: {fileID: 8081575154044244640, guid: 86e352dd7587dac419b68596e497f643, type: 3}
+  fireRate: 4
+  useLaser: 0
+  lineRenderer: {fileID: 0}
   firePoint: {fileID: 4357681104704597809}
   rotatingPart: {fileID: 7186587222562994144}
   rotationSpeed: 8

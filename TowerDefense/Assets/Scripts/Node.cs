@@ -23,14 +23,14 @@ public class Node : MonoBehaviour
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
 
-        buildManager = BuildManager.instance; 
+        buildManager = BuildManager.instance;
     }
 
     public Vector3 GetBuildPosition()
     {
         return transform.position + positionOffSet;
     }
-    
+
     void OnMouseDown()
     {
         if (!buildManager.CanBuild)
@@ -61,7 +61,7 @@ public class Node : MonoBehaviour
             rend.material.color = notEnoughMoneyColor;
         }
 
-        
+
     }
 
     void OnMouseExit()

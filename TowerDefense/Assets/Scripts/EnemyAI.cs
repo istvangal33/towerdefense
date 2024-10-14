@@ -74,7 +74,7 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(float amount)
     {
         health -= amount;
         healthBar.fillAmount = health / startHealth;
