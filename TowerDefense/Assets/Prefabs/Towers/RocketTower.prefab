@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 5046628118335452986}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -143,7 +143,7 @@ Transform:
   m_GameObject: {fileID: 7347241663130184296}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.55, z: 0}
   m_LocalScale: {x: 2.226377, y: 2.226377, z: 2.226377}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -279,11 +279,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 13
-  bulletPrefab: {fileID: 8081575154044244640, guid: 1afc8c1b89ef89d479668d99102c84ce, type: 3}
   fireRate: 0.7
+  bulletPrefab: {fileID: 8081575154044244640, guid: 1afc8c1b89ef89d479668d99102c84ce, type: 3}
+  firePoint: {fileID: 2027967336987991304}
   useLaser: 0
   lineRenderer: {fileID: 0}
-  firePoint: {fileID: 2027967336987991304}
+  laserDamagePerSecond: 10
   rotatingPart: {fileID: 3385460455784850765}
   rotationSpeed: 5
   angleThreshold: 5

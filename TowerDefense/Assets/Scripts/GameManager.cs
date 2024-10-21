@@ -1,15 +1,25 @@
 using UnityEngine;
-using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    private bool gameEnded = false;
+    public static bool GameIsOver;
+    public GameOver gameOverScript;
 
-    // Update is called once per frame
+    void Start()
+    {
+        GameIsOver = false;
+    }
+
+    
     void Update()
     {
-        if (gameEnded)
+        if (GameIsOver)
             return;
+
+        if (Input.GetKeyDown("e"))
+        {
+            EndGame();
+        }
 
         if (PlayerStats.Lives <= 0)
         {
@@ -19,7 +29,29 @@ public class GameManager : MonoBehaviour
 
     void EndGame()
     {
-        gameEnded = true;
-        Debug.Log("Game Over!");
+        GameIsOver = true;
+        gameOverScript.ShowGameOver(); 
+
+       
+        StopAllEnemies();
+    }
+
+    
+    void StopAllEnemies()
+    {
+        EnemyAI[] enemies = FindObjectsOfType<EnemyAI>();
+        foreach (EnemyAI enemy in enemies)
+        {
+            
+            UnityEngine.AI.NavMeshAgent agent = enemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
+            if (agent != null)
+            {
+                agent.isStopped = true; 
+            }
+
+            
+            enemy.StopAllCoroutines(); 
+            enemy.enabled = false;     
+        }
     }
 }

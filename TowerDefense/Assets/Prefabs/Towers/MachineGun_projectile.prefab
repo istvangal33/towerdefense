@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8315120996576352078}
-  - component: {fileID: 4314674683963253357}
   - component: {fileID: 9013547187804011385}
   - component: {fileID: 975927870076092130}
   - component: {fileID: 8033650457946448034}
   - component: {fileID: 6330797772623370751}
+  - component: {fileID: 8458556099103562282}
   m_Layer: 0
   m_Name: MachineGun_projectile
   m_TagString: Bullet
@@ -36,21 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
---- !u!114 &4314674683963253357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8081575154044244640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8277c557e23b87b408384fb9d6b107a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 40
-  damage: 10
-  impactEffect: {fileID: 8081575154044244640}
 --- !u!33 &9013547187804011385
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -151,3 +136,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &8458556099103562282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8081575154044244640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8277c557e23b87b408384fb9d6b107a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 200
+  damage: 5
+  impactEffect: {fileID: 8081575154044244640}
