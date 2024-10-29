@@ -398,7 +398,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 21.404585, y: 0.1, z: 2.7172275}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6730033130082622040}
@@ -415,11 +415,11 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
-  avoidancePriority: 50
+  avoidancePriority: 80
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 0.35
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -463,15 +463,11 @@ MonoBehaviour:
   startHealth: 300
   value: 1
   agent: {fileID: 9019214449059110804}
-  heightOffset: 0
   arrivalThreshold: 0.5
   deathEffect: {fileID: 1082826025734650, guid: c0df7f1e7948bdb48a72a072715febaf, type: 3}
   explosionPrefab: {fileID: 1082826025734650, guid: 42a3690e5d4a841ad958c0e3b9b7b19e, type: 3}
   healthBar: {fileID: 7195813197296729136}
-  movementSpeed: 2
-  acceleration: 8
-  angularSpeed: 120
-  stoppingDistance: 0.2
+  isSlowed: 0
 --- !u!1 &8213289122881989165
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,10 @@ public class Bullet : MonoBehaviour
     public float speed = 200f;
     public int damage = 50;
     public GameObject impactEffect;
+    public bool hasExploded = false;
+
+    public enum ProjectileType { Bullet, Rocket }
+    public ProjectileType projectileType; 
 
     public void Seek(Transform _target)
     {
@@ -38,10 +42,12 @@ public class Bullet : MonoBehaviour
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
 
-        if (target != null)
+        if (projectileType == ProjectileType.Bullet) 
         {
-            Damage(target);
+            Damage(target); 
         }
+
+        hasExploded = true;
 
         Destroy(gameObject);
     }

@@ -29,7 +29,13 @@ public class Tower : MonoBehaviour
     public float rotationSpeed = 5f;
     public float angleThreshold = 5f;
 
-    
+   
+    public int upgradeCost = 8;
+    public int sellAmount = 2;
+    public bool isMaxLevel = false;
+
+    public int currentLevel = 1;  
+    public int maxLevel = 3;      
 
     void Start()
     {
@@ -102,6 +108,15 @@ public class Tower : MonoBehaviour
         if (bullet != null)
         {
             bullet.Seek(target);
+
+
+            
+            if (towerType == TowerType.Rocket)
+            {
+                Explosion explosion = bulletGO.AddComponent<Explosion>();
+                explosion.explosionRadius = 2f;
+                explosion.explosionDamage = bullet.damage;
+            }
         }
         else
         {
@@ -132,6 +147,7 @@ public class Tower : MonoBehaviour
         if (enemyAI != null)
         {
             enemyAI.TakeDamage(laserDamagePerSecond * Time.deltaTime);
+            enemyAI.Slow(0.25f); 
         }
     }
 
@@ -171,5 +187,44 @@ public class Tower : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void Upgrade()
+    {
+        if (!isMaxLevel && PlayerStats.Money >= upgradeCost)
+        {
+            
+            PlayerStats.Money -= upgradeCost;
+
+            
+            fireRate *= 1.2f;
+            range *= 1.1f;
+
+            
+            upgradeCost = (int)(upgradeCost * 1.5f);
+
+            
+            currentLevel++;
+
+            
+            if (currentLevel >= maxLevel)
+            {
+                isMaxLevel = true;  
+                Debug.Log("Tower is at max level!");
+            }
+        }
+        else
+        {
+            Debug.Log("Not enough money or tower is at max level!");
+        }
+    }
+
+    public void Sell()
+    {
+        
+        PlayerStats.Money += sellAmount;
+
+       
+        Destroy(gameObject);
     }
 }
