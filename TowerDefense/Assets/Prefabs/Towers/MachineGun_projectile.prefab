@@ -151,3 +151,5 @@ MonoBehaviour:
   speed: 200
   damage: 5
   impactEffect: {fileID: 8081575154044244640}
+  hasExploded: 0
+  projectileType: 0

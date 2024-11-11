@@ -242,6 +242,7 @@ GameObject:
   - component: {fileID: 8564210045011370416}
   - component: {fileID: -6290148055414276891}
   - component: {fileID: -7185585423774889201}
+  - component: {fileID: -8916313092192452460}
   m_Layer: 0
   m_Name: RocketTower3
   m_TagString: Tower
@@ -259,7 +260,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -29.94, y: 8.59, z: 11.533789}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2797855345436388951}
@@ -278,10 +279,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7523028fd475b31409cf93be401c4260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionOffset: {x: 0, y: -0.65, z: 0.2}
+  node: {fileID: 0}
   towerType: 1
-  range: 13
+  range: 12
   endPoint: {fileID: 0}
-  fireRate: 0.7
+  fireRate: 1.3
   bulletPrefab: {fileID: 8081575154044244640, guid: 1afc8c1b89ef89d479668d99102c84ce, type: 3}
   firePoint: {fileID: 2027967336987991304}
   useLaser: 0
@@ -329,3 +332,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 5
+--- !u!208 &-8916313092192452460
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8597285425103371000}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.3, y: 1, z: 1.3}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5

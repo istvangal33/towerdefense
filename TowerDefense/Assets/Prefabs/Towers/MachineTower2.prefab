@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 2142182312834015606}
   - component: {fileID: 2906672827540688892}
   - component: {fileID: 1900303329757608675}
+  - component: {fileID: 5890277280674387151}
   m_Layer: 0
   m_Name: MachineTower2
   m_TagString: Tower
@@ -195,10 +196,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7523028fd475b31409cf93be401c4260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positionOffset: {x: 0, y: 0, z: 0}
+  node: {fileID: 0}
   towerType: 0
-  range: 10
+  range: 8
   endPoint: {fileID: 0}
-  fireRate: 4
+  fireRate: 6
   bulletPrefab: {fileID: 8081575154044244640, guid: 86e352dd7587dac419b68596e497f643, type: 3}
   firePoint: {fileID: 4357681104704597809}
   useLaser: 0
@@ -246,6 +249,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 12
+--- !u!208 &5890277280674387151
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256431272251314829}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 0
+  m_Extents: {x: 1.3, y: 1, z: 1.3}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &8928288710049546216
 GameObject:
   m_ObjectHideFlags: 0

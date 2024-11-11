@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     public float speed = 200f;
     public int damage = 50;
     public GameObject impactEffect;
-    public bool hasExploded = false;
+    public float explosionRadius = 2f;
 
     public enum ProjectileType { Bullet, Rocket }
     public ProjectileType projectileType; 
@@ -42,15 +42,19 @@ public class Bullet : MonoBehaviour
         GameObject effectIns = (GameObject)Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(effectIns, 2f);
 
-        if (projectileType == ProjectileType.Bullet) 
+        if (projectileType == ProjectileType.Bullet)
         {
-            Damage(target); 
+            Damage(target);
+        }
+        else if (projectileType == ProjectileType.Rocket)
+        {
+            Explode(); 
         }
 
-        hasExploded = true;
-
-        Destroy(gameObject);
+        Destroy(gameObject); 
     }
+
+    
 
     void Damage(Transform enemy)
     {
@@ -59,6 +63,23 @@ public class Bullet : MonoBehaviour
         if (e != null)
         {
             e.TakeDamage(damage);
+        }
+    }
+
+    void Explode()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        foreach (Collider nearbyObject in colliders)
+        {
+            if (nearbyObject.CompareTag("Enemy"))
+
+            {
+                EnemyAI enemy = nearbyObject.GetComponent<EnemyAI>();
+                if (enemy != null)
+                {
+                    enemy.TakeDamage(damage);
+                }
+            }
         }
     }
 }

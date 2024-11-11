@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
+public enum EnemyType { Buggy, Helicopter, Hovertank }
 
 public class EnemyAI : MonoBehaviour
 {
+    public EnemyType enemyType;
     public float startHealth = 100;
     private float health;
     public int value = 1;

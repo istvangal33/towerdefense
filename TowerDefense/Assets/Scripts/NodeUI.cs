@@ -20,6 +20,20 @@ public class NodeUI : MonoBehaviour
 
     public void SetTarget(Node _target)
     {
+
+        Debug.Log("SetTarget called");
+        if (_target == null)
+        {
+            Debug.LogError("The target Node is null!");
+            return;
+        }
+
+        if (_target.turretBlueprint == null)
+        {
+            Debug.LogError("The turretBlueprint is null!");
+            return;
+        }
+
         target = _target;
 
         

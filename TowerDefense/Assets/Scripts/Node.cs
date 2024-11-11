@@ -34,29 +34,30 @@ public class Node : MonoBehaviour
     void FindNeighbors()
     {
         neighbors = new Node[3];
+        Node[] allNodes = FindObjectsOfType<Node>();
 
         
-        Node[] allNodes = FindObjectsOfType<Node>();
+        Quaternion gridRotation = transform.parent.rotation;
 
         foreach (Node node in allNodes)
         {
-            if (node == this) continue; 
+            if (node == this) continue;
 
             
-            Vector3 relativePos = node.transform.position - transform.position;
+            Vector3 relativePos = Quaternion.Inverse(gridRotation) * (node.transform.position - transform.position);
 
             
-            if (Mathf.Abs(relativePos.x) < 0.1f && relativePos.z > 0 && Mathf.Abs(relativePos.z) < 1.1f)
+            float tolerance = 0.1f;
+
+            if (Mathf.Abs(relativePos.x) < tolerance && relativePos.z > 0 && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) 
             {
                 neighbors[0] = node;
             }
-            
-            else if (Mathf.Abs(relativePos.z) < 0.1f && relativePos.x > 0 && Mathf.Abs(relativePos.x) < 1.1f)
+            else if (Mathf.Abs(relativePos.z) < tolerance && relativePos.x > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance) 
             {
-                neighbors[1] = node; 
+                neighbors[1] = node;
             }
-            
-            else if (relativePos.x > 0 && relativePos.z > 0 && Mathf.Abs(relativePos.x) < 1.1f && Mathf.Abs(relativePos.z) < 1.1f)
+            else if (relativePos.x > 0 && relativePos.z > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) 
             {
                 neighbors[2] = node;
             }
@@ -92,10 +93,16 @@ public class Node : MonoBehaviour
         GameObject _turret = (GameObject)Instantiate(upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
+        
+        Tower towerComponent = _turret.GetComponent<Tower>();
+        if (towerComponent != null)
+        {
+            towerComponent.node = this;
+        }
+
         upgradeLevel++;
         Debug.Log("Turret upgraded to level " + upgradeLevel + "!");
 
-        
         BuildManager.instance.nodeUI.SetTarget(this);
     }
 
@@ -123,23 +130,22 @@ public class Node : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log("OnMouseDown() called for " + gameObject.name); 
+        Debug.Log("OnMouseDown() called for " + gameObject.name);
 
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            Debug.Log("Mouse over UI element, exiting."); 
+            Debug.Log("Mouse over UI element, exiting.");
             return;
         }
 
         if (isOccupied)
         {
-            Debug.Log("Node is occupied, showing NodeUI."); 
-            BuildManager.instance.SelectNode(this); 
-            return; 
+            Debug.Log("Node is occupied, but NodeUI will not be shown.");
+            return;
         }
 
-        Debug.Log("Checking neighbors..."); 
-                                            
+        Debug.Log("Checking neighbors...");
+
         for (int i = 0; i < neighbors.Length; i++)
         {
             if (neighbors[i] != null)
@@ -148,11 +154,10 @@ public class Node : MonoBehaviour
             }
         }
 
-       
         if (
             (neighbors[0] != null && neighbors[0].isOccupied) ||
-            (neighbors[1] != null && neighbors[1].isOccupied) || 
-            (neighbors[0] != null && neighbors[0].neighbors[1] != null && neighbors[0].neighbors[1].isOccupied)    
+            (neighbors[1] != null && neighbors[1].isOccupied) ||
+            (neighbors[0] != null && neighbors[0].neighbors[1] != null && neighbors[0].neighbors[1].isOccupied)
            )
         {
             Debug.Log("Cannot build here due to occupied neighbors.");
@@ -166,19 +171,19 @@ public class Node : MonoBehaviour
             BuildTurret(buildManager.GetTurretToBuild());
             isOccupied = true;
 
-            Debug.Log("Occupying neighbors..."); 
-            
-            if (neighbors[0] != null) neighbors[0].isOccupied = true; 
-            if (neighbors[1] != null) neighbors[1].isOccupied = true; 
-            if (neighbors[0] != null && neighbors[0].neighbors[1] != null) neighbors[0].neighbors[1].isOccupied = true; 
+            Debug.Log("Occupying neighbors...");
+
+            if (neighbors[0] != null) neighbors[0].isOccupied = true;
+            if (neighbors[1] != null) neighbors[1].isOccupied = true;
+            if (neighbors[0] != null && neighbors[0].neighbors[1] != null) neighbors[0].neighbors[1].isOccupied = true;
         }
         else
         {
-            Debug.Log("Cannot build: buildManager.CanBuild is false."); 
+            Debug.Log("Cannot build: buildManager.CanBuild is false.");
         }
     }
 
-    void BuildTurret(TurretBlueprint blueprint)
+    public void BuildTurret(TurretBlueprint blueprint)
     {
         if (PlayerStats.Money < blueprint.cost)
         {
@@ -191,11 +196,19 @@ public class Node : MonoBehaviour
         GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
-        turretBlueprint = blueprint; 
+        turretBlueprint = blueprint;
         isOccupied = true;
+
+        
+        Tower towerScript = _turret.GetComponent<Tower>();
+        if (towerScript != null)
+        {
+            towerScript.node = this;
+        }
 
         Debug.Log("Turret built!");
     }
+
 
     void OnMouseEnter()
     {

@@ -30,7 +30,7 @@ public class WaveSpawner : MonoBehaviour
         UpdateWaveText();
         waveProgressBarForeground.fillAmount = 0f;
 
-        // CSV fájl fejlécének létrehozása
+        
         string header = "waveNumber,enemyType,spawnTime,playerHealth,playerMoney";
         WriteDataToCSV(header);
     }
