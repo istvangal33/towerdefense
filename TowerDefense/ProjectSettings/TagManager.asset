@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - Road
   - Enviro
+  - SingleNode
+  - 'GridNode '
   layers:
   - Default
   - TransparentFX

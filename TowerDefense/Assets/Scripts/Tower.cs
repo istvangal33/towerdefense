@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
+
 
 public enum TowerType { MachineGun, Rocket, Laser }
 
 public class Tower : MonoBehaviour
 {
+    public Vector3 positionOffset;
+
+    public Node node;
+
     public TowerType towerType;
     private Transform target;
 
@@ -29,7 +35,13 @@ public class Tower : MonoBehaviour
     public float rotationSpeed = 5f;
     public float angleThreshold = 5f;
 
-    
+   
+    public int upgradeCost = 8;
+    public int sellAmount = 2;
+    public bool isMaxLevel = false;
+
+    public int currentLevel = 1;  
+    public int maxLevel = 3;      
 
     void Start()
     {
@@ -52,6 +64,8 @@ public class Tower : MonoBehaviour
         {
             Debug.LogError("Nem található End GameObject a jelenetben!");
         }
+
+        transform.position += positionOffset;
     }
 
     void Update()
@@ -87,6 +101,27 @@ public class Tower : MonoBehaviour
         }
     }
 
+    void OnMouseDown()
+    {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return; 
+        }
+
+        if (EventSystem.current.IsPointerOverGameObject())
+            return;
+
+        if (node != null)
+        {
+            BuildManager.instance.SelectNode(node);
+        }
+        else
+        {
+            Debug.LogError("The target Node is null!");
+        }
+
+    }
+
     void RotateTowards(Vector3 direction)
     {
         Quaternion lookRotation = Quaternion.LookRotation(direction);
@@ -102,6 +137,15 @@ public class Tower : MonoBehaviour
         if (bullet != null)
         {
             bullet.Seek(target);
+
+
+            
+            if (towerType == TowerType.Rocket)
+            {
+                Explosion explosion = bulletGO.AddComponent<Explosion>();
+                explosion.explosionRadius = 2f;
+                explosion.explosionDamage = bullet.damage;
+            }
         }
         else
         {
@@ -132,6 +176,7 @@ public class Tower : MonoBehaviour
         if (enemyAI != null)
         {
             enemyAI.TakeDamage(laserDamagePerSecond * Time.deltaTime);
+            enemyAI.Slow(0.25f); 
         }
     }
 
@@ -143,12 +188,21 @@ public class Tower : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            float distanceToEnd = Vector3.Distance(enemy.transform.position, endPoint.position);
+            EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
 
-            if (distanceToEnd < shortestDistanceToEnd && Vector3.Distance(transform.position, enemy.transform.position) <= range)
+            if (enemyAI != null)
             {
-                shortestDistanceToEnd = distanceToEnd;
-                nearestEnemy = enemy;
+
+                if (IsTargetAllowed(enemyAI.enemyType))
+                {
+                    float distanceToEnd = Vector3.Distance(enemy.transform.position, endPoint.position);
+
+                    if (distanceToEnd < shortestDistanceToEnd && Vector3.Distance(transform.position, enemy.transform.position) <= range)
+                    {
+                        shortestDistanceToEnd = distanceToEnd;
+                        nearestEnemy = enemy;
+                    }
+                }
             }
         }
 
@@ -167,9 +221,67 @@ public class Tower : MonoBehaviour
         }
     }
 
+
+
+    bool IsTargetAllowed(EnemyType enemyType)
+    {
+
+        switch (towerType)
+        {
+            case TowerType.MachineGun:
+            case TowerType.Laser:
+                return true; 
+
+            case TowerType.Rocket:
+                return enemyType == EnemyType.Buggy || enemyType == EnemyType.Hovertank;
+
+            default:
+                return false;
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, range);
+    }
+
+    public void Upgrade()
+    {
+        if (!isMaxLevel && PlayerStats.Money >= upgradeCost)
+        {
+            
+            PlayerStats.Money -= upgradeCost;
+
+            
+            fireRate *= 1.2f;
+            range *= 1.1f;
+
+            
+            upgradeCost = (int)(upgradeCost * 1.5f);
+
+            
+            currentLevel++;
+
+            
+            if (currentLevel >= maxLevel)
+            {
+                isMaxLevel = true;  
+                Debug.Log("Tower is at max level!");
+            }
+        }
+        else
+        {
+            Debug.Log("Not enough money or tower is at max level!");
+        }
+    }
+
+    public void Sell()
+    {
+        
+        PlayerStats.Money += sellAmount;
+
+       
+        Destroy(gameObject);
     }
 }

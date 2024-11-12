@@ -3,7 +3,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private bool doMovement = true;
-    public float panSpeed = 30f;
+    public float panSpeed = 50f;
     public float panBorderThickness = 10f;
     public float scrollSpeed = 5f;
     public float minY = 10f;
@@ -46,13 +46,13 @@ public class CameraController : MonoBehaviour
             transform.Translate(Vector3.right * panSpeed * Time.deltaTime, Space.World);
         }
 
-        // Görgetés kezelése
+        
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         Vector3 pos = transform.position;
         pos.y -= scroll * 1000 * scrollSpeed * Time.deltaTime;
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
 
-        // Kamera pozíciójának limitálása
+        
         pos.x = Mathf.Clamp(pos.x, minX, maxX);
         pos.z = Mathf.Clamp(pos.z, minZ, maxZ);
 

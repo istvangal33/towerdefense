@@ -2,9 +2,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
 
+public enum EnemyType { Buggy, Helicopter, Hovertank }
 
 public class EnemyAI : MonoBehaviour
 {
+    public EnemyType enemyType;
     public float startHealth = 100;
     private float health;
     public int value = 1;
@@ -20,22 +22,22 @@ public class EnemyAI : MonoBehaviour
     public UnityEngine.UI.Image healthBar;
 
     [Header("Waypoints")]
-    private Transform[] choices;  // Array for path choices (e.g., Choice1 and Choice2)
-    private Transform endTarget;  // Final target (End)
+    private Transform[] choices;  
+    private Transform endTarget;  
 
-  
+    public bool isSlowed = false;
 
     private void Start()
     {
-        // Find path choices and the final target
+        
         Transform choice1 = GameObject.Find("Choice1").transform;
         Transform choice2 = GameObject.Find("Choice2").transform;
         endTarget = GameObject.Find("End").transform;
 
-        // Fill the choices array
+        
         choices = new Transform[] { choice1, choice2 };
 
-        // Choose a path based on danger
+        
         ChoosePath();
 
         health = startHealth;
@@ -67,14 +69,14 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        // If the enemy reaches the path choice, they make a decision
+        
         if (!hasMadeChoice && Vector3.Distance(transform.position, agent.destination) < arrivalThreshold)
         {
             agent.SetDestination(endTarget.position);
             hasMadeChoice = true;
         }
 
-        // If the enemy reaches the end
+        
         if (hasMadeChoice && Vector3.Distance(transform.position, endTarget.position) < arrivalThreshold)
         {
             StartCoroutine(HandleArrival());
@@ -103,10 +105,10 @@ public class EnemyAI : MonoBehaviour
         {
             float distanceToPath = Vector3.Distance(tower.transform.position, path.position);
 
-            if (distanceToPath < 10f) // Példa küszöbérték a torony hatására
+            if (distanceToPath < 10f) 
             {
                 Tower towerScript = tower.GetComponent<Tower>();
-                dangerScore += 1 / distanceToPath;  // Minél közelebb van, annál nagyobb a veszély
+                dangerScore += 1 / distanceToPath;  
 
                 switch (towerScript.towerType)
                 {
@@ -127,7 +129,7 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    // Make a path choice based on danger level
+    
     void ChoosePath()
     {
         Transform choice1 = GameObject.Find("Choice1").transform;
@@ -145,4 +147,23 @@ public class EnemyAI : MonoBehaviour
             agent.SetDestination(choice2.position);
         }
     }
+
+    public void Slow(float slowAmount)
+    {
+        if (!isSlowed)
+        {
+            agent.speed *= (1f - slowAmount);
+            isSlowed = true;
+            StartCoroutine(ResetSpeed(slowAmount)); 
+        }
+    }
+
+    IEnumerator ResetSpeed(float slowAmount) 
+    {
+        yield return new WaitForSeconds(2f); 
+        agent.speed /= (1f - slowAmount); 
+        isSlowed = false;
+    }
+
+
 }
