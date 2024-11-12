@@ -8,7 +8,7 @@ public class Node : MonoBehaviour
     public Vector3 positionOffSet;
 
     public GameObject turret;
-    public TurretBlueprint turretBlueprint; 
+    public TurretBlueprint turretBlueprint;
     public bool isUpgraded = false;
     public int upgradeLevel = 0;
 
@@ -36,28 +36,28 @@ public class Node : MonoBehaviour
         neighbors = new Node[3];
         Node[] allNodes = FindObjectsOfType<Node>();
 
-        
+        // Get the grid's rotation
         Quaternion gridRotation = transform.parent.rotation;
 
         foreach (Node node in allNodes)
         {
             if (node == this) continue;
 
-            
+            // Calculate the relative position in local space
             Vector3 relativePos = Quaternion.Inverse(gridRotation) * (node.transform.position - transform.position);
 
-            
+            // Use a small tolerance for comparisons
             float tolerance = 0.1f;
 
-            if (Mathf.Abs(relativePos.x) < tolerance && relativePos.z > 0 && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) 
+            if (Mathf.Abs(relativePos.x) < tolerance && relativePos.z > 0 && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) // Access cellSize from GridCreator
             {
                 neighbors[0] = node;
             }
-            else if (Mathf.Abs(relativePos.z) < tolerance && relativePos.x > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance) 
+            else if (Mathf.Abs(relativePos.z) < tolerance && relativePos.x > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance) // Access cellSize from GridCreator
             {
                 neighbors[1] = node;
             }
-            else if (relativePos.x > 0 && relativePos.z > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) 
+            else if (relativePos.x > 0 && relativePos.z > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) // Access cellSize from GridCreator
             {
                 neighbors[2] = node;
             }
@@ -93,7 +93,7 @@ public class Node : MonoBehaviour
         GameObject _turret = (GameObject)Instantiate(upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
-        
+
         Tower towerComponent = _turret.GetComponent<Tower>();
         if (towerComponent != null)
         {
@@ -116,13 +116,13 @@ public class Node : MonoBehaviour
         Destroy(turret);
         turretBlueprint = null;
         isUpgraded = false;
-        isOccupied = false; 
+        isOccupied = false;
 
-        
-        if (neighbors[0] != null) neighbors[0].isOccupied = false; 
-        if (neighbors[1] != null) neighbors[1].isOccupied = false; 
+
+        if (neighbors[0] != null) neighbors[0].isOccupied = false;
+        if (neighbors[1] != null) neighbors[1].isOccupied = false;
         if (neighbors[0] != null && neighbors[0].neighbors[1] != null) neighbors[0].neighbors[1].isOccupied = false;
-        if (neighbors[1] != null && neighbors[1].neighbors[0] != null) neighbors[1].neighbors[0].isOccupied = false; 
+        if (neighbors[1] != null && neighbors[1].neighbors[0] != null) neighbors[1].neighbors[0].isOccupied = false;
 
         Debug.Log("Turret sold!");
         upgradeLevel = 0;
@@ -199,7 +199,7 @@ public class Node : MonoBehaviour
         turretBlueprint = blueprint;
         isOccupied = true;
 
-        
+
         Tower towerScript = _turret.GetComponent<Tower>();
         if (towerScript != null)
         {
