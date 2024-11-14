@@ -23,7 +23,7 @@ public class TurretBlueprint
             case 1:
                 return (cost + upgradeCost) / 2; 
             case 2:
-                return (cost + upgradeCost + upgradeCost2); 
+                return (cost + upgradeCost + upgradeCost2) / 2; 
             default:
                 return 0;
         }

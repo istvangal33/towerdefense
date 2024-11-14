@@ -36,28 +36,28 @@ public class Node : MonoBehaviour
         neighbors = new Node[3];
         Node[] allNodes = FindObjectsOfType<Node>();
 
-        // Get the grid's rotation
+        
         Quaternion gridRotation = transform.parent.rotation;
 
         foreach (Node node in allNodes)
         {
             if (node == this) continue;
 
-            // Calculate the relative position in local space
+            
             Vector3 relativePos = Quaternion.Inverse(gridRotation) * (node.transform.position - transform.position);
 
-            // Use a small tolerance for comparisons
+            
             float tolerance = 0.1f;
 
-            if (Mathf.Abs(relativePos.x) < tolerance && relativePos.z > 0 && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) // Access cellSize from GridCreator
+            if (Mathf.Abs(relativePos.x) < tolerance && relativePos.z > 0 && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) 
             {
                 neighbors[0] = node;
             }
-            else if (Mathf.Abs(relativePos.z) < tolerance && relativePos.x > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance) // Access cellSize from GridCreator
+            else if (Mathf.Abs(relativePos.z) < tolerance && relativePos.x > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance)
             {
                 neighbors[1] = node;
             }
-            else if (relativePos.x > 0 && relativePos.z > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) // Access cellSize from GridCreator
+            else if (relativePos.x > 0 && relativePos.z > 0 && Mathf.Abs(relativePos.x - GridCreator.cellSize) < tolerance && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance)
             {
                 neighbors[2] = node;
             }
@@ -140,12 +140,12 @@ public class Node : MonoBehaviour
 
         if (isOccupied)
         {
-            Debug.Log("Node is occupied, but NodeUI will not be shown.");
+            Debug.Log("Node is already occupied.");
             return;
         }
 
+        
         Debug.Log("Checking neighbors...");
-
         for (int i = 0; i < neighbors.Length; i++)
         {
             if (neighbors[i] != null)
@@ -165,23 +165,25 @@ public class Node : MonoBehaviour
         }
 
         Debug.Log("Checking build manager...");
-        if (buildManager.CanBuild)
+        if (buildManager.CanBuild && buildManager.HasMoney)
         {
             Debug.Log("Building tower...");
+
+            
             BuildTurret(buildManager.GetTurretToBuild());
             isOccupied = true;
 
             Debug.Log("Occupying neighbors...");
-
             if (neighbors[0] != null) neighbors[0].isOccupied = true;
             if (neighbors[1] != null) neighbors[1].isOccupied = true;
             if (neighbors[0] != null && neighbors[0].neighbors[1] != null) neighbors[0].neighbors[1].isOccupied = true;
         }
         else
         {
-            Debug.Log("Cannot build: buildManager.CanBuild is false.");
+            Debug.Log("Cannot build: either no turret selected or not enough money.");
         }
     }
+
 
     public void BuildTurret(TurretBlueprint blueprint)
     {

@@ -11285,8 +11285,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+      - m_Target: {fileID: 2026182776}
+        m_TargetAssemblyTypeName: GameCompleteMenu, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -11419,9 +11419,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
-        m_MethodName: GoToMainMenu
+      - m_Target: {fileID: 1695344207}
+        m_TargetAssemblyTypeName: LevelCompleteMenu, Assembly-CSharp
+        m_MethodName: NextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11658,8 +11658,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+      - m_Target: {fileID: 1695344207}
+        m_TargetAssemblyTypeName: LevelCompleteMenu, Assembly-CSharp
         m_MethodName: GoToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -13477,8 +13477,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+      - m_Target: {fileID: 1695344207}
+        m_TargetAssemblyTypeName: LevelCompleteMenu, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -16968,8 +16968,10 @@ MonoBehaviour:
   hardEnemies:
   - {fileID: 6759861183001786440, guid: d231b7f046701df408bb99930cf7f709, type: 3}
   spawnPoint: {fileID: 1373740606}
-  waveDuration: 40
-  maxWaves: 15
+  waveDuration: 20
+  maxWaves: 2
+  levelCompleteMenu: {fileID: 1695344207}
+  gameCompleteUI: {fileID: 2026182776}
   waveProgressBarForeground: {fileID: 2099671842}
   waveNumberText: {fileID: 706302203}
 --- !u!1 &1379509153
@@ -21275,7 +21277,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1300, y: 800}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1695344206
 MonoBehaviour:
@@ -21302,9 +21304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelCompleteUI: {fileID: 1695344202}
-  nextLevelButton: {fileID: 879107301}
-  mainMenuButton: {fileID: 909325070}
-  restartButton: {fileID: 1057200231}
 --- !u!1 &1710763215
 GameObject:
   m_ObjectHideFlags: 0
@@ -26828,6 +26827,7 @@ GameObject:
   - component: {fileID: 2026182773}
   - component: {fileID: 2026182775}
   - component: {fileID: 2026182774}
+  - component: {fileID: 2026182776}
   m_Layer: 5
   m_Name: GameComplete
   m_TagString: Untagged
@@ -26855,7 +26855,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1300, y: 800}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &2026182774
 Animator:
@@ -26890,6 +26890,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 805ac8c939665de4fa27dbdd99a8c842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2026182776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026182772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac653599523bca34e84c31138f4df59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameCompleteUI: {fileID: 2026182772}
 --- !u!1 &2032928162
 GameObject:
   m_ObjectHideFlags: 0

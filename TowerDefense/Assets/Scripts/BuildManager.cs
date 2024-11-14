@@ -7,7 +7,7 @@ public class BuildManager : MonoBehaviour
     public GameObject sellEffect;
     private TurretBlueprint turretToBuild;
     private Node selectedNode;
-    private Tower selectedTower; 
+    private Tower selectedTower;
     public NodeUI nodeUI;
 
     public bool CanBuild { get { return turretToBuild != null; } }
@@ -25,35 +25,52 @@ public class BuildManager : MonoBehaviour
 
     public void BuildTurretOn(Node node)
     {
+        
         if (PlayerStats.Money < turretToBuild.cost)
         {
             Debug.Log("Not enough money to build that one");
             return;
         }
 
+        
         PlayerStats.Money -= turretToBuild.cost;
 
-        GameObject turret = (GameObject)Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
-        node.turret = turret;
-
-        node.turretBlueprint = turretToBuild;
-        node.isOccupied = true;
+        
+        GameObject turret = Instantiate(turretToBuild.prefab, node.GetBuildPosition(), Quaternion.identity);
 
         
+        if (turret != null)
+        {
+            node.turret = turret;
 
-        Debug.Log("Turret built! Money left: " + PlayerStats.Money);
+            
+            Tower towerScript = turret.GetComponent<Tower>();
+            if (towerScript != null)
+            {
+                towerScript.node = node;
+            }
+
+            node.turretBlueprint = turretToBuild;
+            node.isOccupied = true; 
+            Debug.Log("Turret built! Money left: " + PlayerStats.Money);
+        }
+        else
+        {
+            Debug.LogError("Failed to build turret!");
+        }
     }
+
 
     public void SelectNode(Node node)
     {
-        
+
         if (nodeUI == null)
         {
             Debug.LogError("NodeUI reference is null in BuildManager. Check if it is assigned in the Inspector.");
             return;
         }
 
-        
+
         if (node == null)
         {
             Debug.LogError("Node reference is null. Make sure a valid node is passed to SelectNode.");
@@ -67,9 +84,9 @@ public class BuildManager : MonoBehaviour
         }
 
         selectedNode = node;
-        selectedTower = null; 
+        selectedTower = null;
 
-        
+
         try
         {
             nodeUI.SetTarget(node);
@@ -86,10 +103,10 @@ public class BuildManager : MonoBehaviour
     public void SelectTower(Tower tower)
     {
         selectedTower = tower;
-        selectedNode = null; 
-        nodeUI.SetTarget(tower.GetComponentInParent<Node>()); 
+        selectedNode = null;
+        nodeUI.SetTarget(tower.GetComponentInParent<Node>());
         nodeUI.gameObject.SetActive(true);
-        nodeUI.transform.position = tower.transform.position; 
+        nodeUI.transform.position = tower.transform.position;
     }
 
     public void DeselectNode()

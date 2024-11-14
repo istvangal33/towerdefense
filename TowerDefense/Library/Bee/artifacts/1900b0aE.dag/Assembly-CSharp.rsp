@@ -400,6 +400,7 @@
 "Assets/Scripts/CameraController.cs"
 "Assets/Scripts/EnemyAI.cs"
 "Assets/Scripts/Explosion.cs"
+"Assets/Scripts/GameCompleteMenu.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/GameOver.cs"
 "Assets/Scripts/GridCreator.cs"
