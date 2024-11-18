@@ -417,8 +417,10 @@
 "Assets/Scripts/PlayerStats.cs"
 "Assets/Scripts/RotationScript.cs"
 "Assets/Scripts/Shop.cs"
+"Assets/Scripts/SoundManager.cs"
 "Assets/Scripts/Tower.cs"
 "Assets/Scripts/TurretBlueprint.cs"
+"Assets/Scripts/VolumeControl.cs"
 "Assets/Scripts/WaveSpawner.cs"
 -langversion:9.0
 /deterministic

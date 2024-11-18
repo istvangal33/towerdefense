@@ -35,13 +35,14 @@ public class Tower : MonoBehaviour
     public float rotationSpeed = 5f;
     public float angleThreshold = 5f;
 
-   
+
     public int upgradeCost = 8;
     public int sellAmount = 2;
     public bool isMaxLevel = false;
 
-    public int currentLevel = 1;  
-    public int maxLevel = 3;      
+    public int currentLevel = 1;
+    public int maxLevel = 3;
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -66,6 +67,9 @@ public class Tower : MonoBehaviour
         }
 
         transform.position += positionOffset;
+
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     void Update()
@@ -105,7 +109,7 @@ public class Tower : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
         {
-            return; 
+            return;
         }
 
         if (EventSystem.current.IsPointerOverGameObject())
@@ -139,7 +143,6 @@ public class Tower : MonoBehaviour
             bullet.Seek(target);
 
 
-            
             if (towerType == TowerType.Rocket)
             {
                 Explosion explosion = bulletGO.AddComponent<Explosion>();
@@ -151,20 +154,35 @@ public class Tower : MonoBehaviour
         {
             Debug.LogError("A lövedék prefab nem tartalmaz Bullet komponenst!");
         }
+
+
+        PlayTowerShootSound();
     }
+
+    void PlayTowerShootSound()
+    {
+        switch (towerType)
+        {
+            case TowerType.MachineGun:
+                SoundManager.Instance.PlayMachineGunShot();
+                break;
+            case TowerType.Rocket:
+                SoundManager.Instance.PlayRocketLaunch();
+                break;
+            case TowerType.Laser:
+                SoundManager.Instance.PlayLaserShoot();
+                break;
+        }
+    }
+
+
 
     void Laser()
     {
-        if (target == null)
+        if (target == null || !target.gameObject.activeSelf)
         {
             lineRenderer.enabled = false;
-            return;
-        }
-
-        if (!target.gameObject.activeSelf)
-        {
-            lineRenderer.enabled = false;
-            target = null;
+            SoundManager.Instance.StopLaserShoot();
             return;
         }
 
@@ -172,13 +190,21 @@ public class Tower : MonoBehaviour
         lineRenderer.SetPosition(0, firePoint.position);
         lineRenderer.SetPosition(1, target.position);
 
+        
+        if (!SoundManager.Instance.laserAudioSource.isPlaying)
+        {
+            SoundManager.Instance.PlayLaserShoot();
+        }
+
+        
         EnemyAI enemyAI = target.GetComponent<EnemyAI>();
         if (enemyAI != null)
         {
             enemyAI.TakeDamage(laserDamagePerSecond * Time.deltaTime);
-            enemyAI.Slow(0.25f); 
+            enemyAI.Slow(0.25f);
         }
     }
+
 
     void FindTarget()
     {
@@ -190,18 +216,14 @@ public class Tower : MonoBehaviour
         {
             EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
 
-            if (enemyAI != null)
+            if (enemyAI != null && IsTargetAllowed(enemyAI.enemyType))
             {
+                float distanceToEnd = Vector3.Distance(enemy.transform.position, endPoint.position);
 
-                if (IsTargetAllowed(enemyAI.enemyType))
+                if (distanceToEnd < shortestDistanceToEnd && Vector3.Distance(transform.position, enemy.transform.position) <= range)
                 {
-                    float distanceToEnd = Vector3.Distance(enemy.transform.position, endPoint.position);
-
-                    if (distanceToEnd < shortestDistanceToEnd && Vector3.Distance(transform.position, enemy.transform.position) <= range)
-                    {
-                        shortestDistanceToEnd = distanceToEnd;
-                        nearestEnemy = enemy;
-                    }
+                    shortestDistanceToEnd = distanceToEnd;
+                    nearestEnemy = enemy;
                 }
             }
         }
@@ -217,9 +239,11 @@ public class Tower : MonoBehaviour
             if (useLaser && lineRenderer != null)
             {
                 lineRenderer.enabled = false;
+                SoundManager.Instance.StopLaserShoot();
             }
         }
     }
+
 
 
 
@@ -230,7 +254,7 @@ public class Tower : MonoBehaviour
         {
             case TowerType.MachineGun:
             case TowerType.Laser:
-                return true; 
+                return true;
 
             case TowerType.Rocket:
                 return enemyType == EnemyType.Buggy || enemyType == EnemyType.Hovertank;
@@ -250,23 +274,23 @@ public class Tower : MonoBehaviour
     {
         if (!isMaxLevel && PlayerStats.Money >= upgradeCost)
         {
-            
+
             PlayerStats.Money -= upgradeCost;
 
-            
+
             fireRate *= 1.2f;
             range *= 1.1f;
 
-            
+
             upgradeCost = (int)(upgradeCost * 1.5f);
 
-            
+
             currentLevel++;
 
-            
+
             if (currentLevel >= maxLevel)
             {
-                isMaxLevel = true;  
+                isMaxLevel = true;
                 Debug.Log("Tower is at max level!");
             }
         }
@@ -278,10 +302,7 @@ public class Tower : MonoBehaviour
 
     public void Sell()
     {
-        
         PlayerStats.Money += sellAmount;
-
-       
         Destroy(gameObject);
     }
 }

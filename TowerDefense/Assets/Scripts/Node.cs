@@ -36,20 +36,20 @@ public class Node : MonoBehaviour
         neighbors = new Node[3];
         Node[] allNodes = FindObjectsOfType<Node>();
 
-        
+
         Quaternion gridRotation = transform.parent.rotation;
 
         foreach (Node node in allNodes)
         {
             if (node == this) continue;
 
-            
+
             Vector3 relativePos = Quaternion.Inverse(gridRotation) * (node.transform.position - transform.position);
 
-            
+
             float tolerance = 0.1f;
 
-            if (Mathf.Abs(relativePos.x) < tolerance && relativePos.z > 0 && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance) 
+            if (Mathf.Abs(relativePos.x) < tolerance && relativePos.z > 0 && Mathf.Abs(relativePos.z - GridCreator.cellSize) < tolerance)
             {
                 neighbors[0] = node;
             }
@@ -90,9 +90,8 @@ public class Node : MonoBehaviour
 
         Destroy(turret);
 
-        GameObject _turret = (GameObject)Instantiate(upgradedPrefab, GetBuildPosition(), Quaternion.identity);
+        GameObject _turret = Instantiate(upgradedPrefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
-
 
         Tower towerComponent = _turret.GetComponent<Tower>();
         if (towerComponent != null)
@@ -100,14 +99,21 @@ public class Node : MonoBehaviour
             towerComponent.node = this;
         }
 
+
+        SoundManager.Instance.PlayUpgradeSound();
+
         upgradeLevel++;
         Debug.Log("Turret upgraded to level " + upgradeLevel + "!");
 
         BuildManager.instance.nodeUI.SetTarget(this);
     }
 
+
     public void SellTurret()
     {
+
+        SoundManager.Instance.PlayExplosionSound();
+
         PlayerStats.Money += turretBlueprint.GetSellAmount(upgradeLevel);
 
         GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
@@ -128,6 +134,7 @@ public class Node : MonoBehaviour
         upgradeLevel = 0;
     }
 
+
     void OnMouseDown()
     {
         Debug.Log("OnMouseDown() called for " + gameObject.name);
@@ -144,7 +151,7 @@ public class Node : MonoBehaviour
             return;
         }
 
-        
+
         Debug.Log("Checking neighbors...");
         for (int i = 0; i < neighbors.Length; i++)
         {
@@ -169,7 +176,7 @@ public class Node : MonoBehaviour
         {
             Debug.Log("Building tower...");
 
-            
+
             BuildTurret(buildManager.GetTurretToBuild());
             isOccupied = true;
 
@@ -195,12 +202,11 @@ public class Node : MonoBehaviour
 
         PlayerStats.Money -= blueprint.cost;
 
-        GameObject _turret = (GameObject)Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
         turret = _turret;
 
         turretBlueprint = blueprint;
         isOccupied = true;
-
 
         Tower towerScript = _turret.GetComponent<Tower>();
         if (towerScript != null)
@@ -208,8 +214,12 @@ public class Node : MonoBehaviour
             towerScript.node = this;
         }
 
+
+        SoundManager.Instance.PlayBuildSound();
+
         Debug.Log("Turret built!");
     }
+
 
 
     void OnMouseEnter()

@@ -1,27 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    
-    public void PlayGame()
+    [Header("Menu Panels")]
+    public GameObject mainMenuPanel;
+    public GameObject optionsPanel;
+
+    private void Start()
     {
-        SceneManager.LoadScene("LevelSelector"); 
+        ShowMainMenu();
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.PlayMainMenuMusic();
+        }
     }
 
-    
     public void OpenOptions()
     {
-        
-        Debug.Log("Options Menu Opened");
+        mainMenuPanel.SetActive(false);
+        optionsPanel.SetActive(true);
     }
 
-    
+    public void CloseOptions()
+    {
+        mainMenuPanel.SetActive(true);
+        optionsPanel.SetActive(false);
+    }
+
+    public void PlayGame()
+    {
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.StopMusic();
+        }
+        UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelector");
+    }
+
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Game is exiting"); 
+        Debug.Log("Game is exiting");
+    }
+
+    private void ShowMainMenu()
+    {
+        mainMenuPanel.SetActive(true);
+        optionsPanel.SetActive(false);
     }
 }
