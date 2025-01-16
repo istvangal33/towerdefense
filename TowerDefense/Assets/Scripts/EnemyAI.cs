@@ -169,6 +169,15 @@ public class EnemyAI : MonoBehaviour
         agent.speed /= (1f - slowAmount);
         isSlowed = false;
     }
+    public void SetHealth(float multiplier)
+    {
+        startHealth *= multiplier;
+        health = startHealth; 
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = health / startHealth;
+        }
+    }
 
-    
+
 }

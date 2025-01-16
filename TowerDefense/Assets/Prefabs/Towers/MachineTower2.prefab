@@ -198,10 +198,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionOffset: {x: 0, y: 0, z: 0}
   node: {fileID: 0}
+  coveredCells: []
   towerType: 0
-  range: 8
+  range: 7
   endPoint: {fileID: 0}
-  fireRate: 6
+  fireRate: 5
   bulletPrefab: {fileID: 8081575154044244640, guid: 86e352dd7587dac419b68596e497f643, type: 3}
   firePoint: {fileID: 4357681104704597809}
   useLaser: 0

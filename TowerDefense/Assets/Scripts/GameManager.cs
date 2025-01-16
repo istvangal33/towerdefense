@@ -34,7 +34,11 @@ public class GameManager : MonoBehaviour
 
         
         InitializeCSVFile();
+
+        
+        LogTowerDataToCSV("GameStart");
     }
+
 
     void InitializeCSVFile()
     {
@@ -211,7 +215,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void LogTowerDataToCSV(string action, Tower tower)
+    public void LogTowerDataToCSV(string action, Tower tower = null)
     {
         string filePath = "TowerData.csv";
 
@@ -223,22 +227,23 @@ public class GameManager : MonoBehaviour
         int currentLevel = CurrentLevel;
         int waveNumber = FindObjectOfType<WaveSpawner>()?.waveNumber ?? 0;
 
-        string towerID = tower.GetInstanceID().ToString();
-        string towerType = tower.towerType.ToString();
-        int level = tower.currentLevel;
-        float range = tower.range;
-        float fireRate = tower.fireRate;
-
-        int currentCost = tower.node?.turretBlueprint?.GetSellAmount(level) * 2 ?? 0;
+        string towerID = tower != null ? tower.GetInstanceID().ToString() : "NaN";
+        string towerType = tower != null ? tower.towerType.ToString() : "NaN";
+        string level = tower != null ? tower.currentLevel.ToString() : "NaN";
+        string range = tower != null ? tower.range.ToString("F2") : "NaN";
+        string fireRate = tower != null ? tower.fireRate.ToString("F2") : "NaN";
+        string currentCost = tower != null && tower.node != null ? (tower.node.turretBlueprint?.GetSellAmount(tower.currentLevel) * 2).ToString() : "NaN";
 
         // Idõbélyeg hozzáadása
         string timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
-        string line = $"{currentLevel},{waveNumber},{towerID},{towerType},{action},{level},{range:F2},{fireRate:F2},{currentCost},{timestamp}";
+        // Sor összeállítása
+        string line = $"{currentLevel},{waveNumber},{towerID},{towerType},{action},{level},{range},{fireRate},{currentCost},{timestamp}";
         File.AppendAllText(filePath, line + "\n");
 
         Debug.Log($"Tower data logged: {line}");
     }
+
 
 
 

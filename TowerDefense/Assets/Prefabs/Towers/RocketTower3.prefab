@@ -285,7 +285,7 @@ MonoBehaviour:
   towerType: 1
   range: 10
   endPoint: {fileID: 0}
-  fireRate: 1
+  fireRate: 0.8
   bulletPrefab: {fileID: 8081575154044244640, guid: 1afc8c1b89ef89d479668d99102c84ce, type: 3}
   firePoint: {fileID: 2027967336987991304}
   useLaser: 0

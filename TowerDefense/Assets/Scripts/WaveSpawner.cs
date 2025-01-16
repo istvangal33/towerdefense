@@ -289,14 +289,22 @@ public class WaveSpawner : MonoBehaviour
 
     IEnumerator SpawnEnemyWithDelay(GameObject enemyPrefab, float delay)
     {
-        Debug.Log($"Spawning enemy with delay: {delay} seconds."); 
-        spawnIntervals.Add(delay);
         yield return new WaitForSeconds(delay);
         GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+
+        
+        EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+        if (enemyAI != null)
+        {
+            float healthMultiplier = GetHealthMultiplier();
+            enemyAI.SetHealth(healthMultiplier);
+        }
+
         UpdateEnemyCounts(enemy);
         totalEnemiesSpawned++;
-        Debug.Log("Enemy spawned.");
+        Debug.Log($"Enemy spawned with {GetHealthMultiplier()}x health multiplier.");
     }
+
 
 
 
@@ -320,4 +328,9 @@ public class WaveSpawner : MonoBehaviour
     {
         waveNumberText.text = waveNumber + "/" + maxWaves;
     }
+    private float GetHealthMultiplier()
+    {
+        return 1.0f + (waveNumber - 1) * 0.2f; // Minden hullám +10% életerő
+    }
+
 }
