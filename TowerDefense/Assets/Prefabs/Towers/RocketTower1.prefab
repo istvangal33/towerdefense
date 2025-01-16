@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionOffset: {x: 0, y: 0, z: 0}
   node: {fileID: 0}
+  coveredCells: []
   towerType: 1
   range: 8
   endPoint: {fileID: 0}

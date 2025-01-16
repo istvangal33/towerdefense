@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.IO;
-using System;
 using UnityEngine.SceneManagement;
-
+using System;
+using System.Linq;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -16,8 +15,8 @@ public class WaveSpawner : MonoBehaviour
     public Transform spawnPoint;
     public float waveDuration = 10f;
     private float countdown = 0f;
-    private int waveNumber = 1;
-    public int maxWaves = 5; 
+    public int waveNumber = 1;
+    public int maxWaves = 5;
     private bool firstWave = true;
 
     public LevelCompleteMenu levelCompleteMenu;
@@ -26,31 +25,72 @@ public class WaveSpawner : MonoBehaviour
     public Image waveProgressBarForeground;
     public TextMeshProUGUI waveNumberText;
 
+    private List<float> spawnIntervals = new List<float>();
+
     private bool gameOver = false;
 
-    private string csvFilePath = "wave_data.csv";
+    public int totalEnemiesSpawned = 0;
+    public Dictionary<EnemyType, int> enemyTypeCounts = new Dictionary<EnemyType, int>
+    {
+        { EnemyType.Buggy, 0 },
+        { EnemyType.Helicopter, 0 },
+        { EnemyType.Hovertank, 0 }
+    };
+
+
+    void LogWaveData()
+    {
+        Debug.Log($"Wave {waveNumber} Summary:");
+        Debug.Log($"Total enemies spawned: {totalEnemiesSpawned}");
+        foreach (var type in enemyTypeCounts)
+        {
+            Debug.Log($"{type.Key}: {type.Value}");
+        }
+
+        
+        GameManager.Instance.SaveGameDataToCSV(
+            waveNumber,
+            totalEnemiesSpawned,
+            new Dictionary<EnemyType, int>(enemyTypeCounts) 
+        );
+
+        
+        totalEnemiesSpawned = 0;
+        foreach (var key in enemyTypeCounts.Keys.ToList())
+        {
+            enemyTypeCounts[key] = 0;
+        }
+
+        spawnIntervals.Clear(); 
+    }
+
+
 
     void Start()
     {
         UpdateWaveText();
         waveProgressBarForeground.fillAmount = 0f;
-
-        string header = "waveNumber,enemyType,spawnTime,playerHealth,playerMoney";
-        WriteDataToCSV(header);
-
-        
         StartCoroutine(UpdateProgressBar());
-
-        
         StartCoroutine(ManageWave());
+        InitializeTowerCoverage();
     }
 
+
+
+    void InitializeTowerCoverage()
+    {
+        Tower[] towers = FindObjectsOfType<Tower>();
+        foreach (Tower tower in towers)
+        {
+            tower.CalculateCoverage();
+        }
+    }
 
 
     IEnumerator DelayedStart()
     {
         yield return new WaitForSeconds(1.5f);
-        countdown = 10f; 
+        countdown = 10f;
     }
 
     void Update()
@@ -61,21 +101,67 @@ public class WaveSpawner : MonoBehaviour
         countdown -= Time.deltaTime;
     }
 
+    IEnumerator SpawnEnemiesAndProgressBar()
+    {
+        Debug.Log("SpawnEnemiesAndProgressBar coroutine started.");
+        float elapsedTime = 0f;
+        waveProgressBarForeground.fillAmount = 0f;
+
+        GameObject[] enemyPool = DetermineEnemyPool();
+
+        if (enemyPool.Length == 0)
+        {
+            Debug.LogError("Nincs ellenség a poolban!");
+            yield break;
+        }
+
+        while (elapsedTime < waveDuration)
+        {
+            float remainingTime = waveDuration - elapsedTime;
+
+            
+            float spawnDelay = UnityEngine.Random.Range(0.5f, Mathf.Min(remainingTime, 2));
+            StartCoroutine(SpawnEnemyWithDelay(enemyPool[UnityEngine.Random.Range(0, enemyPool.Length)], spawnDelay));
+
+            elapsedTime += spawnDelay;
+            waveProgressBarForeground.fillAmount = Mathf.Clamp01(elapsedTime / waveDuration);
+
+            yield return new WaitForSeconds(spawnDelay);
+        }
+
+        
+        waveProgressBarForeground.fillAmount = 1f;
+        Debug.Log("SpawnEnemiesAndProgressBar coroutine ended.");
+    }
+
+
     IEnumerator ManageWave()
     {
         while (waveNumber <= maxWaves)
         {
+            
+            GameManager.Instance.LogPlayerMoneyAtWaveStart(waveNumber);
+
+            GameManager.Instance.SaveGameDataToCSV(waveNumber, totalEnemiesSpawned, new Dictionary<EnemyType, int>(enemyTypeCounts));
             Debug.Log("Hullám " + waveNumber + " indul");
             UpdateWaveText();
 
             
-            StartCoroutine(SpawnEnemies());
+            yield return StartCoroutine(SpawnEnemiesAndProgressBar());
 
-            
-            yield return StartCoroutine(UpdateProgressBar());
-
+           
             yield return new WaitUntil(() => FindObjectsOfType<EnemyAI>().Length == 0);
 
+            
+            GameManager.Instance.LogWaveNumber(waveNumber);          
+            LogWaveData();                                           
+            GameManager.Instance.LogPlayerLivesAtWaveEnd();          
+            GameManager.Instance.LogTowerStats();
+
+           
+            GameManager.Instance.LogPlayerMoneyAtWaveEnd(waveNumber);
+
+            
             if (waveNumber >= maxWaves)
             {
                 gameOver = true;
@@ -83,8 +169,6 @@ public class WaveSpawner : MonoBehaviour
 
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
                 int lastSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
-
-               
 
                 if (currentSceneIndex == lastSceneIndex)
                 {
@@ -98,11 +182,14 @@ public class WaveSpawner : MonoBehaviour
                 yield break;
             }
 
-
+            
             waveNumber++;
             countdown = 10f;
         }
     }
+
+
+
 
 
 
@@ -121,42 +208,47 @@ public class WaveSpawner : MonoBehaviour
         waveProgressBarForeground.fillAmount = 1f;
     }
 
-
-
-
-
-
     IEnumerator SpawnEnemies()
     {
+        Debug.Log("SpawnEnemies coroutine started.");
         float elapsedTime = 0f;
-        float spawnDelay = UnityEngine.Random.Range(1f, 2f);
+        float spawnDelay = UnityEngine.Random.Range(0.5f, 2f);
         GameObject[] enemyPool = DetermineEnemyPool();
 
-        
         if (enemyPool.Length == 0)
         {
             Debug.LogError("Nincs ellenség a poolban!");
             yield break;
         }
 
+        
+        GameObject firstEnemy = enemyPool[UnityEngine.Random.Range(0, enemyPool.Length)];
+        Instantiate(firstEnemy, spawnPoint.position, spawnPoint.rotation);
+        UpdateEnemyCounts(firstEnemy); 
+        Debug.Log("First enemy spawned immediately.");
+        totalEnemiesSpawned++;
+
+        elapsedTime += spawnDelay;
+
         while (elapsedTime < waveDuration)
         {
-            SpawnEnemy(enemyPool);
+            StartCoroutine(SpawnEnemyWithDelay(enemyPool[UnityEngine.Random.Range(0, enemyPool.Length)], spawnDelay));
             elapsedTime += spawnDelay;
             yield return new WaitForSeconds(spawnDelay);
-            spawnDelay = UnityEngine.Random.Range(1f, 2f);
+            spawnDelay = UnityEngine.Random.Range(0.5f, 2f);
         }
     }
-
 
     GameObject[] DetermineEnemyPool()
     {
         if (waveNumber == 1)
         {
+            Debug.Log("Wave 1 enemy pool created.");
             int numMediumEnemies = Mathf.Min(mediumEnemies.Length, 2);
             GameObject[] mixedPool = new GameObject[easyEnemies.Length + numMediumEnemies];
             Array.Copy(easyEnemies, mixedPool, easyEnemies.Length);
             Array.Copy(mediumEnemies, 0, mixedPool, easyEnemies.Length, numMediumEnemies);
+            Debug.Log($"Pool size: {mixedPool.Length}");
             return mixedPool;
         }
         else if (waveNumber == 2)
@@ -165,6 +257,7 @@ public class WaveSpawner : MonoBehaviour
             GameObject[] mixedPool = new GameObject[mediumEnemies.Length + numEasyEnemies];
             Array.Copy(mediumEnemies, mixedPool, mediumEnemies.Length);
             Array.Copy(easyEnemies, 0, mixedPool, mediumEnemies.Length, numEasyEnemies);
+            Debug.Log($"Pool size: {mixedPool.Length}");
             return mixedPool;
         }
         else if (waveNumber >= 3)
@@ -173,6 +266,7 @@ public class WaveSpawner : MonoBehaviour
             Array.Copy(easyEnemies, mixedPool, easyEnemies.Length);
             Array.Copy(mediumEnemies, 0, mixedPool, easyEnemies.Length, mediumEnemies.Length);
             Array.Copy(hardEnemies, 0, mixedPool, easyEnemies.Length + mediumEnemies.Length, hardEnemies.Length);
+            Debug.Log($"Pool size: {mixedPool.Length}");
             return mixedPool;
         }
 
@@ -188,49 +282,38 @@ public class WaveSpawner : MonoBehaviour
         }
 
         int randomIndex = UnityEngine.Random.Range(0, enemyPool.Length);
-        GameObject enemy = enemyPool[randomIndex];
-
-        Debug.Log("Spawning enemy: " + enemy.name);
-
-        float spawnDelay = UnityEngine.Random.Range(1f, 3f);
-        StartCoroutine(SpawnEnemyWithDelay(enemy, spawnDelay));
+        GameObject enemy = Instantiate(enemyPool[randomIndex], spawnPoint.position, spawnPoint.rotation);
+        UpdateEnemyCounts(enemy);
+        totalEnemiesSpawned++;
     }
 
-    IEnumerator SpawnEnemyWithDelay(GameObject enemy, float delay)
+    IEnumerator SpawnEnemyWithDelay(GameObject enemyPrefab, float delay)
     {
+        Debug.Log($"Spawning enemy with delay: {delay} seconds."); 
+        spawnIntervals.Add(delay);
         yield return new WaitForSeconds(delay);
-        Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
-
-        string enemyType = GetEnemyType(enemy);
-        string spawnTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        int playerHealth = PlayerStats.Lives;
-        int playerMoney = PlayerStats.Money;
-
-        string towerData = GetTowerData();
-
-        string data = $"{waveNumber},{enemyType},{spawnTime},{playerHealth},{playerMoney},{towerData}";
-        WriteDataToCSV(data);
+        GameObject enemy = Instantiate(enemyPrefab, spawnPoint.position, spawnPoint.rotation);
+        UpdateEnemyCounts(enemy);
+        totalEnemiesSpawned++;
+        Debug.Log("Enemy spawned.");
     }
 
-    string GetEnemyType(GameObject enemy)
-    {
-        if (Array.IndexOf(easyEnemies, enemy) != -1) return "easy";
-        if (Array.IndexOf(mediumEnemies, enemy) != -1) return "medium";
-        if (Array.IndexOf(hardEnemies, enemy) != -1) return "hard";
-        return "unknown";
-    }
 
-    void WriteDataToCSV(string data)
+
+    void UpdateEnemyCounts(GameObject enemy)
     {
-        using (StreamWriter writer = new StreamWriter(csvFilePath, true))
+        EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+        if (enemyAI != null)
         {
-            writer.WriteLine(data);
+            if (enemyTypeCounts.ContainsKey(enemyAI.enemyType))
+            {
+                enemyTypeCounts[enemyAI.enemyType]++;
+            }
+            else
+            {
+                Debug.LogError($"Unknown enemy type: {enemyAI.enemyType}");
+            }
         }
-    }
-
-    string GetTowerData()
-    {
-        return "tower data";
     }
 
     void UpdateWaveText()

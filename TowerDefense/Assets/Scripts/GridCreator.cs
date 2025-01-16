@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class GridCreator : MonoBehaviour
 {
-
-    
-
     [SerializeField] private int gridWidth = 10;     
     [SerializeField] private int gridHeight = 10;
     [SerializeField] public static float cellSize = 1f;
@@ -19,7 +16,6 @@ public class GridCreator : MonoBehaviour
         CreateGrid();
     }
 
-    
     void CreateGrid()
     {
         if (cellPrefab == null)

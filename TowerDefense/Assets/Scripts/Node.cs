@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using System.Collections.Generic;
+
 
 public class Node : MonoBehaviour
 {
@@ -21,8 +23,37 @@ public class Node : MonoBehaviour
 
     BuildManager buildManager;
 
+    public int gridX;
+    public int gridY;
+    public List<Vector2Int> coveredCells = new List<Vector2Int>();
+
+    public float range;
+
+    public void CalculateCoverage()
+    {
+        coveredCells.Clear();
+        int gridRange = Mathf.CeilToInt(range / GridCreator.cellSize);
+
+        for (int x = -gridRange; x <= gridRange; x++)
+        {
+            for (int y = -gridRange; y <= gridRange; y++)
+            {
+                Vector2Int cell = new Vector2Int(
+                    Mathf.RoundToInt(transform.position.x / GridCreator.cellSize) + x,
+                    Mathf.RoundToInt(transform.position.z / GridCreator.cellSize) + y
+                );
+                if (Vector2.Distance(new Vector2(cell.x, cell.y), new Vector2(transform.position.x, transform.position.z)) <= range / GridCreator.cellSize)
+                {
+                    coveredCells.Add(cell);
+                }
+            }
+        }
+    }
+
     void Start()
     {
+
+        CalculateGridPosition();
         rend = GetComponent<Renderer>();
         startColor = rend.material.color;
 
@@ -97,42 +128,57 @@ public class Node : MonoBehaviour
         if (towerComponent != null)
         {
             towerComponent.node = this;
+            towerComponent.currentLevel = ++upgradeLevel;
+            towerComponent.CalculateCoverage();
         }
 
-
-        SoundManager.Instance.PlayUpgradeSound();
-
-        upgradeLevel++;
-        Debug.Log("Turret upgraded to level " + upgradeLevel + "!");
-
-        BuildManager.instance.nodeUI.SetTarget(this);
+        Debug.Log($"Turret upgraded to level {upgradeLevel}! Cost: {upgradeCost}");
     }
+
+
 
 
     public void SellTurret()
     {
-
         SoundManager.Instance.PlayExplosionSound();
 
+        
         PlayerStats.Money += turretBlueprint.GetSellAmount(upgradeLevel);
 
+        
         GameObject effect = (GameObject)Instantiate(buildManager.sellEffect, GetBuildPosition(), Quaternion.identity);
         Destroy(effect, 5f);
 
-        Destroy(turret);
+        
+        if (turret != null)
+        {
+            Tower towerScript = turret.GetComponent<Tower>();
+            if (towerScript != null)
+            {
+               
+                towerScript.coveredCells.Clear();
+            }
+
+            Destroy(turret);
+        }
+
+        
         turretBlueprint = null;
         isUpgraded = false;
         isOccupied = false;
 
-
+        
         if (neighbors[0] != null) neighbors[0].isOccupied = false;
         if (neighbors[1] != null) neighbors[1].isOccupied = false;
         if (neighbors[0] != null && neighbors[0].neighbors[1] != null) neighbors[0].neighbors[1].isOccupied = false;
         if (neighbors[1] != null && neighbors[1].neighbors[0] != null) neighbors[1].neighbors[0].isOccupied = false;
 
         Debug.Log("Turret sold!");
+
+        
         upgradeLevel = 0;
     }
+
 
 
     void OnMouseDown()
@@ -212,6 +258,7 @@ public class Node : MonoBehaviour
         if (towerScript != null)
         {
             towerScript.node = this;
+            towerScript.CalculateCoverage();
         }
 
 
@@ -254,5 +301,11 @@ public class Node : MonoBehaviour
     void OnMouseExit()
     {
         rend.material.color = startColor;
+    }
+
+    void CalculateGridPosition()
+    {
+        gridX = Mathf.RoundToInt(transform.position.x / GridCreator.cellSize);
+        gridY = Mathf.RoundToInt(transform.position.z / GridCreator.cellSize);
     }
 }

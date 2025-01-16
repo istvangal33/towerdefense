@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public static int Money;
-    public int startMoney = 10;
+    public static int startMoney = 20;
+    public static int Money = 20;
+    private static int previousMoney;
+    private static int previousLives;
+    public static int Lives = 15;
 
-    public static int Lives;
-    public int startLives = 10;
-    
     void Start()
     {
         Money = startMoney;
-        Lives = startLives;
+        previousMoney = Money;
+    }
+
+    void Update()
+    {
+        if (Lives != previousLives)
+        {
+            GameManager.Instance.LogPlayerLivesChange(previousLives, Lives);
+            previousLives = Lives;
+        }
     }
 }

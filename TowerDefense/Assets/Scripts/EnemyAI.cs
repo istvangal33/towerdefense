@@ -26,21 +26,24 @@ public class EnemyAI : MonoBehaviour
     private Transform endTarget;  
 
     public bool isSlowed = false;
+    public static event System.Action<EnemyAI> OnEnemySpawned;
+    public static event System.Action<EnemyAI> OnEnemyDestroyed;
 
     private void Start()
     {
-        
+        OnEnemySpawned?.Invoke(this);
+
         Transform choice1 = GameObject.Find("Choice1").transform;
         Transform choice2 = GameObject.Find("Choice2").transform;
         endTarget = GameObject.Find("End").transform;
 
-        
         choices = new Transform[] { choice1, choice2 };
 
-        
         ChoosePath();
 
         health = startHealth;
+        
+
     }
 
     public void TakeDamage(float amount)
@@ -57,6 +60,8 @@ public class EnemyAI : MonoBehaviour
     void Die()
     {
         PlayerStats.Money += value;
+        OnEnemyDestroyed?.Invoke(this);
+
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
         Destroy(gameObject);
@@ -69,14 +74,12 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        
         if (!hasMadeChoice && Vector3.Distance(transform.position, agent.destination) < arrivalThreshold)
         {
             agent.SetDestination(endTarget.position);
             hasMadeChoice = true;
         }
 
-        
         if (hasMadeChoice && Vector3.Distance(transform.position, endTarget.position) < arrivalThreshold)
         {
             StartCoroutine(HandleArrival());
@@ -93,10 +96,12 @@ public class EnemyAI : MonoBehaviour
         Destroy(explosion, 5f);
 
         PlayerStats.Lives--;
+        OnEnemyDestroyed?.Invoke(this);
         Destroy(gameObject);
     }
 
-    public float CalculateDanger(Transform path)
+
+    private float CalculateDanger(Transform path)
     {
         GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
         float dangerScore = 0f;
@@ -105,10 +110,10 @@ public class EnemyAI : MonoBehaviour
         {
             float distanceToPath = Vector3.Distance(tower.transform.position, path.position);
 
-            if (distanceToPath < 10f) 
+            if (distanceToPath < 10f)
             {
                 Tower towerScript = tower.GetComponent<Tower>();
-                dangerScore += 1 / distanceToPath;  
+                dangerScore += 1 / distanceToPath;
 
                 switch (towerScript.towerType)
                 {
@@ -129,7 +134,7 @@ public class EnemyAI : MonoBehaviour
     }
 
 
-    
+
     void ChoosePath()
     {
         Transform choice1 = GameObject.Find("Choice1").transform;
@@ -154,16 +159,16 @@ public class EnemyAI : MonoBehaviour
         {
             agent.speed *= (1f - slowAmount);
             isSlowed = true;
-            StartCoroutine(ResetSpeed(slowAmount)); 
+            StartCoroutine(ResetSpeed(slowAmount));
         }
     }
 
-    IEnumerator ResetSpeed(float slowAmount) 
+    IEnumerator ResetSpeed(float slowAmount)
     {
-        yield return new WaitForSeconds(2f); 
-        agent.speed /= (1f - slowAmount); 
+        yield return new WaitForSeconds(2f);
+        agent.speed /= (1f - slowAmount);
         isSlowed = false;
     }
 
-
+    
 }

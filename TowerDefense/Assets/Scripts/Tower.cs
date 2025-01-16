@@ -11,7 +11,8 @@ public class Tower : MonoBehaviour
     public Vector3 positionOffset;
 
     public Node node;
-
+    
+    public List<Vector2Int> coveredCells = new List<Vector2Int>();
     public TowerType towerType;
     private Transform target;
 
@@ -70,7 +71,19 @@ public class Tower : MonoBehaviour
 
         audioSource = GetComponent<AudioSource>();
 
+        
+        if (node != null)
+        {
+            currentLevel = node.upgradeLevel; 
+        }
+        else
+        {
+            currentLevel = 1; 
+        }
+
+        Debug.Log($"Tower initialized with level: {currentLevel}");
     }
+
 
     void Update()
     {
@@ -304,5 +317,31 @@ public class Tower : MonoBehaviour
     {
         PlayerStats.Money += sellAmount;
         Destroy(gameObject);
+    }
+
+    public void CalculateCoverage()
+    {
+        if (node == null)
+        {
+            Debug.LogError("Node is not set for this tower!");
+            return;
+        }
+
+        coveredCells.Clear();
+        int gridRange = Mathf.CeilToInt(range / GridCreator.cellSize);
+
+        for (int x = -gridRange; x <= gridRange; x++)
+        {
+            for (int y = -gridRange; y <= gridRange; y++)
+            {
+                Vector2Int cell = new Vector2Int(node.gridX + x, node.gridY + y);
+                if (Vector2.Distance(new Vector2(cell.x, cell.y), new Vector2(node.gridX, node.gridY)) <= range / GridCreator.cellSize)
+                {
+                    coveredCells.Add(cell);
+                }
+            }
+        }
+
+        Debug.Log($"Coverage calculated for tower at {node.gridX}, {node.gridY}");
     }
 }

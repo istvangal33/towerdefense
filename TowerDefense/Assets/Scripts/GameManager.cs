@@ -1,16 +1,99 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
     public static bool GameIsOver;
     public GameOver gameOverScript;
 
+    public static GameManager Instance { get; private set; }
+
+    public int CurrentLevel { get; private set; }
+    private string filePath = "GameData.csv";
+
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
     void Start()
     {
         GameIsOver = false;
+
+        
+        CurrentLevel = UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Current Level: " + CurrentLevel);
+
+        
+        InitializeCSVFile();
     }
 
-    
+    void InitializeCSVFile()
+    {
+        if (!File.Exists(filePath))
+        {
+            File.WriteAllText(filePath, "CurrentLevel,WaveNumber,StartMoney,CurrentLives,TotalEnemiesSpawned,Buggy%,Helicopter%,Hovertank%,Coverage\n");
+            Debug.Log("CSV fájl inicializálva: " + filePath);
+
+            SaveInitialGameDataToCSV();
+        }
+    }
+
+    void SaveInitialGameDataToCSV()
+    {
+        string currentLevel = CurrentLevel.ToString();
+        string startMoney = PlayerStats.startMoney.ToString();
+        string startLives = PlayerStats.Lives.ToString();
+
+        string line = $"{currentLevel},0,{startMoney},{startLives}";
+        File.AppendAllText(filePath, line + "\n");
+
+        Debug.Log($"Kezdeti adatok mentve: Level={currentLevel}, StartMoney={startMoney}, StartLives={startLives}");
+    }
+
+    public void SaveGameDataToCSV(int waveNumber, int totalEnemiesSpawned, Dictionary<EnemyType, int> enemyTypeCounts)
+    {
+        string currentLevel = CurrentLevel.ToString();
+        string wave = waveNumber.ToString();
+        string currentMoney = PlayerStats.Money.ToString();
+        string currentLives = PlayerStats.Lives.ToString();
+
+        float towerCoverage = FindObjectOfType<GridCoverageManager>()?.GetCurrentCoverage() ?? 0f;
+
+        int totalEnemies = Mathf.Max(1, totalEnemiesSpawned);
+        float buggyPercentage = (enemyTypeCounts[EnemyType.Buggy] / (float)totalEnemies) * 100f;
+        float helicopterPercentage = (enemyTypeCounts[EnemyType.Helicopter] / (float)totalEnemies) * 100f;
+        float hovertankPercentage = (enemyTypeCounts[EnemyType.Hovertank] / (float)totalEnemies) * 100f;
+
+        string timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+        if (!File.Exists(filePath))
+        {
+            File.WriteAllText(filePath, "CurrentLevel,WaveNumber,StartMoney,CurrentLives,TotalEnemiesSpawned,Buggy%,Helicopter%,Hovertank%,Coverage,Timestamp\n");
+        }
+
+        string line = $"{currentLevel},{wave},{currentMoney},{currentLives},{totalEnemiesSpawned},{buggyPercentage:F2},{helicopterPercentage:F2},{hovertankPercentage:F2},{towerCoverage:F2},{timestamp}";
+        File.AppendAllText(filePath, line + "\n");
+
+        Debug.Log($"Adatok mentve: Level={currentLevel}, Wave={wave}, Money={currentMoney}, Lives={currentLives}, TotalEnemies={totalEnemiesSpawned}, Coverage={towerCoverage:F2}, Timestamp={timestamp}");
+    }
+
+
+
+
+    public void LogPlayerMoneyAtWaveStart(int waveNumber)
+    {
+        Debug.Log($"Wave {waveNumber} Start - Player Money: {PlayerStats.Money}");
+    }
+
     void Update()
     {
         if (GameIsOver)
@@ -30,28 +113,135 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         GameIsOver = true;
-        gameOverScript.ShowGameOver(); 
 
-       
+        gameOverScript.ShowGameOver();
         StopAllEnemies();
+        LogTowerStats();
+
+        WaveSpawner waveSpawner = FindObjectOfType<WaveSpawner>();
+        if (waveSpawner != null)
+        {
+            float towerCoverage = FindObjectOfType<GridCoverageManager>()?.GetCurrentCoverage() ?? 0f;
+
+            SaveGameDataToCSV(
+                waveSpawner.waveNumber,
+                waveSpawner.totalEnemiesSpawned,
+                new Dictionary<EnemyType, int>(waveSpawner.enemyTypeCounts)
+            );
+
+            Debug.Log($"Tower coverage at game over: {towerCoverage}%");
+        }
+        else
+        {
+            Debug.LogError("WaveSpawner instance not found!");
+        }
     }
 
-    
+
+
     void StopAllEnemies()
     {
         EnemyAI[] enemies = FindObjectsOfType<EnemyAI>();
         foreach (EnemyAI enemy in enemies)
         {
-            
             UnityEngine.AI.NavMeshAgent agent = enemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
             if (agent != null)
             {
-                agent.isStopped = true; 
+                agent.isStopped = true;
             }
 
-            
-            enemy.StopAllCoroutines(); 
-            enemy.enabled = false;     
+            enemy.StopAllCoroutines();
+            enemy.enabled = false;
         }
     }
+
+    public void LogPlayerMoneyChange(int oldMoney, int newMoney)
+    {
+        int moneyChange = newMoney - oldMoney;
+        if (moneyChange > 0)
+        {
+            Debug.Log($"Player earned {moneyChange} money. Current money: {newMoney}");
+        }
+        else if (moneyChange < 0)
+        {
+            Debug.Log($"Player spent {Mathf.Abs(moneyChange)} money. Current money: {newMoney}");
+        }
+    }
+
+    public void LogPlayerMoneyAtWaveEnd(int waveNumber)
+    {
+        Debug.Log($"Wave {waveNumber} ended. Player money: {PlayerStats.Money}");
+    }
+
+    public void LogWaveNumber(int waveNumber)
+    {
+        Debug.Log($"Wave {waveNumber} ended.");
+    }
+
+    public void LogPlayerLivesChange(int oldLives, int newLives)
+    {
+        int livesChange = newLives - oldLives;
+        if (livesChange < 0)
+        {
+            Debug.Log($"Player lost {Mathf.Abs(livesChange)} lives. Current lives: {newLives}");
+        }
+        else if (livesChange > 0)
+        {
+            Debug.Log($"Player gained {livesChange} lives. Current lives: {newLives}");
+        }
+    }
+
+    public void LogPlayerLivesAtWaveEnd()
+    {
+        Debug.Log($"Wave ended. Player lives: {PlayerStats.Lives}");
+    }
+
+    public void LogTowerStats()
+    {
+        Tower[] towers = FindObjectsOfType<Tower>();
+        Debug.Log($"Total towers: {towers.Length}");
+
+        foreach (Tower tower in towers)
+        {
+            int currentCost = tower.node?.turretBlueprint?.GetSellAmount(tower.currentLevel) * 2 ?? 0;
+
+            Debug.Log($"Type: {tower.towerType}, Position: {tower.transform.position}, Range: {tower.range}, FireRate: {tower.fireRate}, Level: {tower.currentLevel}, Cost: {currentCost}");
+
+            LogTowerDataToCSV("Update", tower);
+        }
+    }
+
+    public void LogTowerDataToCSV(string action, Tower tower)
+    {
+        string filePath = "TowerData.csv";
+
+        if (!File.Exists(filePath))
+        {
+            File.WriteAllText(filePath, "CurrentLevel,WaveNumber,TowerID,TowerType,Action,Level,Range,FireRate,Cost,Timestamp\n");
+        }
+
+        int currentLevel = CurrentLevel;
+        int waveNumber = FindObjectOfType<WaveSpawner>()?.waveNumber ?? 0;
+
+        string towerID = tower.GetInstanceID().ToString();
+        string towerType = tower.towerType.ToString();
+        int level = tower.currentLevel;
+        float range = tower.range;
+        float fireRate = tower.fireRate;
+
+        int currentCost = tower.node?.turretBlueprint?.GetSellAmount(level) * 2 ?? 0;
+
+        // Idõbélyeg hozzáadása
+        string timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+        string line = $"{currentLevel},{waveNumber},{towerID},{towerType},{action},{level},{range:F2},{fireRate:F2},{currentCost},{timestamp}";
+        File.AppendAllText(filePath, line + "\n");
+
+        Debug.Log($"Tower data logged: {line}");
+    }
+
+
+
+
+
 }

@@ -180,9 +180,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &45136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -700,9 +713,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &52263796
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,9 +1102,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &82016988
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1208,9 +1247,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &94377340
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1445,9 +1497,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &117529976
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1714,9 +1779,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &130490031
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2209,9 +2287,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &169312590
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3242,9 +3333,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &229574830
 GameObject:
   m_ObjectHideFlags: 0
@@ -3374,9 +3478,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &239929010
 GameObject:
   m_ObjectHideFlags: 0
@@ -3871,6 +3988,108 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260540137}
   m_CullTransparentMesh: 1
+--- !u!1 &261603726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 261603727}
+  - component: {fileID: 261603730}
+  - component: {fileID: 261603729}
+  - component: {fileID: 261603728}
+  m_Layer: 5
+  m_Name: GameComplete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &261603727
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261603726}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2026182773}
+  m_Father: {fileID: 978242643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &261603728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261603726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &261603729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261603726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &261603730
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 261603726}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &289812272
 GameObject:
   m_ObjectHideFlags: 0
@@ -4449,9 +4668,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &328600736
 GameObject:
   m_ObjectHideFlags: 0
@@ -4770,9 +5002,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &367993738
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5165,9 +5410,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &391471112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5399,9 +5657,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &412165194
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5707,9 +5978,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &439741588
 GameObject:
   m_ObjectHideFlags: 0
@@ -5944,9 +6228,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &462002554
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,9 +6302,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &462002557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6562,9 +6872,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &531918098
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6694,9 +7017,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &535398546
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6880,9 +7216,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &537778970
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7453,9 +7802,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &639785107
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8097,9 +8459,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &665675226
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8334,9 +8709,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &688910271
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8537,9 +8925,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -8931,9 +9332,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &708545267
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9139,9 +9553,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &717913765
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9530,7 +9957,7 @@ Transform:
   m_GameObject: {fileID: 773209439}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -23.15579, y: 16.605463, z: 17.680473}
+  m_LocalPosition: {x: -33.58, y: 16.605463, z: 5.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9562,8 +9989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5542ed58cdbfc6479da6c414ebf9452, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 100
-  startLives: 15
 --- !u!114 &773209444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9632,6 +10057,108 @@ Transform:
   - {fileID: 535398544}
   m_Father: {fileID: 828482368}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &782628375
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782628376}
+  - component: {fileID: 782628379}
+  - component: {fileID: 782628378}
+  - component: {fileID: 782628377}
+  m_Layer: 5
+  m_Name: LevelComplete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &782628376
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782628375}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1695344203}
+  m_Father: {fileID: 978242643}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 960, y: 540}
+  m_SizeDelta: {x: 1920, y: 1080}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &782628377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782628375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &782628378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782628375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &782628379
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782628375}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!1 &784678641
 GameObject:
   m_ObjectHideFlags: 0
@@ -9690,9 +10217,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &784678644
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9822,9 +10362,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &789331682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10206,9 +10759,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &821925893
 GameObject:
   m_ObjectHideFlags: 0
@@ -11198,9 +11764,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &864824425
 GameObject:
   m_ObjectHideFlags: 0
@@ -12040,9 +12619,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &933333290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12172,9 +12764,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &940104075
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12387,7 +12992,7 @@ MonoBehaviour:
   panBorderThickness: 7
   scrollSpeed: 0.5
   minY: 18
-  maxY: 25
+  maxY: 24.5
   minX: -25
   maxX: 2.5
   minZ: 10
@@ -12617,8 +13222,8 @@ RectTransform:
   - {fileID: 394536896}
   - {fileID: 909554445}
   - {fileID: 1571645161}
-  - {fileID: 1695344203}
-  - {fileID: 2026182773}
+  - {fileID: 782628376}
+  - {fileID: 261603727}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12684,9 +13289,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &979085102
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12816,9 +13434,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &995354235
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12948,9 +13579,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &995964528
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13080,9 +13724,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1012775428
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14082,9 +14739,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1122428317
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14214,9 +14884,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1138506898
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14393,6 +15076,52 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142100473}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1150726096
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150726098}
+  - component: {fileID: 1150726097}
+  m_Layer: 0
+  m_Name: EnemyManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1150726097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150726096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25cd11f64bdf5744a151c7a0cacddc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cellSize: 1
+  roadTag: Road
+--- !u!4 &1150726098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150726096}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.2953787, y: 55.462082, z: -18.821405}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166594014
 GameObject:
   m_ObjectHideFlags: 0
@@ -14585,9 +15314,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1177092470
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15064,9 +15806,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1187994655
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15246,9 +16001,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1218267982
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15446,6 +16214,15 @@ MonoBehaviour:
     upgradeCost: 8
     upgradedPrefab2: {fileID: 7256431272251314829, guid: 0d74aecfb30a353448c0b79d2ecb5ff5, type: 3}
     upgradeCost2: 14
+    rangeByLevel:
+    - 8
+    - 8
+    - 10
+    fireRateByLevel:
+    - 4
+    - 6
+    - 10
+    damageByLevel: 050000000500000005000000
   RocketTower:
     prefab: {fileID: 8597285425103371000, guid: 5cb123338d2994841820ae84857623f6, type: 3}
     cost: 12
@@ -15453,6 +16230,15 @@ MonoBehaviour:
     upgradeCost: 24
     upgradedPrefab2: {fileID: 8597285425103371000, guid: ef248a6c18919d94184d463faca6de1f, type: 3}
     upgradeCost2: 32
+    rangeByLevel:
+    - 8
+    - 10
+    - 10
+    fireRateByLevel:
+    - 0.5
+    - 1
+    - 1
+    damageByLevel: 640000006400000064000000
   LaserTower:
     prefab: {fileID: 2429872818905852461, guid: 4263b8f8779a90d42884ad44522d7c32, type: 3}
     cost: 16
@@ -15460,6 +16246,15 @@ MonoBehaviour:
     upgradeCost: 30
     upgradedPrefab2: {fileID: 2429872818905852461, guid: c124a20dd6ca1f24abf40ad275dcaf43, type: 3}
     upgradeCost2: 40
+    rangeByLevel:
+    - 5
+    - 6
+    - 8
+    fireRateByLevel:
+    - 2
+    - 2
+    - 2
+    damageByLevel: 190000002800000046000000
 --- !u!1 &1227974204
 GameObject:
   m_ObjectHideFlags: 0
@@ -16205,9 +17000,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1303799742
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16474,9 +17282,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1343506089
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16606,9 +17427,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1361204755
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16738,9 +17572,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1363132774
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16968,12 +17815,14 @@ MonoBehaviour:
   hardEnemies:
   - {fileID: 6759861183001786440, guid: d231b7f046701df408bb99930cf7f709, type: 3}
   spawnPoint: {fileID: 1373740606}
-  waveDuration: 20
-  maxWaves: 2
+  waveDuration: 45
+  waveNumber: 1
+  maxWaves: 10
   levelCompleteMenu: {fileID: 1695344207}
   gameCompleteUI: {fileID: 2026182776}
   waveProgressBarForeground: {fileID: 2099671842}
   waveNumberText: {fileID: 706302203}
+  totalEnemiesSpawned: 0
 --- !u!1 &1379509153
 GameObject:
   m_ObjectHideFlags: 0
@@ -17271,9 +18120,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1409106860
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17403,9 +18265,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1413091429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17535,9 +18410,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1413906109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17948,9 +18836,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &1438613138
 GameObject:
   m_ObjectHideFlags: 0
@@ -18685,9 +19586,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1479550658
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19071,9 +19985,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1502630181
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19224,6 +20151,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1503118531}
   m_CullTransparentMesh: 1
+--- !u!1 &1534085737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534085739}
+  - component: {fileID: 1534085738}
+  m_Layer: 0
+  m_Name: Coverage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1534085738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534085737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0581e7fbc4efd254c9d823f52cdb79eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkableObjects:
+  - {fileID: 1838946121}
+  - {fileID: 1821599694}
+  - {fileID: 1821599682}
+  - {fileID: 1821599690}
+  - {fileID: 1821599702}
+--- !u!4 &1534085739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534085737}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6827649, y: -5.536331, z: 8.71838}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551072139
 GameObject:
   m_ObjectHideFlags: 0
@@ -19353,9 +20330,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &1552162408
 GameObject:
   m_ObjectHideFlags: 0
@@ -19414,9 +20404,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1552162411
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19600,7 +20603,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1571645161}
-  - component: {fileID: 1571645162}
   - component: {fileID: 1571645163}
   - component: {fileID: 1571645164}
   m_Layer: 5
@@ -19631,20 +20633,8 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1300, y: 800}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1571645162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1571645160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805ac8c939665de4fa27dbdd99a8c842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1571645163
 Animator:
   serializedVersion: 5
@@ -19737,9 +20727,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1573676618
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19916,89 +20919,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1576211932}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1578860599
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1578860600}
-  - component: {fileID: 1578860602}
-  - component: {fileID: 1578860601}
-  m_Layer: 0
-  m_Name: Level04_Pt2_Road (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &1578860600
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578860599}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.052335896, z: -0, w: 0.9986295}
-  m_LocalPosition: {x: 13.16, y: 0, z: -0.95000076}
-  m_LocalScale: {x: 1.0776788, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1821703162}
-  m_LocalEulerAnglesHint: {x: 0, y: -6, z: 0}
---- !u!23 &1578860601
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578860599}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 96c827f63b5004e0583fe6ac7d168334, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1578860602
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1578860599}
-  m_Mesh: {fileID: 4300018, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
 --- !u!1 &1595855669
 GameObject:
   m_ObjectHideFlags: 0
@@ -20128,9 +21048,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &1633819678
 GameObject:
   m_ObjectHideFlags: 0
@@ -20528,92 +21461,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
---- !u!1 &1670122047
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1670122048}
-  - component: {fileID: 1670122050}
-  - component: {fileID: 1670122049}
-  m_Layer: 0
-  m_Name: Level04_Pt3_Road (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &1670122048
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670122047}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.97999954, y: 0.17006731, z: 16.25}
-  m_LocalScale: {x: 0.8117508, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1821703162}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &1670122049
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670122047}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 96c827f63b5004e0583fe6ac7d168334, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1670122050
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1670122047}
-  m_Mesh: {fileID: 4300020, guid: 4a4f98795c1bb4f299e0a3d35e32dc0e, type: 3}
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &1670393695
 GameObject:
   m_ObjectHideFlags: 0
@@ -20672,9 +21535,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1670393698
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20804,9 +21680,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1671353458
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20936,9 +21825,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1672779496
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21246,7 +22148,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1695344203}
-  - component: {fileID: 1695344206}
   - component: {fileID: 1695344207}
   m_Layer: 5
   m_Name: CompleteLevel
@@ -21254,7 +22155,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1695344203
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21262,7 +22163,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695344202}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -21272,25 +22173,13 @@ RectTransform:
   - {fileID: 72478195}
   - {fileID: 974198817}
   - {fileID: 144759605}
-  m_Father: {fileID: 978242643}
+  m_Father: {fileID: 782628376}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1695344206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1695344202}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805ac8c939665de4fa27dbdd99a8c842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1695344207
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21303,7 +22192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe344d50588c71b48b8d773ef318e8ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCompleteUI: {fileID: 1695344202}
+  levelCompleteUI: {fileID: 782628375}
 --- !u!1 &1710763215
 GameObject:
   m_ObjectHideFlags: 0
@@ -21362,9 +22251,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1710763218
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21535,9 +22437,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1729794819
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21881,9 +22796,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1767375929
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22369,9 +23297,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1789037807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22572,9 +23513,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!224 &1809226173 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2650144957564660298, guid: c3c799e4cf0d3474ebc113507ce86399, type: 3}
@@ -22638,9 +23592,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1811963775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22743,7 +23710,7 @@ GameObject:
   - component: {fileID: 1823602958}
   m_Layer: 0
   m_Name: Level04_Pt4_Road
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -22797,7 +23764,7 @@ GameObject:
   - component: {fileID: 1823602966}
   m_Layer: 0
   m_Name: Level04_Pt2_Road
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -22833,7 +23800,7 @@ GameObject:
   - component: {fileID: 1823602954}
   m_Layer: 0
   m_Name: Level04_Pt3_Road
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -22887,7 +23854,7 @@ GameObject:
   - component: {fileID: 1823602962}
   m_Layer: 0
   m_Name: Level04_Pt1_Road
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -23079,9 +24046,7 @@ Transform:
   - {fileID: 1821703142}
   - {fileID: 1821703158}
   - {fileID: 1821703146}
-  - {fileID: 1578860600}
   - {fileID: 1821703150}
-  - {fileID: 1670122048}
   - {fileID: 1838946122}
   - {fileID: 1821703138}
   - {fileID: 186063761}
@@ -23145,9 +24110,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1821948923
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23923,9 +24901,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &1838364018
 GameObject:
   m_ObjectHideFlags: 0
@@ -24014,7 +25005,7 @@ GameObject:
   - component: {fileID: 1838946123}
   m_Layer: 0
   m_Name: Level04_Pt3_Road (1)
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -24213,9 +25204,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!1 &1851063485
 GameObject:
   m_ObjectHideFlags: 0
@@ -24274,9 +25278,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1851063488
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24704,9 +25721,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1893806051
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25151,9 +26181,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &1918840512
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25948,6 +26991,8 @@ MonoBehaviour:
   enemyDeathSound: {fileID: 8300000, guid: ce694442cbe97954fa051268778cd1b9, type: 3}
   upgradeSound: {fileID: 8300000, guid: 721d54caff55c9a4897959e376632af6, type: 3}
   buildSound: {fileID: 8300000, guid: 721d54caff55c9a4897959e376632af6, type: 3}
+  mainMenuMusic: {fileID: 0}
+  laserAudioSource: {fileID: 0}
 --- !u!4 &1969696136
 Transform:
   m_ObjectHideFlags: 0
@@ -26556,9 +27601,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &2013166047
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26688,9 +27746,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &2013610303
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26876,7 +27947,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2026182773}
-  - component: {fileID: 2026182775}
   - component: {fileID: 2026182774}
   - component: {fileID: 2026182776}
   m_Layer: 5
@@ -26885,7 +27955,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2026182773
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26893,7 +27963,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2026182772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -26901,7 +27971,7 @@ RectTransform:
   - {fileID: 1294687794}
   - {fileID: 521590495}
   - {fileID: 1895343205}
-  m_Father: {fileID: 978242643}
+  m_Father: {fileID: 261603727}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -26929,18 +27999,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2026182775
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2026182772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805ac8c939665de4fa27dbdd99a8c842, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2026182776
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27223,9 +28281,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &2059789032
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27661,9 +28732,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &2099797407
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27948,9 +29032,22 @@ MonoBehaviour:
     upgradeCost: 0
     upgradedPrefab2: {fileID: 0}
     upgradeCost2: 0
+    rangeByLevel:
+    - 0
+    - 0
+    - 0
+    fireRateByLevel:
+    - 0
+    - 0
+    - 0
+    damageByLevel: 000000000000000000000000
   isUpgraded: 0
   upgradeLevel: 0
   isOccupied: 0
+  gridX: 0
+  gridY: 0
+  coveredCells: []
+  range: 0
 --- !u!65 &2146852300
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28254,3 +29351,5 @@ SceneRoots:
   - {fileID: 978242643}
   - {fileID: 1995711234}
   - {fileID: 1969696136}
+  - {fileID: 1534085739}
+  - {fileID: 1150726098}
