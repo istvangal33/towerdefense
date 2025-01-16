@@ -19,10 +19,13 @@ public class GameOver : MonoBehaviour
         SceneManager.LoadScene("MainMenuScene");  
     }
 
-    
+
     public void RestartLevel()
     {
-        Time.timeScale = 1f;  
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);  
+        gameOverUI.SetActive(false);
+        Time.timeScale = 1f;
+        PlayerStats.Lives = 15;
+        GameManager.GameIsOver = false; // GameIsOver visszaállítása
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

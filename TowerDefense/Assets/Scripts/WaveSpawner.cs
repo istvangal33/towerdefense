@@ -330,7 +330,7 @@ public class WaveSpawner : MonoBehaviour
     }
     private float GetHealthMultiplier()
     {
-        return 1.0f + (waveNumber - 1) * 0.2f; // Minden hullám +10% életerő
+        return 1.0f + (waveNumber - 1) * 0.3f; // Minden hullám +10% életerő
     }
 
 }

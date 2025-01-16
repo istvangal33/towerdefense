@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 200
-  damage: 5
+  damage: 8
   impactEffect: {fileID: 8081575154044244640}
-  hasExploded: 0
+  explosionRadius: 2
   projectileType: 0

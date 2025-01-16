@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
+        filePath = Path.Combine(Application.persistentDataPath, "GameData.csv");
+        Debug.Log($"GameData fájl helye: {filePath}");
     }
 
     void Start()
@@ -217,7 +221,7 @@ public class GameManager : MonoBehaviour
 
     public void LogTowerDataToCSV(string action, Tower tower = null)
     {
-        string filePath = "TowerData.csv";
+        string filePath = Path.Combine(Application.persistentDataPath, "TowerData.csv");
 
         if (!File.Exists(filePath))
         {
@@ -234,19 +238,11 @@ public class GameManager : MonoBehaviour
         string fireRate = tower != null ? tower.fireRate.ToString("F2") : "NaN";
         string currentCost = tower != null && tower.node != null ? (tower.node.turretBlueprint?.GetSellAmount(tower.currentLevel) * 2).ToString() : "NaN";
 
-        // Idõbélyeg hozzáadása
         string timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
-        // Sor összeállítása
         string line = $"{currentLevel},{waveNumber},{towerID},{towerType},{action},{level},{range},{fireRate},{currentCost},{timestamp}";
+
         File.AppendAllText(filePath, line + "\n");
-
-        Debug.Log($"Tower data logged: {line}");
+        Debug.Log($"Tower data mentve: {line}");
     }
-
-
-
-
-
 
 }

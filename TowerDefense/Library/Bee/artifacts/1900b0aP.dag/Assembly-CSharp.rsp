@@ -342,7 +342,6 @@
 "Assets/Scripts/LevelCompleteMenu.cs"
 "Assets/Scripts/LevelSelector.cs"
 "Assets/Scripts/LivesUI.cs"
-"Assets/Scripts/LogManager.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/MoneyUI.cs"
 "Assets/Scripts/Node.cs"

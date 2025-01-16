@@ -27793,11 +27793,13 @@ MonoBehaviour:
   - {fileID: 6759861183001786440, guid: d231b7f046701df408bb99930cf7f709, type: 3}
   spawnPoint: {fileID: 1373740606}
   waveDuration: 60
+  waveNumber: 1
   maxWaves: 15
   levelCompleteMenu: {fileID: 96279306}
   gameCompleteUI: {fileID: 348761925}
   waveProgressBarForeground: {fileID: 2099671842}
   waveNumberText: {fileID: 706302203}
+  totalEnemiesSpawned: 0
 --- !u!1 &1374740609
 GameObject:
   m_ObjectHideFlags: 0
@@ -32099,7 +32101,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1300, y: 800}
+  m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1571645162
 MonoBehaviour:

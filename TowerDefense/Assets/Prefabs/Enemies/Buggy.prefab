@@ -142,7 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 651886dd199439f4d8e224a2c5b0de94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startHealth: 175
+  enemyType: 0
+  startHealth: 200
   value: 1
   agent: {fileID: 5176226051849300665}
   arrivalThreshold: 0.5
