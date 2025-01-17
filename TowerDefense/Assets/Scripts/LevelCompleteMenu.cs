@@ -13,9 +13,55 @@ public class LevelCompleteMenu : MonoBehaviour
 
     public void NextLevel()
     {
+        
+        PlayerStats.Lives += 5;
+
+        
+        if (PlayerStats.Lives > 15)
+        {
+            PlayerStats.Lives = 15;
+        }
+
+        
+        int bonusMoney = 0;
+        if (PlayerStats.Lives >= 6 && PlayerStats.Lives <= 10)
+        {
+            bonusMoney = 8;
+        }
+        else if (PlayerStats.Lives >= 11 && PlayerStats.Lives <= 14)
+        {
+            bonusMoney = 6;
+        }
+        else if (PlayerStats.Lives == 15) 
+        {
+            bonusMoney = 4;
+        }
+
+        
+        PlayerStats.Money = 20 + bonusMoney; 
+
+        Debug.Log($"A játékos {bonusMoney} bónuszpénzt kapott. Jelenlegi pénz: {PlayerStats.Money}");
+
+        
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+        else
+        {
+            Debug.LogError("Nincs több pálya!");
+            GoToMainMenu();
+        }
     }
+
+
+
+
 
     public void GoToMainMenu()
     {

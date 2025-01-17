@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 2
-  startHealth: 750
+  startHealth: 650
   value: 1
   agent: {fileID: 9019214449059110804}
   arrivalThreshold: 0.5

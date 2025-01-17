@@ -143,7 +143,14 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("WaveSpawner instance not found!");
         }
+
+        // **Új funkció: bónusz életek hozzáadása**:
+        if (!GameIsOver && waveSpawner.waveNumber >= waveSpawner.maxWaves)
+        {
+            AwardBonusLife(5); // Bónusz élet minden pálya után
+        }
     }
+
 
 
 
@@ -244,5 +251,21 @@ public class GameManager : MonoBehaviour
         File.AppendAllText(filePath, line + "\n");
         Debug.Log($"Tower data mentve: {line}");
     }
+
+    public void AwardBonusLife(int bonusLives)
+    {
+        int maxLives = 15;
+        int currentLives = PlayerStats.Lives;
+
+        if (currentLives >= maxLives)
+        {
+            Debug.Log("A játékos már maximális élettel rendelkezik.");
+            return;
+        }
+
+        PlayerStats.Lives = Mathf.Min(currentLives + bonusLives, maxLives);
+        Debug.Log($"Bónusz életek hozzáadva: {bonusLives}. Aktuális életek: {PlayerStats.Lives}");
+    }
+
 
 }
