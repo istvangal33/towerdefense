@@ -17815,9 +17815,9 @@ MonoBehaviour:
   hardEnemies:
   - {fileID: 6759861183001786440, guid: d231b7f046701df408bb99930cf7f709, type: 3}
   spawnPoint: {fileID: 1373740606}
-  waveDuration: 30
+  waveDuration: 45
   waveNumber: 1
-  maxWaves: 2
+  maxWaves: 10
   levelCompleteMenu: {fileID: 1695344207}
   gameCompleteUI: {fileID: 2026182776}
   waveProgressBarForeground: {fileID: 2099671842}

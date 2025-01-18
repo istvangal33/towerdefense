@@ -9684,7 +9684,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f60ef194fcddb6d4a9c6c54a96c672e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  logInterval: 3
 --- !u!1 &773562887
 GameObject:
   m_ObjectHideFlags: 0
@@ -18365,9 +18364,9 @@ MonoBehaviour:
   hardEnemies:
   - {fileID: 6759861183001786440, guid: d231b7f046701df408bb99930cf7f709, type: 3}
   spawnPoint: {fileID: 1373740606}
-  waveDuration: 60
+  waveDuration: 45
   waveNumber: 1
-  maxWaves: 15
+  maxWaves: 10
   levelCompleteMenu: {fileID: 96279306}
   gameCompleteUI: {fileID: 348761925}
   waveProgressBarForeground: {fileID: 2099671842}

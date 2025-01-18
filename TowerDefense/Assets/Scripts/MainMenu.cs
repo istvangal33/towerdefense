@@ -29,12 +29,15 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
+        GameManager.GameIsOver = false;
+        PlayerStats.ResetStats(); 
         if (SoundManager.Instance != null)
         {
             SoundManager.Instance.StopMusic();
         }
         UnityEngine.SceneManagement.SceneManager.LoadScene("LevelSelector");
     }
+
 
     public void QuitGame()
     {

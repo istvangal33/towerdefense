@@ -23,9 +23,10 @@ public class GameOver : MonoBehaviour
     public void RestartLevel()
     {
         gameOverUI.SetActive(false);
-        Time.timeScale = 1f;
-        PlayerStats.Lives = 15;
-        GameManager.GameIsOver = false; // GameIsOver visszaállítása
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f; 
+        PlayerStats.ResetStats();
+        GameManager.GameIsOver = false; 
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
     }
+
 }
