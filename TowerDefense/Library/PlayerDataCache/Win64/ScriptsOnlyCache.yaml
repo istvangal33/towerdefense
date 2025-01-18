@@ -232,13 +232,13 @@ ScriptsOnlyBuild:
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
     fullTypeName: Shop
+    methodName: SelectTower1
+  - assembly: Assembly-CSharp
+    fullTypeName: Shop
     methodName: SelectTower3
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: SelectTower2
-  - assembly: Assembly-CSharp
-    fullTypeName: Shop
-    methodName: SelectTower1
   - assembly: Assembly-CSharp
     fullTypeName: NodeUI
     methodName: Upgrade
@@ -292,10 +292,10 @@ ScriptsOnlyBuild:
     methodName: Pause
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower2
+    methodName: SelectTower1
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower1
+    methodName: SelectTower2
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: SelectTower3
@@ -352,13 +352,13 @@ ScriptsOnlyBuild:
     methodName: Pause
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower1
+    methodName: SelectTower2
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: SelectTower3
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower2
+    methodName: SelectTower1
   - assembly: Assembly-CSharp
     fullTypeName: GameOver
     methodName: RestartLevel
@@ -412,13 +412,13 @@ ScriptsOnlyBuild:
     methodName: Pause
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower1
+    methodName: SelectTower3
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: SelectTower2
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower3
+    methodName: SelectTower1
   - assembly: Assembly-CSharp
     fullTypeName: GameOver
     methodName: RestartLevel
@@ -724,9 +724,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 34528}
+      Script: {instanceID: 34524}
     - Class: 114
-      Script: {instanceID: 34530}
+      Script: {instanceID: 34526}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -865,9 +865,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 34528}
+      Script: {instanceID: 34524}
     - Class: 114
-      Script: {instanceID: 34530}
+      Script: {instanceID: 34526}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1006,9 +1006,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 34528}
+      Script: {instanceID: 34524}
     - Class: 114
-      Script: {instanceID: 34530}
+      Script: {instanceID: 34526}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
