@@ -139,54 +139,50 @@ public class WaveSpawner : MonoBehaviour
     {
         while (waveNumber <= maxWaves)
         {
-            
             GameManager.Instance.LogPlayerMoneyAtWaveStart(waveNumber);
 
             GameManager.Instance.SaveGameDataToCSV(waveNumber, totalEnemiesSpawned, new Dictionary<EnemyType, int>(enemyTypeCounts));
             Debug.Log("Hullám " + waveNumber + " indul");
             UpdateWaveText();
 
-            
             yield return StartCoroutine(SpawnEnemiesAndProgressBar());
 
-           
             yield return new WaitUntil(() => FindObjectsOfType<EnemyAI>().Length == 0);
 
-            
-            GameManager.Instance.LogWaveNumber(waveNumber);          
-            LogWaveData();                                           
-            GameManager.Instance.LogPlayerLivesAtWaveEnd();          
+            GameManager.Instance.LogWaveNumber(waveNumber);
+            LogWaveData();
+            GameManager.Instance.LogPlayerLivesAtWaveEnd();
             GameManager.Instance.LogTowerStats();
 
-           
             GameManager.Instance.LogPlayerMoneyAtWaveEnd(waveNumber);
 
-            
             if (waveNumber >= maxWaves)
             {
                 gameOver = true;
                 Debug.Log("Vége a játéknak.");
 
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-                int lastSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
+                int lastPlayableSceneIndex = 4;
 
-                if (currentSceneIndex == lastSceneIndex)
+                if (currentSceneIndex == lastPlayableSceneIndex)
                 {
+                    Debug.Log("Game complete! Showing GameCompleteUI.");
                     gameCompleteUI.ShowGameComplete();
                 }
                 else
                 {
+                    Debug.Log("Level complete! Showing LevelCompleteUI.");
                     levelCompleteMenu.ShowLevelComplete();
                 }
 
                 yield break;
             }
 
-            
             waveNumber++;
             countdown = 10f;
         }
     }
+
 
 
 
