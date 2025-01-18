@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         if (!File.Exists(filePath))
         {
-            File.WriteAllText(filePath, "CurrentLevel,WaveNumber,StartMoney,CurrentLives,TotalEnemiesSpawned,Buggy%,Helicopter%,Hovertank%,Coverage\n");
+            File.WriteAllText(filePath, "CurrentLevel;WaveNumber;StartMoney;CurrentLives;TotalEnemiesSpawned;Buggy%;Helicopter%;Hovertank%;Coverage\n");
             Debug.Log("CSV fájl inicializálva: " + filePath);
 
             SaveInitialGameDataToCSV();
@@ -85,10 +85,10 @@ public class GameManager : MonoBehaviour
 
         if (!File.Exists(filePath))
         {
-            File.WriteAllText(filePath, "CurrentLevel,WaveNumber,StartMoney,CurrentLives,TotalEnemiesSpawned,Buggy%,Helicopter%,Hovertank%,Coverage,Timestamp\n");
+            File.WriteAllText(filePath, "CurrentLevel;WaveNumber;StartMoney;CurrentLives;TotalEnemiesSpawned;Buggy%;Helicopter%;Hovertank%;Coverage;Timestamp\n");
         }
 
-        string line = $"{currentLevel},{wave},{currentMoney},{currentLives},{totalEnemiesSpawned},{buggyPercentage:F2},{helicopterPercentage:F2},{hovertankPercentage:F2},{towerCoverage:F2},{timestamp}";
+        string line = $"{currentLevel};{wave};{currentMoney};{currentLives};{totalEnemiesSpawned};{buggyPercentage:F2};{helicopterPercentage:F2};{hovertankPercentage:F2};{towerCoverage:F2};{timestamp}";
         File.AppendAllText(filePath, line + "\n");
 
         Debug.Log($"Adatok mentve: Level={currentLevel}, Wave={wave}, Money={currentMoney}, Lives={currentLives}, TotalEnemies={totalEnemiesSpawned}, Coverage={towerCoverage:F2}, Timestamp={timestamp}");
@@ -232,7 +232,7 @@ public class GameManager : MonoBehaviour
 
         if (!File.Exists(filePath))
         {
-            File.WriteAllText(filePath, "CurrentLevel,WaveNumber,TowerID,TowerType,Action,Level,Range,FireRate,Cost,Timestamp\n");
+            File.WriteAllText(filePath, "CurrentLevel;WaveNumber;TowerID;TowerType;Action;Level;Range;FireRate;Cost;Timestamp\n");
         }
 
         int currentLevel = CurrentLevel;
@@ -246,7 +246,7 @@ public class GameManager : MonoBehaviour
         string currentCost = tower != null && tower.node != null ? (tower.node.turretBlueprint?.GetSellAmount(tower.currentLevel) * 2).ToString() : "NaN";
 
         string timestamp = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-        string line = $"{currentLevel},{waveNumber},{towerID},{towerType},{action},{level},{range},{fireRate},{currentCost},{timestamp}";
+        string line = $"{currentLevel};{waveNumber};{towerID};{towerType};{action};{level};{range};{fireRate};{currentCost};{timestamp}";
 
         File.AppendAllText(filePath, line + "\n");
         Debug.Log($"Tower data mentve: {line}");
