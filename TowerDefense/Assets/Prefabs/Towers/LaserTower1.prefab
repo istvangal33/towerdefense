@@ -166,6 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positionOffset: {x: 0, y: 0, z: 0}
   node: {fileID: 0}
+  coveredCells: []
   towerType: 2
   range: 5
   endPoint: {fileID: 2319702153569083320, guid: f650880dbd98ef84fa36f19753833b88, type: 3}
@@ -174,7 +175,7 @@ MonoBehaviour:
   firePoint: {fileID: 1954744691732647413}
   useLaser: 1
   lineRenderer: {fileID: 3865311944288189418}
-  laserDamagePerSecond: 25
+  laserDamagePerSecond: 35
   rotatingPart: {fileID: 1957557640635283655}
   rotationSpeed: 5
   angleThreshold: 5

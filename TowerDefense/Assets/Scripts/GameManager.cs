@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
     {
         if (!File.Exists(filePath))
         {
-            File.WriteAllText(filePath, "CurrentLevel;WaveNumber;StartMoney;CurrentLives;TotalEnemiesSpawned;Buggy%;Helicopter%;Hovertank%;Coverage\n");
+            File.WriteAllText(filePath, "CurrentLevel;WaveNumber;StartMoney;CurrentLives;TotalEnemiesSpawned;Buggy%;Helicopter%;Hovertank%;Coverage;CoverageByTower;Timestamp\n");
             Debug.Log("CSV fájl inicializálva: " + filePath);
 
             SaveInitialGameDataToCSV();
@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
         string currentLives = PlayerStats.Lives.ToString();
 
         float towerCoverage = FindObjectOfType<GridCoverageManager>()?.GetCurrentCoverage() ?? 0f;
+        float coverageByTower = FindObjectOfType<GridCoverageManager>()?.GetCoverageByTower() ?? 0f;
 
         int totalEnemies = Mathf.Max(1, totalEnemiesSpawned);
         float buggyPercentage = (enemyTypeCounts[EnemyType.Buggy] / (float)totalEnemies) * 100f;
@@ -85,14 +86,15 @@ public class GameManager : MonoBehaviour
 
         if (!File.Exists(filePath))
         {
-            File.WriteAllText(filePath, "CurrentLevel;WaveNumber;StartMoney;CurrentLives;TotalEnemiesSpawned;Buggy%;Helicopter%;Hovertank%;Coverage;Timestamp\n");
+            File.WriteAllText(filePath, "CurrentLevel;WaveNumber;StartMoney;CurrentLives;TotalEnemiesSpawned;Buggy%;Helicopter%;Hovertank%;Coverage;CoverageByTower;Timestamp\n");
         }
 
-        string line = $"{currentLevel};{wave};{currentMoney};{currentLives};{totalEnemiesSpawned};{buggyPercentage:F2};{helicopterPercentage:F2};{hovertankPercentage:F2};{towerCoverage:F2};{timestamp}";
+        string line = $"{currentLevel};{wave};{currentMoney};{currentLives};{totalEnemiesSpawned};{buggyPercentage:F2};{helicopterPercentage:F2};{hovertankPercentage:F2};{towerCoverage:F2};{coverageByTower:F2};{timestamp}";
         File.AppendAllText(filePath, line + "\n");
 
-        Debug.Log($"Adatok mentve: Level={currentLevel}, Wave={wave}, Money={currentMoney}, Lives={currentLives}, TotalEnemies={totalEnemiesSpawned}, Coverage={towerCoverage:F2}, Timestamp={timestamp}");
+        Debug.Log($"Adatok mentve: Level={currentLevel}, Wave={wave}, Money={currentMoney}, Lives={currentLives}, TotalEnemies={totalEnemiesSpawned}, Coverage={towerCoverage:F2}, CoverageByTower={coverageByTower:F2}, Timestamp={timestamp}");
     }
+
 
 
 
@@ -144,10 +146,10 @@ public class GameManager : MonoBehaviour
             Debug.LogError("WaveSpawner instance not found!");
         }
 
-        // **Új funkció: bónusz életek hozzáadása**:
+       
         if (!GameIsOver && waveSpawner.waveNumber >= waveSpawner.maxWaves)
         {
-            AwardBonusLife(5); // Bónusz élet minden pálya után
+            AwardBonusLife(5);
         }
     }
 

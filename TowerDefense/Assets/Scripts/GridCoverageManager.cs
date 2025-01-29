@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,14 +9,24 @@ public class GridCoverageManager : MonoBehaviour
     public List<GameObject> walkableObjects = new List<GameObject>();
     public Dictionary<GameObject, List<Vector3>> pathPoints = new Dictionary<GameObject, List<Vector3>>();
     private Dictionary<string, float> maxCoveragePercentages = new Dictionary<string, float>
-{
-    { "LVL1", 64.0f },
-    { "LVL2", 87.5f },
-    { "LVL3", 80.0f },
-    { "LVL4", 74.0f },
-    { "LVL5", 100.0f }
+    {
+        { "LVL1", 64.0f },
+        { "LVL2", 87.5f },
+        { "LVL3", 80.0f },
+        { "LVL4", 74.0f },
+        { "LVL5", 100.0f }
+    };
 
-};
+    private Dictionary<string, int> maxTowerSpotsByLevel = new Dictionary<string, int>
+    {
+        { "LVL1", 23 },
+        { "LVL2", 12 },
+        { "LVL3", 28 },
+        { "LVL4", 54 }
+    };
+
+
+    private int totalTowerSpots = 0;
 
 
     void Start()
@@ -41,6 +52,9 @@ public class GridCoverageManager : MonoBehaviour
         }
 
         Debug.Log($"Összes path inicializálva: {pathPoints.Count}");
+
+        
+        CountTotalTowerSpots();
     }
 
     void Update()
@@ -95,9 +109,8 @@ public class GridCoverageManager : MonoBehaviour
             {
                 foreach (Vector3 point in path.Value)
                 {
-                    
                     float distance = Vector3.Distance(tower.transform.position, point);
-                    if (distance <= tower.range) 
+                    if (distance <= tower.range)
                     {
                         coveredPoints.Add(point);
                     }
@@ -105,7 +118,6 @@ public class GridCoverageManager : MonoBehaviour
             }
         }
 
-        
         int totalPoints = 0;
         foreach (var path in pathPoints)
         {
@@ -113,14 +125,11 @@ public class GridCoverageManager : MonoBehaviour
         }
 
         float coveragePercentage = (float)coveredPoints.Count / totalPoints * 100f;
-
-        
         float normalizedCoverage = (coveragePercentage / maxCoveragePercentage) * 100f;
 
         Debug.Log($"Lefedett pontok: {coveredPoints.Count}/{totalPoints} ({coveragePercentage}%)");
         Debug.Log($"Normalizált lefedettség: {normalizedCoverage}%");
 
-        
         foreach (Vector3 point in coveredPoints)
         {
             Debug.Log($"Lefedett pont: {point}");
@@ -170,6 +179,45 @@ public class GridCoverageManager : MonoBehaviour
         }
     }
 
+    
+    void CountTotalTowerSpots()
+    {
+        string currentLevelName = SceneManager.GetActiveScene().name;
+
+        if (maxTowerSpotsByLevel.TryGetValue(currentLevelName, out int maxSpots))
+        {
+            totalTowerSpots = maxSpots;
+            Debug.Log($"Összes lehetséges toronyhely ({currentLevelName}): {totalTowerSpots}");
+        }
+        else
+        {
+            Debug.LogError($"Nincs megadva toronyhely adat a(z) {currentLevelName} szinthez!");
+            totalTowerSpots = 0; 
+        }
+    }
+
+
+    public float GetCoverageByTower()
+    {
+        
+        GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
+        int placedTowers = towers.Length;
+
+        
+        if (totalTowerSpots == 0)
+        {
+            Debug.LogWarning("A totalTowerSpots értéke 0, lefedettség nem számolható.");
+            return 0f;
+        }
+
+        
+        float coverageByTower = (float)placedTowers / totalTowerSpots * 100f;
+
+       
+        Debug.Log($"Toronyhely lefedettség: {coverageByTower:F2}% ({placedTowers}/{totalTowerSpots})");
+
+        return coverageByTower;
+    }
 
 
 }

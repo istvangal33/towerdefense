@@ -316,7 +316,6 @@ GameObject:
   - component: {fileID: 52587770}
   - component: {fileID: 52587769}
   - component: {fileID: 52587768}
-  - component: {fileID: 52587767}
   m_Layer: 15
   m_Name: Cube (39)
   m_TagString: 'GridNode '
@@ -339,45 +338,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 653718961}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &52587767
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52587765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0fab91b567638469a81de7a3303969, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hoverColor: {r: 0.6392157, g: 0.6392157, b: 0.6392157, a: 0}
-  notEnoughMoneyColor: {r: 1, g: 0, b: 0, a: 0}
-  positionOffSet: {x: -0.5, y: 1, z: -0.5}
-  turret: {fileID: 0}
-  turretBlueprint:
-    prefab: {fileID: 0}
-    cost: 0
-    upgradedPrefab: {fileID: 0}
-    upgradeCost: 0
-    upgradedPrefab2: {fileID: 0}
-    upgradeCost2: 0
-    rangeByLevel:
-    - 0
-    - 0
-    - 0
-    fireRateByLevel:
-    - 0
-    - 0
-    - 0
-    damageByLevel: 000000000000000000000000
-  isUpgraded: 0
-  upgradeLevel: 0
-  isOccupied: 0
-  gridX: 0
-  gridY: 0
-  coveredCells: []
-  range: 0
 --- !u!65 &52587768
 BoxCollider:
   m_ObjectHideFlags: 0

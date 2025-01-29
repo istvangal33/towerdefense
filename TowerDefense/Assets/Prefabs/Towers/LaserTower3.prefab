@@ -175,7 +175,7 @@ MonoBehaviour:
   firePoint: {fileID: 1954744691732647413}
   useLaser: 1
   lineRenderer: {fileID: 3865311944288189418}
-  laserDamagePerSecond: 70
+  laserDamagePerSecond: 80
   rotatingPart: {fileID: 1957557640635283655}
   rotationSpeed: 5
   angleThreshold: 5
