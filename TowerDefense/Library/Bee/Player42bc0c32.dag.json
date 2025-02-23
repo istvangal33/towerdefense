@@ -185,10 +185,7 @@
         177,
         178,
         179,
-        180,
-        181,
-        182,
-        183
+        180
       ],
       "OverwriteOutputs": false,
       "DebugActionIndex": 0
@@ -374,30 +371,6 @@
       "DebugActionIndex": 15
     },
     {
-      "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/level6",
-      "DisplayName": "Copying level6",
-      "ActionType": "CopyFiles",
-      "Inputs": [
-        "Library/PlayerDataCache/Win64/Data/level6"
-      ],
-      "Outputs": [
-        "D:/Játék/TowerDefenseGame_Data/level6"
-      ],
-      "DebugActionIndex": 16
-    },
-    {
-      "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/level6.resS",
-      "DisplayName": "Copying level6.resS",
-      "ActionType": "CopyFiles",
-      "Inputs": [
-        "Library/PlayerDataCache/Win64/Data/level6.resS"
-      ],
-      "Outputs": [
-        "D:/Játék/TowerDefenseGame_Data/level6.resS"
-      ],
-      "DebugActionIndex": 17
-    },
-    {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/resources.assets",
       "DisplayName": "Copying resources.assets",
       "ActionType": "CopyFiles",
@@ -407,7 +380,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/resources.assets"
       ],
-      "DebugActionIndex": 18
+      "DebugActionIndex": 16
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/resources.assets.resS",
@@ -419,7 +392,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/resources.assets.resS"
       ],
-      "DebugActionIndex": 19
+      "DebugActionIndex": 17
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Resources/unity_builtin_extra",
@@ -431,7 +404,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Resources/unity_builtin_extra"
       ],
-      "DebugActionIndex": 20
+      "DebugActionIndex": 18
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/RuntimeInitializeOnLoads.json",
@@ -443,7 +416,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/RuntimeInitializeOnLoads.json"
       ],
-      "DebugActionIndex": 21
+      "DebugActionIndex": 19
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/ScriptingAssemblies.json",
@@ -455,7 +428,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/ScriptingAssemblies.json"
       ],
-      "DebugActionIndex": 22
+      "DebugActionIndex": 20
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets0.assets",
@@ -467,7 +440,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets0.assets"
       ],
-      "DebugActionIndex": 23
+      "DebugActionIndex": 21
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets0.assets.resS",
@@ -479,7 +452,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets0.assets.resS"
       ],
-      "DebugActionIndex": 24
+      "DebugActionIndex": 22
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets0.resource",
@@ -491,7 +464,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets0.resource"
       ],
-      "DebugActionIndex": 25
+      "DebugActionIndex": 23
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets1.assets",
@@ -503,7 +476,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets1.assets"
       ],
-      "DebugActionIndex": 26
+      "DebugActionIndex": 24
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets1.assets.resS",
@@ -515,7 +488,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets1.assets.resS"
       ],
-      "DebugActionIndex": 27
+      "DebugActionIndex": 25
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets2.assets",
@@ -527,7 +500,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets2.assets"
       ],
-      "DebugActionIndex": 28
+      "DebugActionIndex": 26
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets3.assets",
@@ -539,7 +512,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets3.assets"
       ],
-      "DebugActionIndex": 29
+      "DebugActionIndex": 27
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets4.assets",
@@ -551,7 +524,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets4.assets"
       ],
-      "DebugActionIndex": 30
+      "DebugActionIndex": 28
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets5.assets",
@@ -563,44 +536,32 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/sharedassets5.assets"
       ],
-      "DebugActionIndex": 31
+      "DebugActionIndex": 29
     },
     {
-      "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets6.assets",
-      "DisplayName": "Copying sharedassets6.assets",
+      "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets5.resource",
+      "DisplayName": "Copying sharedassets5.resource",
       "ActionType": "CopyFiles",
       "Inputs": [
-        "Library/PlayerDataCache/Win64/Data/sharedassets6.assets"
+        "Library/PlayerDataCache/Win64/Data/sharedassets5.resource"
       ],
       "Outputs": [
-        "D:/Játék/TowerDefenseGame_Data/sharedassets6.assets"
+        "D:/Játék/TowerDefenseGame_Data/sharedassets5.resource"
       ],
-      "DebugActionIndex": 32
-    },
-    {
-      "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/sharedassets6.resource",
-      "DisplayName": "Copying sharedassets6.resource",
-      "ActionType": "CopyFiles",
-      "Inputs": [
-        "Library/PlayerDataCache/Win64/Data/sharedassets6.resource"
-      ],
-      "Outputs": [
-        "D:/Játék/TowerDefenseGame_Data/sharedassets6.resource"
-      ],
-      "DebugActionIndex": 33
+      "DebugActionIndex": 30
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/boot.config_tyr4.info",
       "DisplayName": "Writing boot.config_tyr4.info",
       "ActionType": "WriteFile",
       "PayloadOffset": 83,
-      "PayloadLength": 19119,
+      "PayloadLength": 18968,
       "PayloadDebugContentSnippet": "{\"System.Object\":null,\"Bee.Tun",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/csharpactions/boot.config_tyr4.info"
       ],
-      "DebugActionIndex": 34
+      "DebugActionIndex": 31
     },
     {
       "Annotation": "AddBootConfigGUID Library/Bee/artifacts/WinPlayerBuildProgram/boot.config",
@@ -624,8 +585,6 @@
         "Library/PlayerDataCache/Win64/Data/level4.resS",
         "Library/PlayerDataCache/Win64/Data/level5",
         "Library/PlayerDataCache/Win64/Data/level5.resS",
-        "Library/PlayerDataCache/Win64/Data/level6",
-        "Library/PlayerDataCache/Win64/Data/level6.resS",
         "Library/PlayerDataCache/Win64/Data/resources.assets",
         "Library/PlayerDataCache/Win64/Data/resources.assets.resS",
         "Library/PlayerDataCache/Win64/Data/Resources/unity_builtin_extra",
@@ -640,8 +599,7 @@
         "Library/PlayerDataCache/Win64/Data/sharedassets3.assets",
         "Library/PlayerDataCache/Win64/Data/sharedassets4.assets",
         "Library/PlayerDataCache/Win64/Data/sharedassets5.assets",
-        "Library/PlayerDataCache/Win64/Data/sharedassets6.assets",
-        "Library/PlayerDataCache/Win64/Data/sharedassets6.resource",
+        "Library/PlayerDataCache/Win64/Data/sharedassets5.resource",
         "C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.AIModule.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.ARModule.dll",
         "C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/Variations/mono/Managed/UnityEngine.AccessibilityModule.dll",
@@ -801,12 +759,12 @@
         "Library/Bee/artifacts/WinPlayerBuildProgram/boot.config"
       ],
       "ToBuildDependencies": [
-        34
+        31
       ],
       "OverwriteOutputs": false,
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 35
+      "DebugActionIndex": 32
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/boot.config",
@@ -819,9 +777,9 @@
         "D:/Játék/TowerDefenseGame_Data/boot.config"
       ],
       "ToBuildDependencies": [
-        35
+        32
       ],
-      "DebugActionIndex": 36
+      "DebugActionIndex": 33
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AIModule.dll",
@@ -833,7 +791,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AIModule.dll"
       ],
-      "DebugActionIndex": 37
+      "DebugActionIndex": 34
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ARModule.dll",
@@ -845,7 +803,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ARModule.dll"
       ],
-      "DebugActionIndex": 38
+      "DebugActionIndex": 35
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AccessibilityModule.dll",
@@ -857,7 +815,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AccessibilityModule.dll"
       ],
-      "DebugActionIndex": 39
+      "DebugActionIndex": 36
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AndroidJNIModule.dll",
@@ -869,7 +827,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AndroidJNIModule.dll"
       ],
-      "DebugActionIndex": 40
+      "DebugActionIndex": 37
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AnimationModule.dll",
@@ -881,7 +839,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AnimationModule.dll"
       ],
-      "DebugActionIndex": 41
+      "DebugActionIndex": 38
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AssetBundleModule.dll",
@@ -893,7 +851,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AssetBundleModule.dll"
       ],
-      "DebugActionIndex": 42
+      "DebugActionIndex": 39
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AudioModule.dll",
@@ -905,7 +863,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.AudioModule.dll"
       ],
-      "DebugActionIndex": 43
+      "DebugActionIndex": 40
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ClothModule.dll",
@@ -917,7 +875,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ClothModule.dll"
       ],
-      "DebugActionIndex": 44
+      "DebugActionIndex": 41
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ClusterInputModule.dll",
@@ -929,7 +887,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ClusterInputModule.dll"
       ],
-      "DebugActionIndex": 45
+      "DebugActionIndex": 42
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ClusterRendererModule.dll",
@@ -941,7 +899,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ClusterRendererModule.dll"
       ],
-      "DebugActionIndex": 46
+      "DebugActionIndex": 43
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ContentLoadModule.dll",
@@ -953,7 +911,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ContentLoadModule.dll"
       ],
-      "DebugActionIndex": 47
+      "DebugActionIndex": 44
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.CoreModule.dll",
@@ -965,7 +923,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.CoreModule.dll"
       ],
-      "DebugActionIndex": 48
+      "DebugActionIndex": 45
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.CrashReportingModule.dll",
@@ -977,7 +935,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.CrashReportingModule.dll"
       ],
-      "DebugActionIndex": 49
+      "DebugActionIndex": 46
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.DSPGraphModule.dll",
@@ -989,7 +947,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.DSPGraphModule.dll"
       ],
-      "DebugActionIndex": 50
+      "DebugActionIndex": 47
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.DirectorModule.dll",
@@ -1001,7 +959,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.DirectorModule.dll"
       ],
-      "DebugActionIndex": 51
+      "DebugActionIndex": 48
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.GIModule.dll",
@@ -1013,7 +971,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.GIModule.dll"
       ],
-      "DebugActionIndex": 52
+      "DebugActionIndex": 49
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.GameCenterModule.dll",
@@ -1025,7 +983,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.GameCenterModule.dll"
       ],
-      "DebugActionIndex": 53
+      "DebugActionIndex": 50
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.GridModule.dll",
@@ -1037,7 +995,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.GridModule.dll"
       ],
-      "DebugActionIndex": 54
+      "DebugActionIndex": 51
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.HotReloadModule.dll",
@@ -1049,7 +1007,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.HotReloadModule.dll"
       ],
-      "DebugActionIndex": 55
+      "DebugActionIndex": 52
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.IMGUIModule.dll",
@@ -1061,7 +1019,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.IMGUIModule.dll"
       ],
-      "DebugActionIndex": 56
+      "DebugActionIndex": 53
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ImageConversionModule.dll",
@@ -1073,7 +1031,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ImageConversionModule.dll"
       ],
-      "DebugActionIndex": 57
+      "DebugActionIndex": 54
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.InputLegacyModule.dll",
@@ -1085,7 +1043,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.InputLegacyModule.dll"
       ],
-      "DebugActionIndex": 58
+      "DebugActionIndex": 55
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.InputModule.dll",
@@ -1097,7 +1055,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.InputModule.dll"
       ],
-      "DebugActionIndex": 59
+      "DebugActionIndex": 56
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.JSONSerializeModule.dll",
@@ -1109,7 +1067,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.JSONSerializeModule.dll"
       ],
-      "DebugActionIndex": 60
+      "DebugActionIndex": 57
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.LocalizationModule.dll",
@@ -1121,7 +1079,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.LocalizationModule.dll"
       ],
-      "DebugActionIndex": 61
+      "DebugActionIndex": 58
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.NVIDIAModule.dll",
@@ -1133,7 +1091,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.NVIDIAModule.dll"
       ],
-      "DebugActionIndex": 62
+      "DebugActionIndex": 59
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ParticleSystemModule.dll",
@@ -1145,7 +1103,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ParticleSystemModule.dll"
       ],
-      "DebugActionIndex": 63
+      "DebugActionIndex": 60
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.PerformanceReportingModule.dll",
@@ -1157,7 +1115,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.PerformanceReportingModule.dll"
       ],
-      "DebugActionIndex": 64
+      "DebugActionIndex": 61
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.Physics2DModule.dll",
@@ -1169,7 +1127,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.Physics2DModule.dll"
       ],
-      "DebugActionIndex": 65
+      "DebugActionIndex": 62
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.PhysicsModule.dll",
@@ -1181,7 +1139,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.PhysicsModule.dll"
       ],
-      "DebugActionIndex": 66
+      "DebugActionIndex": 63
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ProfilerModule.dll",
@@ -1193,7 +1151,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ProfilerModule.dll"
       ],
-      "DebugActionIndex": 67
+      "DebugActionIndex": 64
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.PropertiesModule.dll",
@@ -1205,7 +1163,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.PropertiesModule.dll"
       ],
-      "DebugActionIndex": 68
+      "DebugActionIndex": 65
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
@@ -1217,7 +1175,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll"
       ],
-      "DebugActionIndex": 69
+      "DebugActionIndex": 66
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ScreenCaptureModule.dll",
@@ -1229,7 +1187,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.ScreenCaptureModule.dll"
       ],
-      "DebugActionIndex": 70
+      "DebugActionIndex": 67
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SharedInternalsModule.dll",
@@ -1241,7 +1199,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SharedInternalsModule.dll"
       ],
-      "DebugActionIndex": 71
+      "DebugActionIndex": 68
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SpriteMaskModule.dll",
@@ -1253,7 +1211,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SpriteMaskModule.dll"
       ],
-      "DebugActionIndex": 72
+      "DebugActionIndex": 69
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SpriteShapeModule.dll",
@@ -1265,7 +1223,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SpriteShapeModule.dll"
       ],
-      "DebugActionIndex": 73
+      "DebugActionIndex": 70
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.StreamingModule.dll",
@@ -1277,7 +1235,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.StreamingModule.dll"
       ],
-      "DebugActionIndex": 74
+      "DebugActionIndex": 71
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SubstanceModule.dll",
@@ -1289,7 +1247,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SubstanceModule.dll"
       ],
-      "DebugActionIndex": 75
+      "DebugActionIndex": 72
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SubsystemsModule.dll",
@@ -1301,7 +1259,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.SubsystemsModule.dll"
       ],
-      "DebugActionIndex": 76
+      "DebugActionIndex": 73
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TLSModule.dll",
@@ -1313,7 +1271,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TLSModule.dll"
       ],
-      "DebugActionIndex": 77
+      "DebugActionIndex": 74
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TerrainModule.dll",
@@ -1325,7 +1283,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TerrainModule.dll"
       ],
-      "DebugActionIndex": 78
+      "DebugActionIndex": 75
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TerrainPhysicsModule.dll",
@@ -1337,7 +1295,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TerrainPhysicsModule.dll"
       ],
-      "DebugActionIndex": 79
+      "DebugActionIndex": 76
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll",
@@ -1349,7 +1307,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TextCoreFontEngineModule.dll"
       ],
-      "DebugActionIndex": 80
+      "DebugActionIndex": 77
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll",
@@ -1361,7 +1319,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TextCoreTextEngineModule.dll"
       ],
-      "DebugActionIndex": 81
+      "DebugActionIndex": 78
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TextRenderingModule.dll",
@@ -1373,7 +1331,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TextRenderingModule.dll"
       ],
-      "DebugActionIndex": 82
+      "DebugActionIndex": 79
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TilemapModule.dll",
@@ -1385,7 +1343,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.TilemapModule.dll"
       ],
-      "DebugActionIndex": 83
+      "DebugActionIndex": 80
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UIElementsModule.dll",
@@ -1397,7 +1355,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UIElementsModule.dll"
       ],
-      "DebugActionIndex": 84
+      "DebugActionIndex": 81
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UIModule.dll",
@@ -1409,7 +1367,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UIModule.dll"
       ],
-      "DebugActionIndex": 85
+      "DebugActionIndex": 82
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UmbraModule.dll",
@@ -1421,7 +1379,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UmbraModule.dll"
       ],
-      "DebugActionIndex": 86
+      "DebugActionIndex": 83
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll",
@@ -1433,7 +1391,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityAnalyticsCommonModule.dll"
       ],
-      "DebugActionIndex": 87
+      "DebugActionIndex": 84
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityAnalyticsModule.dll",
@@ -1445,7 +1403,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityAnalyticsModule.dll"
       ],
-      "DebugActionIndex": 88
+      "DebugActionIndex": 85
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityConnectModule.dll",
@@ -1457,7 +1415,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityConnectModule.dll"
       ],
-      "DebugActionIndex": 89
+      "DebugActionIndex": 86
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityCurlModule.dll",
@@ -1469,7 +1427,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityCurlModule.dll"
       ],
-      "DebugActionIndex": 90
+      "DebugActionIndex": 87
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityTestProtocolModule.dll",
@@ -1481,7 +1439,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityTestProtocolModule.dll"
       ],
-      "DebugActionIndex": 91
+      "DebugActionIndex": 88
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll",
@@ -1493,7 +1451,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestAssetBundleModule.dll"
       ],
-      "DebugActionIndex": 92
+      "DebugActionIndex": 89
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll",
@@ -1505,7 +1463,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestAudioModule.dll"
       ],
-      "DebugActionIndex": 93
+      "DebugActionIndex": 90
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestModule.dll",
@@ -1517,7 +1475,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestModule.dll"
       ],
-      "DebugActionIndex": 94
+      "DebugActionIndex": 91
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll",
@@ -1529,7 +1487,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestTextureModule.dll"
       ],
-      "DebugActionIndex": 95
+      "DebugActionIndex": 92
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll",
@@ -1541,7 +1499,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UnityWebRequestWWWModule.dll"
       ],
-      "DebugActionIndex": 96
+      "DebugActionIndex": 93
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VFXModule.dll",
@@ -1553,7 +1511,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VFXModule.dll"
       ],
-      "DebugActionIndex": 97
+      "DebugActionIndex": 94
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VRModule.dll",
@@ -1565,7 +1523,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VRModule.dll"
       ],
-      "DebugActionIndex": 98
+      "DebugActionIndex": 95
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VehiclesModule.dll",
@@ -1577,7 +1535,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VehiclesModule.dll"
       ],
-      "DebugActionIndex": 99
+      "DebugActionIndex": 96
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VideoModule.dll",
@@ -1589,7 +1547,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VideoModule.dll"
       ],
-      "DebugActionIndex": 100
+      "DebugActionIndex": 97
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VirtualTexturingModule.dll",
@@ -1601,7 +1559,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.VirtualTexturingModule.dll"
       ],
-      "DebugActionIndex": 101
+      "DebugActionIndex": 98
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.WindModule.dll",
@@ -1613,7 +1571,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.WindModule.dll"
       ],
-      "DebugActionIndex": 102
+      "DebugActionIndex": 99
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.XRModule.dll",
@@ -1625,7 +1583,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.XRModule.dll"
       ],
-      "DebugActionIndex": 103
+      "DebugActionIndex": 100
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.dll",
@@ -1637,7 +1595,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.dll"
       ],
-      "DebugActionIndex": 104
+      "DebugActionIndex": 101
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Assembly-CSharp.dll",
@@ -1649,7 +1607,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Assembly-CSharp.dll"
       ],
-      "DebugActionIndex": 105
+      "DebugActionIndex": 102
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.IK.Runtime.dll",
@@ -1661,7 +1619,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.IK.Runtime.dll"
       ],
-      "DebugActionIndex": 106
+      "DebugActionIndex": 103
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll",
@@ -1673,7 +1631,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Core.Runtime.dll"
       ],
-      "DebugActionIndex": 107
+      "DebugActionIndex": 104
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.AI.Navigation.dll",
@@ -1685,7 +1643,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.AI.Navigation.dll"
       ],
-      "DebugActionIndex": 108
+      "DebugActionIndex": 105
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll",
@@ -1697,7 +1655,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Universal.Config.Runtime.dll"
       ],
-      "DebugActionIndex": 109
+      "DebugActionIndex": 106
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.VisualScripting.Flow.dll",
@@ -1709,7 +1667,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.VisualScripting.Flow.dll"
       ],
-      "DebugActionIndex": 110
+      "DebugActionIndex": 107
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll",
@@ -1721,7 +1679,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Core.ShaderLibrary.dll"
       ],
-      "DebugActionIndex": 111
+      "DebugActionIndex": 108
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.Collections.dll",
@@ -1733,7 +1691,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.Collections.dll"
       ],
-      "DebugActionIndex": 112
+      "DebugActionIndex": 109
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.SpriteShape.Runtime.dll",
@@ -1745,7 +1703,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.SpriteShape.Runtime.dll"
       ],
-      "DebugActionIndex": 113
+      "DebugActionIndex": 110
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.PixelPerfect.dll",
@@ -1757,7 +1715,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.PixelPerfect.dll"
       ],
-      "DebugActionIndex": 114
+      "DebugActionIndex": 111
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.TextMeshPro.dll",
@@ -1769,7 +1727,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.TextMeshPro.dll"
       ],
-      "DebugActionIndex": 115
+      "DebugActionIndex": 112
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll",
@@ -1781,7 +1739,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll"
       ],
-      "DebugActionIndex": 116
+      "DebugActionIndex": 113
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll",
@@ -1793,7 +1751,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll"
       ],
-      "DebugActionIndex": 117
+      "DebugActionIndex": 114
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.Burst.dll",
@@ -1805,7 +1763,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.Burst.dll"
       ],
-      "DebugActionIndex": 118
+      "DebugActionIndex": 115
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.VisualScripting.Core.dll",
@@ -1817,7 +1775,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.VisualScripting.Core.dll"
       ],
-      "DebugActionIndex": 119
+      "DebugActionIndex": 116
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.Animation.Runtime.dll",
@@ -1829,7 +1787,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.Animation.Runtime.dll"
       ],
-      "DebugActionIndex": 120
+      "DebugActionIndex": 117
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.Tilemap.Extras.dll",
@@ -1841,7 +1799,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.Tilemap.Extras.dll"
       ],
-      "DebugActionIndex": 121
+      "DebugActionIndex": 118
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UI.dll",
@@ -1853,7 +1811,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/UnityEngine.UI.dll"
       ],
-      "DebugActionIndex": 122
+      "DebugActionIndex": 119
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.InternalAPIEngineBridge.001.dll",
@@ -1865,7 +1823,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.InternalAPIEngineBridge.001.dll"
       ],
-      "DebugActionIndex": 123
+      "DebugActionIndex": 120
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.Common.Runtime.dll",
@@ -1877,7 +1835,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.2D.Common.Runtime.dll"
       ],
-      "DebugActionIndex": 124
+      "DebugActionIndex": 121
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll",
@@ -1889,7 +1847,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll"
       ],
-      "DebugActionIndex": 125
+      "DebugActionIndex": 122
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.Timeline.dll",
@@ -1901,7 +1859,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.Timeline.dll"
       ],
-      "DebugActionIndex": 126
+      "DebugActionIndex": 123
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.Mathematics.dll",
@@ -1913,7 +1871,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.Mathematics.dll"
       ],
-      "DebugActionIndex": 127
+      "DebugActionIndex": 124
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll",
@@ -1925,7 +1883,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll"
       ],
-      "DebugActionIndex": 128
+      "DebugActionIndex": 125
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.VisualScripting.State.dll",
@@ -1937,7 +1895,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.VisualScripting.State.dll"
       ],
-      "DebugActionIndex": 129
+      "DebugActionIndex": 126
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.Collections.LowLevel.ILSupport.dll",
@@ -1949,7 +1907,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.Collections.LowLevel.ILSupport.dll"
       ],
-      "DebugActionIndex": 130
+      "DebugActionIndex": 127
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll",
@@ -1961,7 +1919,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.VisualScripting.Antlr3.Runtime.dll"
       ],
-      "DebugActionIndex": 131
+      "DebugActionIndex": 128
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Unity.Burst.Unsafe.dll",
@@ -1973,7 +1931,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Unity.Burst.Unsafe.dll"
       ],
-      "DebugActionIndex": 132
+      "DebugActionIndex": 129
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Runtime.dll",
@@ -1985,7 +1943,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Runtime.dll"
       ],
-      "DebugActionIndex": 133
+      "DebugActionIndex": 130
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/netstandard.dll",
@@ -1997,7 +1955,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/netstandard.dll"
       ],
-      "DebugActionIndex": 134
+      "DebugActionIndex": 131
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/Mono.Security.dll",
@@ -2009,7 +1967,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/Mono.Security.dll"
       ],
-      "DebugActionIndex": 135
+      "DebugActionIndex": 132
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.ComponentModel.Composition.dll",
@@ -2021,7 +1979,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.ComponentModel.Composition.dll"
       ],
-      "DebugActionIndex": 136
+      "DebugActionIndex": 133
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Configuration.dll",
@@ -2033,7 +1991,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Configuration.dll"
       ],
-      "DebugActionIndex": 137
+      "DebugActionIndex": 134
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Core.dll",
@@ -2045,7 +2003,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Core.dll"
       ],
-      "DebugActionIndex": 138
+      "DebugActionIndex": 135
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Data.DataSetExtensions.dll",
@@ -2057,7 +2015,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Data.DataSetExtensions.dll"
       ],
-      "DebugActionIndex": 139
+      "DebugActionIndex": 136
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Data.dll",
@@ -2069,7 +2027,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Data.dll"
       ],
-      "DebugActionIndex": 140
+      "DebugActionIndex": 137
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Drawing.dll",
@@ -2081,7 +2039,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Drawing.dll"
       ],
-      "DebugActionIndex": 141
+      "DebugActionIndex": 138
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.EnterpriseServices.dll",
@@ -2093,7 +2051,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.EnterpriseServices.dll"
       ],
-      "DebugActionIndex": 142
+      "DebugActionIndex": 139
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.IO.Compression.FileSystem.dll",
@@ -2105,7 +2063,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.IO.Compression.FileSystem.dll"
       ],
-      "DebugActionIndex": 143
+      "DebugActionIndex": 140
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.IO.Compression.dll",
@@ -2117,7 +2075,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.IO.Compression.dll"
       ],
-      "DebugActionIndex": 144
+      "DebugActionIndex": 141
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Net.Http.dll",
@@ -2129,7 +2087,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Net.Http.dll"
       ],
-      "DebugActionIndex": 145
+      "DebugActionIndex": 142
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Numerics.dll",
@@ -2141,7 +2099,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Numerics.dll"
       ],
-      "DebugActionIndex": 146
+      "DebugActionIndex": 143
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Runtime.Serialization.dll",
@@ -2153,7 +2111,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Runtime.Serialization.dll"
       ],
-      "DebugActionIndex": 147
+      "DebugActionIndex": 144
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Security.dll",
@@ -2165,7 +2123,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Security.dll"
       ],
-      "DebugActionIndex": 148
+      "DebugActionIndex": 145
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.ServiceModel.Internals.dll",
@@ -2177,7 +2135,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.ServiceModel.Internals.dll"
       ],
-      "DebugActionIndex": 149
+      "DebugActionIndex": 146
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Transactions.dll",
@@ -2189,7 +2147,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Transactions.dll"
       ],
-      "DebugActionIndex": 150
+      "DebugActionIndex": 147
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Xml.Linq.dll",
@@ -2201,7 +2159,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Xml.Linq.dll"
       ],
-      "DebugActionIndex": 151
+      "DebugActionIndex": 148
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.Xml.dll",
@@ -2213,7 +2171,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.Xml.dll"
       ],
-      "DebugActionIndex": 152
+      "DebugActionIndex": 149
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/System.dll",
@@ -2225,7 +2183,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/System.dll"
       ],
-      "DebugActionIndex": 153
+      "DebugActionIndex": 150
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Managed/mscorlib.dll",
@@ -2237,13 +2195,13 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Managed/mscorlib.dll"
       ],
-      "DebugActionIndex": 154
+      "DebugActionIndex": 151
     },
     {
       "Annotation": "GenerateNativePluginsForAssemblies Library/Bee/artifacts/WinPlayerBuildProgram/AsyncPluginsFromLinker",
       "DisplayName": "Running Burst Compiler",
       "ActionType": "RunRPCCommand",
-      "PayloadOffset": 19325,
+      "PayloadOffset": 19174,
       "PayloadLength": 17031,
       "PayloadDebugContentSnippet": "{\"PlayerBuildProgramLibrary.Da",
       "Action": "GenerateNativePluginsForAssemblies",
@@ -2400,7 +2358,7 @@
           "Recurse": 1
         }
       ],
-      "DebugActionIndex": 155
+      "DebugActionIndex": 152
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Plugins/x86_64/lib_burst_generated.dll",
@@ -2413,22 +2371,22 @@
         "D:/Játék/TowerDefenseGame_Data/Plugins/x86_64/lib_burst_generated.dll"
       ],
       "ToBuildDependencies": [
-        155
+        152
       ],
-      "DebugActionIndex": 156
+      "DebugActionIndex": 153
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info",
       "DisplayName": "Writing app.info",
       "ActionType": "WriteFile",
-      "PayloadOffset": 36445,
+      "PayloadOffset": 36294,
       "PayloadLength": 31,
       "PayloadDebugContentSnippet": "DefaultCompany\nTowerDefenseGam",
       "Inputs": [],
       "Outputs": [
         "Library/Bee/artifacts/WinPlayerBuildProgram/Data/app.info"
       ],
-      "DebugActionIndex": 157
+      "DebugActionIndex": 154
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/app.info",
@@ -2441,9 +2399,9 @@
         "D:/Játék/TowerDefenseGame_Data/app.info"
       ],
       "ToBuildDependencies": [
-        157
+        154
       ],
-      "DebugActionIndex": 158
+      "DebugActionIndex": 155
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame_Data/Resources/unity default resources",
@@ -2455,7 +2413,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame_Data/Resources/unity default resources"
       ],
-      "DebugActionIndex": 159
+      "DebugActionIndex": 156
     },
     {
       "Annotation": "CopyFiles D:/Játék/TowerDefenseGame.exe",
@@ -2467,7 +2425,7 @@
       "Outputs": [
         "D:/Játék/TowerDefenseGame.exe"
       ],
-      "DebugActionIndex": 160
+      "DebugActionIndex": 157
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll",
@@ -2479,7 +2437,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/EmbedRuntime/mono-2.0-bdwgc.dll"
       ],
-      "DebugActionIndex": 161
+      "DebugActionIndex": 158
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll",
@@ -2491,7 +2449,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/EmbedRuntime/MonoPosixHelper.dll"
       ],
-      "DebugActionIndex": 162
+      "DebugActionIndex": 159
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser",
@@ -2503,7 +2461,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/2.0/Browsers/Compat.browser"
       ],
-      "DebugActionIndex": 163
+      "DebugActionIndex": 160
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx",
@@ -2515,7 +2473,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/2.0/DefaultWsdlHelpGenerator.aspx"
       ],
-      "DebugActionIndex": 164
+      "DebugActionIndex": 161
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/2.0/machine.config",
@@ -2527,7 +2485,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/2.0/machine.config"
       ],
-      "DebugActionIndex": 165
+      "DebugActionIndex": 162
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/2.0/settings.map",
@@ -2539,7 +2497,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/2.0/settings.map"
       ],
-      "DebugActionIndex": 166
+      "DebugActionIndex": 163
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/2.0/web.config",
@@ -2551,7 +2509,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/2.0/web.config"
       ],
-      "DebugActionIndex": 167
+      "DebugActionIndex": 164
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser",
@@ -2563,7 +2521,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.0/Browsers/Compat.browser"
       ],
-      "DebugActionIndex": 168
+      "DebugActionIndex": 165
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx",
@@ -2575,7 +2533,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.0/DefaultWsdlHelpGenerator.aspx"
       ],
-      "DebugActionIndex": 169
+      "DebugActionIndex": 166
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.0/machine.config",
@@ -2587,7 +2545,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.0/machine.config"
       ],
-      "DebugActionIndex": 170
+      "DebugActionIndex": 167
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.0/settings.map",
@@ -2599,7 +2557,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.0/settings.map"
       ],
-      "DebugActionIndex": 171
+      "DebugActionIndex": 168
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.0/web.config",
@@ -2611,7 +2569,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.0/web.config"
       ],
-      "DebugActionIndex": 172
+      "DebugActionIndex": 169
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser",
@@ -2623,7 +2581,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.5/Browsers/Compat.browser"
       ],
-      "DebugActionIndex": 173
+      "DebugActionIndex": 170
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx",
@@ -2635,7 +2593,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.5/DefaultWsdlHelpGenerator.aspx"
       ],
-      "DebugActionIndex": 174
+      "DebugActionIndex": 171
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.5/machine.config",
@@ -2647,7 +2605,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.5/machine.config"
       ],
-      "DebugActionIndex": 175
+      "DebugActionIndex": 172
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.5/settings.map",
@@ -2659,7 +2617,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.5/settings.map"
       ],
-      "DebugActionIndex": 176
+      "DebugActionIndex": 173
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/4.5/web.config",
@@ -2671,7 +2629,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/4.5/web.config"
       ],
-      "DebugActionIndex": 177
+      "DebugActionIndex": 174
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/browscap.ini",
@@ -2683,7 +2641,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/browscap.ini"
       ],
-      "DebugActionIndex": 178
+      "DebugActionIndex": 175
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/config",
@@ -2695,7 +2653,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/config"
       ],
-      "DebugActionIndex": 179
+      "DebugActionIndex": 176
     },
     {
       "Annotation": "CopyFiles D:/Játék/MonoBleedingEdge/etc/mono/mconfig/config.xml",
@@ -2707,7 +2665,7 @@
       "Outputs": [
         "D:/Játék/MonoBleedingEdge/etc/mono/mconfig/config.xml"
       ],
-      "DebugActionIndex": 180
+      "DebugActionIndex": 177
     },
     {
       "Annotation": "CopyFiles D:/Játék/UnityCrashHandler64.exe",
@@ -2719,7 +2677,7 @@
       "Outputs": [
         "D:/Játék/UnityCrashHandler64.exe"
       ],
-      "DebugActionIndex": 181
+      "DebugActionIndex": 178
     },
     {
       "Annotation": "CopyFiles D:/Játék/UnityPlayer.dll",
@@ -2731,7 +2689,7 @@
       "Outputs": [
         "D:/Játék/UnityPlayer.dll"
       ],
-      "DebugActionIndex": 182
+      "DebugActionIndex": 179
     },
     {
       "Annotation": "Player",
@@ -2769,9 +2727,9 @@
         28,
         29,
         30,
-        31,
-        32,
         33,
+        34,
+        35,
         36,
         37,
         38,
@@ -2888,10 +2846,10 @@
         149,
         150,
         151,
-        152,
         153,
-        154,
+        155,
         156,
+        157,
         158,
         159,
         160,
@@ -2913,13 +2871,10 @@
         176,
         177,
         178,
-        179,
-        180,
-        181,
-        182
+        179
       ],
       "OverwriteOutputs": false,
-      "DebugActionIndex": 183
+      "DebugActionIndex": 180
     }
   ],
   "FileSignatures": [
@@ -3124,7 +3079,7 @@
   ],
         "NamedNodes": {
           "all_tundra_nodes": 0,
-          "Player": 183
+          "Player": 180
         }
 ,  "DefaultNodes": [
     0

@@ -1,6 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using System.Collections;
+using System.Collections.Generic;
 
 public enum EnemyType { Buggy, Helicopter, Hovertank }
 
@@ -22,12 +23,14 @@ public class EnemyAI : MonoBehaviour
     public UnityEngine.UI.Image healthBar;
 
     [Header("Waypoints")]
-    private Transform[] choices;  
-    private Transform endTarget;  
+    private Transform[] choices;
+    private Transform endTarget;
 
     public bool isSlowed = false;
     public static event System.Action<EnemyAI> OnEnemySpawned;
     public static event System.Action<EnemyAI> OnEnemyDestroyed;
+
+    private int waveNumber;
 
     private void Start()
     {
@@ -42,8 +45,12 @@ public class EnemyAI : MonoBehaviour
         ChoosePath();
 
         health = startHealth;
-        
+    }
 
+    
+    public void SetWaveNumber(int waveNumber)
+    {
+        this.waveNumber = waveNumber;
     }
 
     public void TakeDamage(float amount)
@@ -100,7 +107,6 @@ public class EnemyAI : MonoBehaviour
         Destroy(gameObject);
     }
 
-
     private float CalculateDanger(Transform path)
     {
         GameObject[] towers = GameObject.FindGameObjectsWithTag("Tower");
@@ -132,8 +138,6 @@ public class EnemyAI : MonoBehaviour
 
         return dangerScore;
     }
-
-
 
     void ChoosePath()
     {
@@ -169,15 +173,58 @@ public class EnemyAI : MonoBehaviour
         agent.speed /= (1f - slowAmount);
         isSlowed = false;
     }
-    public void SetHealth(float multiplier)
+
+    public void SetSpeed(float speedMultiplier)
     {
-        startHealth *= multiplier;
-        health = startHealth; 
-        if (healthBar != null)
+        if (waveNumber == 1)
         {
-            healthBar.fillAmount = health / startHealth;
+            speedMultiplier = 0.8f;
+        }
+
+        
+        float baseSpeed = GetBaseSpeed();
+        agent.speed = baseSpeed * speedMultiplier;
+
+        Debug.Log($"[EnemyAI] {enemyType} Base Speed: {baseSpeed}, Multiplier: {speedMultiplier}, Final Speed: {agent.speed}");
+    }
+
+    private float GetBaseSpeed()
+    {
+        switch (enemyType)
+        {
+            case EnemyType.Buggy: return 3.5f;
+            case EnemyType.Helicopter: return 2.5f;
+            case EnemyType.Hovertank: return 2.0f;
+            default: return 3.0f;
         }
     }
 
+
+
+    private static Dictionary<EnemyType, float> baseHealthValues = new Dictionary<EnemyType, float>()
+    {
+        { EnemyType.Buggy, 200f },
+        { EnemyType.Helicopter, 250f },
+        { EnemyType.Hovertank, 650f }
+    };
+
+    public void SetHealth(float waveMultiplier, float aiMultiplier)
+    {
+        if (waveNumber == 1)
+        {
+            aiMultiplier = 0.8f;
+        }
+
+        
+        startHealth = baseHealthValues[enemyType] * aiMultiplier;
+        health = startHealth;
+
+        if (healthBar != null)
+        {
+            healthBar.fillAmount = 1.0f;
+        }
+
+        Debug.Log($"[EnemyAI] {enemyType} Base HP: {baseHealthValues[enemyType]}, AI Multiplier: {aiMultiplier}, Final HP: {health}");
+    }
 
 }

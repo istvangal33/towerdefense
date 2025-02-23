@@ -40,7 +40,6 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.GridBrushEditor
     - UnityEditor.Tilemaps.GridPaintingState
     - UnityEditor.Tilemaps.GridPaletteBrushes
-    - UnityEditor.Tilemaps.GridPalettes
     - UnityEditor.Tilemaps.SceneViewGridManager
     - UnityEditor.Tilemaps.SceneViewOpenTilePaletteHelper
     - UnityEditor.Tilemaps.TileDragAndDropManager
@@ -232,13 +231,13 @@ ScriptsOnlyBuild:
     methodName: ResetDebugManager
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower1
-  - assembly: Assembly-CSharp
-    fullTypeName: Shop
     methodName: SelectTower3
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: SelectTower2
+  - assembly: Assembly-CSharp
+    fullTypeName: Shop
+    methodName: SelectTower1
   - assembly: Assembly-CSharp
     fullTypeName: NodeUI
     methodName: Upgrade
@@ -295,10 +294,10 @@ ScriptsOnlyBuild:
     methodName: SelectTower1
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower2
+    methodName: SelectTower3
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower3
+    methodName: SelectTower2
   - assembly: Assembly-CSharp
     fullTypeName: GameOver
     methodName: RestartLevel
@@ -350,16 +349,16 @@ ScriptsOnlyBuild:
   - assembly: Assembly-CSharp
     fullTypeName: PauseMenu
     methodName: Pause
-  - assembly: Assembly-CSharp
-    fullTypeName: Shop
-    methodName: SelectTower2
-  - assembly: Assembly-CSharp
-    fullTypeName: Shop
-    methodName: SelectTower3
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: SelectTower1
   - assembly: Assembly-CSharp
+    fullTypeName: Shop
+    methodName: SelectTower3
+  - assembly: Assembly-CSharp
+    fullTypeName: Shop
+    methodName: SelectTower2
+  - assembly: Assembly-CSharp
     fullTypeName: GameOver
     methodName: RestartLevel
   - assembly: Assembly-CSharp
@@ -412,10 +411,10 @@ ScriptsOnlyBuild:
     methodName: Pause
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower3
+    methodName: SelectTower2
   - assembly: Assembly-CSharp
     fullTypeName: Shop
-    methodName: SelectTower2
+    methodName: SelectTower3
   - assembly: Assembly-CSharp
     fullTypeName: Shop
     methodName: SelectTower1
@@ -724,9 +723,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 34524}
+      Script: {instanceID: 32402}
     - Class: 114
-      Script: {instanceID: 34526}
+      Script: {instanceID: 32452}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -865,9 +864,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 34524}
+      Script: {instanceID: 32402}
     - Class: 114
-      Script: {instanceID: 34526}
+      Script: {instanceID: 32452}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1006,9 +1005,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 34524}
+      Script: {instanceID: 32402}
     - Class: 114
-      Script: {instanceID: 34526}
+      Script: {instanceID: 32452}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -2960,4 +2959,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/LVL3.unity
   - Assets/Scenes/LVL4.unity
   - Assets/Scenes/LevelSelector.unity
-  playerPath: D:/TowerDefense/TowerDefenseGame.exe
+  playerPath: "D:/J\xE1t\xE9k/TowerDefenseGame.exe"

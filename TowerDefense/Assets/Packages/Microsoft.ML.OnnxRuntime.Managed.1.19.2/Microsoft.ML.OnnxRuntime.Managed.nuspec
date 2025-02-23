@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.ML.OnnxRuntime.Managed</id>
+    <version>1.19.2</version>
+    <authors>Microsoft</authors>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>ORT_icon_for_light_bg.png</icon>
+    <projectUrl>https://github.com/Microsoft/onnxruntime</projectUrl>
+    <description>This package contains ONNX Runtime for .Net platforms</description>
+    <releaseNotes>Release Def:
+        Branch: refs/heads/rel-1.19.2
+        Commit: ffceed9d44f2f3efb9dd69fa75fea51163c91d91
+        Build: https://aiinfra.visualstudio.com/Lotus/_build/results?buildId=545659</releaseNotes>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>ONNX ONNX Runtime Machine Learning</tags>
+    <repository type="git" url="https://github.com/microsoft/onnxruntime" commit="ffceed9d44f2f3efb9dd69fa75fea51163c91d91" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="System.Memory" version="4.5.5" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-android34.0">
+        <dependency id="System.Memory" version="4.5.5" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-ios17.5">
+        <dependency id="System.Memory" version="4.5.5" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net8.0-maccatalyst17.5">
+        <dependency id="System.Memory" version="4.5.5" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="System.Memory" version="4.5.5" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

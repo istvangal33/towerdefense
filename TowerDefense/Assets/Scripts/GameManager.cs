@@ -24,9 +24,10 @@ public class GameManager : MonoBehaviour
         }
 
         
-        filePath = Path.Combine(Application.persistentDataPath, "GameData.csv");
+        filePath = Path.Combine(Application.dataPath, "GameData.csv");
         Debug.Log($"GameData fájl helye: {filePath}");
     }
+
 
     void Start()
     {
@@ -118,7 +119,54 @@ public class GameManager : MonoBehaviour
         {
             EndGame();
         }
+
+        if (Input.GetKeyDown(KeyCode.F9))
+        {
+            Time.timeScale = 0.5f;
+            
+        }
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Time.timeScale = 1f; 
+            
+        }
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            Time.timeScale = 2f; 
+            
+        }
+        if (Input.GetKeyDown(KeyCode.F3))
+        {
+            Time.timeScale = 3f;
+            
+        }
+        if (Input.GetKeyDown(KeyCode.F4))
+        {
+            Time.timeScale = 4f;
+            
+        }
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            Time.timeScale = 5f;
+            
+        }
+        if (Input.GetKeyDown(KeyCode.F6))
+        {
+            Time.timeScale = 6f;
+
+        }
+        if (Input.GetKeyDown(KeyCode.F7))
+        {
+            Time.timeScale = 7f;
+
+        }
+        if (Input.GetKeyDown(KeyCode.F8))
+        {
+            Time.timeScale = 8f;
+
+        }
     }
+
 
     void EndGame()
     {
@@ -230,7 +278,7 @@ public class GameManager : MonoBehaviour
 
     public void LogTowerDataToCSV(string action, Tower tower = null)
     {
-        string filePath = Path.Combine(Application.persistentDataPath, "TowerData.csv");
+        string filePath = Path.Combine(Application.dataPath, "TowerData.csv");
 
         if (!File.Exists(filePath))
         {
@@ -253,6 +301,7 @@ public class GameManager : MonoBehaviour
         File.AppendAllText(filePath, line + "\n");
         Debug.Log($"Tower data mentve: {line}");
     }
+
 
     public void AwardBonusLife(int bonusLives)
     {
