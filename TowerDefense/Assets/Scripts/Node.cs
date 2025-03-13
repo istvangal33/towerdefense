@@ -157,6 +157,7 @@ public class Node : MonoBehaviour
             {
                
                 towerScript.coveredCells.Clear();
+                SoundManager.Instance.StopLaserShoot();
             }
 
             Destroy(turret);

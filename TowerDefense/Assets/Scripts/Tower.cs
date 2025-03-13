@@ -316,6 +316,7 @@ public class Tower : MonoBehaviour
     public void Sell()
     {
         PlayerStats.Money += sellAmount;
+        SoundManager.Instance.StopLaserShoot();
         Destroy(gameObject);
     }
 
