@@ -43,15 +43,15 @@ public class GridCoverageManager : MonoBehaviour
             {
                 List<Vector3> points = GeneratePathPoints(path, 10);
                 pathPoints[path] = points;
-                Debug.Log($"Mintapontok generálva a(z) {path.name} objektumhoz: {points.Count} pont.");
+                Debug.Log($"Mintapontok generalva a(z) {path.name} objektumhoz: {points.Count} pont.");
             }
             else
             {
-                Debug.LogWarning("Null path objektum található a walkableObjects listában!");
+                Debug.LogWarning("Null path objektum talalhato a walkableObjects listaban!");
             }
         }
 
-        Debug.Log($"Összes path inicializálva: {pathPoints.Count}");
+        Debug.Log($"osszes path inicializalva: {pathPoints.Count}");
 
         
         CountTotalTowerSpots();
@@ -68,7 +68,7 @@ public class GridCoverageManager : MonoBehaviour
             }
             else
             {
-                Debug.LogError($"Nincs maximális lefedettségi adat a(z) {currentLevelName} pályához!");
+                Debug.LogError($"Nincs maximalis lefedettségi adat a(z) {currentLevelName} palyahoz!");
             }
         }
     }
@@ -91,7 +91,7 @@ public class GridCoverageManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"Nincs Renderer komponens a {path.name} objektumon! Pontokat nem lehet generálni.");
+            Debug.LogWarning($"Nincs Renderer komponens a {path.name} objektumon! Pontokat nem lehet generalni.");
         }
 
         return points;
@@ -128,7 +128,7 @@ public class GridCoverageManager : MonoBehaviour
         float normalizedCoverage = (coveragePercentage / maxCoveragePercentage) * 100f;
 
         Debug.Log($"Lefedett pontok: {coveredPoints.Count}/{totalPoints} ({coveragePercentage}%)");
-        Debug.Log($"Normalizált lefedettség: {normalizedCoverage}%");
+        Debug.Log($"Normalizalt lefedettseg: {normalizedCoverage}%");
 
         foreach (Vector3 point in coveredPoints)
         {
@@ -187,7 +187,7 @@ public class GridCoverageManager : MonoBehaviour
         if (maxTowerSpotsByLevel.TryGetValue(currentLevelName, out int maxSpots))
         {
             totalTowerSpots = maxSpots;
-            Debug.Log($"Összes lehetséges toronyhely ({currentLevelName}): {totalTowerSpots}");
+            Debug.Log($"osszes lehetseges toronyhely ({currentLevelName}): {totalTowerSpots}");
         }
         else
         {
@@ -206,7 +206,7 @@ public class GridCoverageManager : MonoBehaviour
         
         if (totalTowerSpots == 0)
         {
-            Debug.LogWarning("A totalTowerSpots értéke 0, lefedettség nem számolható.");
+            Debug.LogWarning("A totalTowerSpots erteke 0, lefedettseg nem szamolhato.");
             return 0f;
         }
 
@@ -214,7 +214,7 @@ public class GridCoverageManager : MonoBehaviour
         float coverageByTower = (float)placedTowers / totalTowerSpots * 100f;
 
        
-        Debug.Log($"Toronyhely lefedettség: {coverageByTower:F2}% ({placedTowers}/{totalTowerSpots})");
+        Debug.Log($"Toronyhely lefedettseg: {coverageByTower:F2}% ({placedTowers}/{totalTowerSpots})");
 
         return coverageByTower;
     }

@@ -7,11 +7,13 @@ public enum EnemyType { Buggy, Helicopter, Hovertank }
 
 public class EnemyAI : MonoBehaviour
 {
+
+    public NavMeshAgent agent;
     public EnemyType enemyType;
     public float startHealth = 100;
     private float health;
     public int value = 1;
-    [SerializeField] private NavMeshAgent agent;
+    
     [SerializeField] private float arrivalThreshold = 0.5f;
 
     public GameObject deathEffect;
@@ -34,20 +36,34 @@ public class EnemyAI : MonoBehaviour
 
     private void Start()
     {
+        // Inicializáld az agentet
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+
         OnEnemySpawned?.Invoke(this);
 
-        Transform choice1 = GameObject.Find("Choice1").transform;
-        Transform choice2 = GameObject.Find("Choice2").transform;
-        endTarget = GameObject.Find("End").transform;
+        GameObject c1 = GameObject.Find("Choice1");
+        GameObject c2 = GameObject.Find("Choice2");
+        GameObject end = GameObject.Find("End");
+
+        if (c1 == null || c2 == null || end == null)
+        {
+            Debug.LogWarning("One or more path targets not found! Skipping pathfinding.");
+            return;
+        }
+
+        Transform choice1 = c1.transform;
+        Transform choice2 = c2.transform;
+        endTarget = end.transform;
 
         choices = new Transform[] { choice1, choice2 };
 
         ChoosePath();
-
         health = startHealth;
     }
 
-    
+
+
+
     public void SetWaveNumber(int waveNumber)
     {
         this.waveNumber = waveNumber;

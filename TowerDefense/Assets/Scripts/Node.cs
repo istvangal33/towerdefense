@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using System.Collections.Generic;
 
@@ -28,6 +28,8 @@ public class Node : MonoBehaviour
     public List<Vector2Int> coveredCells = new List<Vector2Int>();
 
     public float range;
+
+    public bool enableAutoNeighborFinding = true;
 
     public void CalculateCoverage()
     {
@@ -59,7 +61,11 @@ public class Node : MonoBehaviour
 
         buildManager = BuildManager.instance;
 
-        FindNeighbors();
+        if (enableAutoNeighborFinding)
+        {
+            FindNeighbors();
+        }
+
     }
 
     void FindNeighbors()
@@ -241,6 +247,12 @@ public class Node : MonoBehaviour
 
     public void BuildTurret(TurretBlueprint blueprint)
     {
+
+        if (isOccupied)
+        {
+            Debug.LogWarning("Ez a Node mar occupied, nem lehet uj tornyot epiteni!");
+            return;
+        }
         if (PlayerStats.Money < blueprint.cost)
         {
             Debug.Log("Not enough money to build that!");
@@ -250,6 +262,7 @@ public class Node : MonoBehaviour
         PlayerStats.Money -= blueprint.cost;
 
         GameObject _turret = Instantiate(blueprint.prefab, GetBuildPosition(), Quaternion.identity);
+        _turret.tag = "Tower";
         turret = _turret;
 
         turretBlueprint = blueprint;

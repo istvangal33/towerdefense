@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 38
+  controlID: 160
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -34,22 +34,22 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12111, guid: 0000000000000000e000000000000000, type: 0}
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MinSize: {x: 455, y: 354}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_TitleContent:
-    m_Text: Asset Store
-    m_Image: {fileID: -8693916549880196297, guid: 0000000000000000d000000000000000, type: 0}
+    m_Text: Project
+    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 202
-    y: 73
-    width: 1317
-    height: 573
+    x: 0
+    y: 494
+    width: 1513
+    height: 505
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -60,6 +60,118 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+  m_SearchFilter:
+    m_NameFilter: 
+    m_ClassNames: []
+    m_AssetLabels: []
+    m_AssetBundleNames: []
+    m_ReferencingInstanceIDs: 
+    m_SceneHandles: 
+    m_ShowAllHits: 0
+    m_SkipHidden: 0
+    m_SearchArea: 1
+    m_Folders:
+    - Assets/Scripts
+    m_Globs: []
+    m_OriginalText: 
+    m_ImportLogFlags: 0
+    m_FilterByTypeIntersection: 0
+  m_ViewMode: 1
+  m_StartGridSize: 65
+  m_LastFolders:
+  - Assets/Scripts
+  m_LastFoldersGridSize: 65
+  m_LastProjectPath: D:\Szakdolgozat\towerdefense\TowerDefense
+  m_LockTracker:
+    m_IsLocked: 0
+  m_FolderTreeState:
+    scrollPos: {x: 0, y: 37}
+    m_SelectedIDs: 7e7b0000
+    m_LastClickedID: 31614
+    m_ExpandedIDs: 00000000507b0000527b0000547b000000ca9a3b
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 10}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_AssetTreeState:
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: 00000000507b0000527b0000547b0000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: 
+      m_OriginalName: 
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 0
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 11
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 0}
+    m_SearchString: 
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+  m_ListAreaState:
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: c62300006e5c0000245b0000285b0000605b0000645b0000005b0000365b0000845b0000025c0000045c0000ca5c0000ce5c0000c45c00003a6d0000b25e0000088a0000166b0000fe6a0000a8b30200c6b30200d8b40200bcb50200dcb40200a6ca00009a6b00009669000094690000606a0000b66b00008a7200008e7200009a720000b6720000c27200006c7b0000dac80000000000003e7c0000227c00002e7c00003a7c00008cda000090da0000
+    m_RenameOverlay:
+      m_UserAcceptedRename: 0
+      m_Name: TowerTargetingTests
+      m_OriginalName: TowerTargetingTests
+      m_EditFieldRect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 0
+        height: 0
+      m_UserData: 10348
+      m_IsWaitingForDelay: 0
+      m_IsRenaming: 0
+      m_OriginalEventType: 0
+      m_IsRenamingFilename: 1
+      m_ClientGUIView: {fileID: 10}
+    m_CreateAssetUtility:
+      m_EndAction: {fileID: 0}
+      m_InstanceID: 0
+      m_Path: 
+      m_Icon: {fileID: 0}
+      m_ResourceFile: 
+    m_NewAssetIndexInList: -1
+    m_ScrollPosition: {x: 0, y: 0}
+    m_GridSize: 65
+  m_SkipHiddenPackages: 0
+  m_DirectoriesAreaWidth: 239
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -79,12 +191,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1521
+    width: 1514
     height: 947
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 39
+  controlID: 161
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -105,12 +217,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1521
-    height: 594
+    width: 1514
+    height: 421
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 40
+  controlID: 44
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -129,8 +241,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 202
-    height: 594
+    width: 223
+    height: 421
   m_MinSize: {x: 201, y: 221}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
@@ -159,9 +271,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 73
-    width: 201
-    height: 573
+    y: 19
+    width: 222
+    height: 400
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -175,9 +287,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 00710000
-      m_LastClickedID: 28928
-      m_ExpandedIDs: 1cfbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 9686ffffe686ffff0692ffffb095ffff0096ffff54a1ffffcea7ffff1ea8ffffc6b3ffffe2b6ffff2eb7ffffb8b7fffffcb8ffff4cb9ffff80c3ffffcac4ffff1ac5ffff28ceffff84d0ffffd4d0ffff00dcffffccddffff1cdeffff1ae8ffff2ceaffff7ceaffff0af5ffff18fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -211,24 +323,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: AssetStoreWindow
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 202
+    x: 223
     y: 0
-    width: 1319
-    height: 594
-  m_MinSize: {x: 457, y: 375}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 2}
+    width: 1291
+    height: 421
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 8}
   m_Panes:
   - {fileID: 8}
   - {fileID: 9}
-  - {fileID: 2}
-  m_Selected: 2
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,10 +360,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 202
-    y: 73
-    width: 1317
-    height: 573
+    x: 224
+    y: 19
+    width: 1289
+    height: 400
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -362,7 +473,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Light Settings
-      index: 2
+      index: 0
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -388,7 +499,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Cloth Constraints
-      index: 3
+      index: 1
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -401,7 +512,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Cloth Collisions
-      index: 4
+      index: 2
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -453,7 +564,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Occlusion Culling
-      index: 5
+      index: 3
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -466,7 +577,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Physics Debugger
-      index: 6
+      index: 4
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -479,7 +590,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Scene Visibility
-      index: 7
+      index: 5
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -492,7 +603,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/Particles
-      index: 8
+      index: 6
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -531,7 +642,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: Scene View/TrailRenderer
-      index: 9
+      index: 7
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -553,11 +664,11 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -216, y: -162}
+      snapOffset: {x: -216, y: -220}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 3
       id: AINavigationOverlay
-      index: 10
+      index: 8
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -609,7 +720,7 @@ MonoBehaviour:
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: APV Overlay
-      index: 12
+      index: 9
       layout: 4
       size: {x: 0, y: 0}
       sizeOverriden: 0
@@ -676,9 +787,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -22.605911, y: -0.48641586, z: 22.290516}
+    m_Target: {x: -1.8636322, y: -2.2148151, z: 5.8000746}
     speed: 2
-    m_Value: {x: -22.605911, y: -0.48641586, z: 22.290516}
+    m_Value: {x: -1.8636322, y: -2.2148151, z: 5.8000746}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -724,13 +835,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.33057594, y: -0.60640097, z: 0.30383423, w: -0.6569431}
+    m_Target: {x: -0.30670223, y: 0.30650303, z: -0.10624716, w: -0.8953262}
     speed: 2
-    m_Value: {x: -0.33042857, y: -0.60613066, z: 0.30369878, w: -0.65665025}
+    m_Value: {x: -0.3065631, y: 0.306364, z: -0.10619896, w: -0.89492005}
   m_Size:
-    m_Target: 3.7155068
+    m_Target: 12.800125
     speed: 2
-    m_Value: 3.7155068
+    m_Value: 12.800125
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -775,10 +886,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 243
+    x: 223
     y: 73
-    width: 1575
-    height: 811
+    width: 1289
+    height: 400
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -833,23 +944,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1575
-      height: 790
-    m_Scale: {x: 0.7314815, y: 0.7314815}
-    m_Translation: {x: 787.5, y: 395}
+      width: 1289
+      height: 379
+    m_Scale: {x: 0.35092592, y: 0.35092592}
+    m_Translation: {x: 644.5, y: 189.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1076.5823
+      x: -1836.57
       y: -540
-      width: 2153.1646
+      width: 3673.14
       height: 1080
     m_MinimalGUI: 1
-  m_defaultScale: 0.7314815
-  m_LastWindowPixelSize: {x: 1575, y: 811}
+  m_defaultScale: 0.35092592
+  m_LastWindowPixelSize: {x: 1289, y: 400}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -865,170 +976,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 594
-    width: 1521
-    height: 353
-  m_MinSize: {x: 101, y: 121}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 12}
+    y: 421
+    width: 1514
+    height: 526
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 2}
   m_Panes:
+  - {fileID: 2}
   - {fileID: 11}
   - {fileID: 12}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 2
 --- !u!114 &11
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 1
-  m_Script: {fileID: 12014, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
-  m_TitleContent:
-    m_Text: Project
-    m_Image: {fileID: -5467254957812901981, guid: 0000000000000000d000000000000000, type: 0}
-    m_Tooltip: 
-  m_Pos:
-    serializedVersion: 2
-    x: 0
-    y: 667
-    width: 1520
-    height: 332
-  m_SerializedDataModeController:
-    m_DataMode: 0
-    m_PreferredDataMode: 0
-    m_SupportedDataModes: 
-    isAutomatic: 1
-  m_ViewDataDictionary: {fileID: 0}
-  m_OverlayCanvas:
-    m_LastAppliedPresetName: Default
-    m_SaveData: []
-    m_OverlaysVisible: 1
-  m_SearchFilter:
-    m_NameFilter: 
-    m_ClassNames: []
-    m_AssetLabels: []
-    m_AssetBundleNames: []
-    m_ReferencingInstanceIDs: 
-    m_SceneHandles: 
-    m_ShowAllHits: 0
-    m_SkipHidden: 0
-    m_SearchArea: 1
-    m_Folders:
-    - Assets/Scripts
-    m_Globs: []
-    m_OriginalText: 
-    m_ImportLogFlags: 0
-    m_FilterByTypeIntersection: 0
-  m_ViewMode: 1
-  m_StartGridSize: 67
-  m_LastFolders:
-  - Assets/Scripts
-  m_LastFoldersGridSize: 67
-  m_LastProjectPath: D:\Szakdolgozat\towerdefense\TowerDefense
-  m_LockTracker:
-    m_IsLocked: 0
-  m_FolderTreeState:
-    scrollPos: {x: 0, y: 456}
-    m_SelectedIDs: fa730000
-    m_LastClickedID: 29690
-    m_ExpandedIDs: 0000000060730000627300006473000066730000687300006a7300006c7300006e73000070730000727300007473000076730000787300007a7300007c7300007e73000080730000827300008473000086730000887300008a7300008c730000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 0000000060730000627300006473000066730000687300006a7300006c7300006e73000070730000727300007473000076730000787300007a7300007c7300007e73000080730000827300008473000086730000887300008a7300008c730000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
-    m_SearchString: 
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-  m_ListAreaState:
-    m_SelectedInstanceIDs: 74f7ffff
-    m_LastClickedInstanceID: -2188
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c62300006e5c0000245b0000285b0000605b0000645b0000005b0000365b0000845b0000025c0000045c0000ca5c0000ce5c0000c45c00003a6d0000b25e0000088a0000166b0000fe6a0000a8b30200c6b30200d8b40200bcb50200dcb40200a6ca00009a6b00009669000094690000606a0000b66b00008a7200008e7200009a720000b6720000c27200006c7b0000dac80000000000003e7c0000227c00002e7c00003a7c00008cda000090da0000
-    m_RenameOverlay:
-      m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
-      m_EditFieldRect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 0
-        height: 0
-      m_UserData: 0
-      m_IsWaitingForDelay: 0
-      m_IsRenaming: 0
-      m_OriginalEventType: 11
-      m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 10}
-    m_CreateAssetUtility:
-      m_EndAction: {fileID: 0}
-      m_InstanceID: 0
-      m_Path: 
-      m_Icon: {fileID: 0}
-      m_ResourceFile: 
-    m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 67
-  m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 239
---- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1049,9 +1015,9 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 667
-    width: 1520
-    height: 332
+    y: 494
+    width: 1513
+    height: 505
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1062,6 +1028,842 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+--- !u!114 &12
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13401, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Test Runner
+    m_Image: {fileID: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 0
+    y: 494
+    width: 1513
+    height: 505
+  m_SerializedDataModeController:
+    m_DataMode: 0
+    m_PreferredDataMode: 0
+    m_SupportedDataModes: 
+    isAutomatic: 1
+  m_ViewDataDictionary: {fileID: 0}
+  m_OverlayCanvas:
+    m_LastAppliedPresetName: Default
+    m_SaveData: []
+    m_OverlaysVisible: 1
+  m_Spl:
+    ID: 91
+    splitterInitialOffset: 263
+    currentActiveSplitter: -1
+    realSizes:
+    - 196
+    - 239
+    relativeSizes:
+    - 0.45057473
+    - 0.54942524
+    minSizes:
+    - 32
+    - 32
+    maxSizes:
+    - 0
+    - 0
+    lastTotalSize: 435
+    splitSize: 6
+    xOffset: 0
+    m_Version: 1
+    oldRealSizes: 
+    oldMinSizes: 
+    oldMaxSizes: 
+    oldSplitSize: 0
+  m_TestTypeToolbarIndex: 0
+  m_PlayModeTestListGUI:
+    m_Window: {fileID: 12}
+    m_NewResultList:
+    - id: 1005
+      uniqueId: '[TowerDefenseGame][suite]'
+      name: TowerDefenseGame
+      fullName: TowerDefenseGame
+      resultStatus: 2
+      duration: 4.2718744
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1006
+      uniqueId: '[PlayModeTests][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/PlayModeTests.dll][suite]'
+      name: PlayModeTests.dll
+      fullName: D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/PlayModeTests.dll
+      resultStatus: 2
+      duration: 4.262348
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1000
+      parentUniqueId: '[TowerDefenseGame][suite]'
+    - id: 1006
+      uniqueId: PlayModeTests.dll/[PlayModeTests][MoneyAndLivesUITests][suite]
+      name: MoneyAndLivesUITests
+      fullName: MoneyAndLivesUITests
+      resultStatus: 1
+      duration: 2.1940072
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1010
+      parentUniqueId: '[PlayModeTests][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/PlayModeTests.dll][suite]'
+    - id: 1007
+      uniqueId: PlayModeTests.dll/MoneyAndLivesUITests/[PlayModeTests][MoneyAndLivesUITests.MoneyAndLivesUI_Matches_PlayerStats]
+      name: MoneyAndLivesUI_Matches_PlayerStats
+      fullName: MoneyAndLivesUITests.MoneyAndLivesUI_Matches_PlayerStats
+      resultStatus: 1
+      duration: 2.1826038
+      messages: 
+      output: "GameData f\xE1jl helye: D:/Szakdolgozat/towerdefense/TowerDefense/Assets\\GameData.csv\r\n
+        Input Dimensions: [1, 4]\r\n ONNX Output: 5,472117, 4,800462\r\nCurrent Level:
+        1\r\nTower data mentve: 1;1;NaN;NaN;GameStart;NaN;NaN;NaN;NaN;2025-03-29
+        10:20:34\r\nJ\xE1rhat\xF3 objektum hozz\xE1adva: Level04_Pt4_Road\r\nJ\xE1rhat\xF3
+        objektum hozz\xE1adva: Level04_Pt2_Road\r\nJ\xE1rhat\xF3 objektum hozz\xE1adva:
+        Level04_Pt3_Road\r\nJ\xE1rhat\xF3 objektum hozz\xE1adva: Level04_Pt1_Road\r\nJ\xE1rhat\xF3
+        objektum hozz\xE1adva: Level04_Pt3_Road (1)\r\nWave 1 Start - Player Money:
+        20\r\nNormalized Coverage: NaN%\r\nA totalTowerSpots \xE9rt\xE9ke 0, lefedetts\xE9g
+        nem sz\xE1molhat\xF3.\r\nAdatok mentve: Level=1, Wave=1, Money=20, Lives=15,
+        TotalEnemies=0, Coverage=NaN, CoverageByTower=0,00, Timestamp=2025-03-29
+        10:20:34\r\nHull\xE1m 1 indul\r\nA totalTowerSpots \xE9rt\xE9ke 0, lefedetts\xE9g
+        nem sz\xE1molhat\xF3.\r\nNormalized AI Input: 1, 1, 15, 0\r\nONNX Output
+        (Raw): 0,6902087, 0,7229388\r\nDenormalized AI Output: Health=0,6902087,
+        Speed=0,7229388\r\nSpawnEnemiesAndProgressBar coroutine started.\r\nWave
+        1 enemy pool created.\r\nPool size: 2\r\nAI Prediction Testing Started...\r\nAI
+        Prediction for Input: 1, 1, 15, 0\r\nHealth Multiplier: 0,690, Speed Multiplier:
+        0,723\r\nAI Prediction for Input: 5, 3, 10, 70\r\nHealth Multiplier: 1,853,
+        Speed Multiplier: 1,446\r\nAI Prediction for Input: 10, 1, 15, 80\r\nHealth
+        Multiplier: 3,011, Speed Multiplier: 2,490\r\nAI Prediction for Input: 3,
+        2, 5, 50\r\nHealth Multiplier: 1,031, Speed Multiplier: 0,935\r\nAI Prediction
+        for Input: 7, 1, 10, 20\r\nHealth Multiplier: 1,768, Speed Multiplier: 1,362\r\nAI
+        Prediction Testing Finished.\r\nMintapontok gener\xE1lva a(z) Level04_Pt3_Road
+        (1) objektumhoz: 10 pont.\r\nMintapontok gener\xE1lva a(z) Level04_Pt3_Road
+        objektumhoz: 10 pont.\r\nMintapontok gener\xE1lva a(z) Level04_Pt4_Road objektumhoz:
+        10 pont.\r\nMintapontok gener\xE1lva a(z) Level04_Pt2_Road objektumhoz: 10
+        pont.\r\nMintapontok gener\xE1lva a(z) Level04_Pt1_Road objektumhoz: 10 pont.\r\nMintapontok
+        gener\xE1lva a(z) Level04_Pt4_Road objektumhoz: 10 pont.\r\nMintapontok gener\xE1lva
+        a(z) Level04_Pt2_Road objektumhoz: 10 pont.\r\nMintapontok gener\xE1lva a(z)
+        Level04_Pt3_Road objektumhoz: 10 pont.\r\nMintapontok gener\xE1lva a(z) Level04_Pt1_Road
+        objektumhoz: 10 pont.\r\nMintapontok gener\xE1lva a(z) Level04_Pt3_Road (1)
+        objektumhoz: 10 pont.\r\n\xD6sszes path inicializ\xE1lva: 5\r\n\xD6sszes
+        lehets\xE9ges toronyhely (LVL1): 23\r\n[EnemyAI] Buggy Base HP: 200, AI Multiplier:
+        0,8, Final HP: 160\r\n[EnemyAI] Buggy Base Speed: 3,5, Multiplier: 0,8, Final
+        Speed: 2,8\r\n[SpawnEnemy] Buggy | Wave: 1 | AI HP Multiplier: 1, AI Speed
+        Multiplier: 1, Final HP: 160\r\n[EnemyAI] Helicopter Base HP: 250, AI Multiplier:
+        0,8, Final HP: 200\r\n[EnemyAI] Helicopter Base Speed: 2,5, Multiplier: 0,8,
+        Final Speed: 2\r\n[SpawnEnemy] Helicopter | Wave: 1 | AI HP Multiplier: 1,
+        AI Speed Multiplier: 1, Final HP: 200\r\n"
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1006
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][MoneyAndLivesUITests][suite]
+    - id: 1008
+      uniqueId: PlayModeTests.dll/[PlayModeTests][NodeUIValueTests][suite]
+      name: NodeUIValueTests
+      fullName: NodeUIValueTests
+      resultStatus: 1
+      duration: 0.2180351
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1012
+      parentUniqueId: '[PlayModeTests][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/PlayModeTests.dll][suite]'
+    - id: 1009
+      uniqueId: PlayModeTests.dll/NodeUIValueTests/[PlayModeTests][NodeUIValueTests.NodeUI_ShowsCorrectUpgradeAndSellValues]
+      name: NodeUI_ShowsCorrectUpgradeAndSellValues
+      fullName: NodeUIValueTests.NodeUI_ShowsCorrectUpgradeAndSellValues
+      resultStatus: 1
+      duration: 0.2139289
+      messages: 
+      output: 'Coverage calculated for tower at -14, 8
+
+        Turret built!
+
+        Tower
+        initialized with level: 0
+
+        Player earned 975 money. Current money:
+        995
+
+        SetTarget called
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][NodeUIValueTests][suite]
+    - id: 1010
+      uniqueId: PlayModeTests.dll/[PlayModeTests][TowerTargetingTests][suite]
+      name: TowerTargetingTests
+      fullName: TowerTargetingTests
+      resultStatus: 2
+      duration: 0.368676
+      messages: One or more child tests had errors
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1014
+      parentUniqueId: '[PlayModeTests][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/PlayModeTests.dll][suite]'
+    - id: 1013
+      uniqueId: PlayModeTests.dll/TowerTargetingTests/[PlayModeTests][TowerTargetingTests.Tower_Chooses_New_Target_When_Current_Dies]
+      name: Tower_Chooses_New_Target_When_Current_Dies
+      fullName: TowerTargetingTests.Tower_Chooses_New_Target_When_Current_Dies
+      resultStatus: 2
+      duration: 0.2052313
+      messages: 'Unhandled log message: ''[Error] Tower is missing bulletPrefab or
+        firePoint reference!''. Use UnityEngine.TestTools.LogAssert.Expect'
+      output: '[EnemyAI] Buggy Base HP: 200, AI Multiplier: 0,8, Final HP: 160
+
+        [EnemyAI]
+        Buggy Base Speed: 3,5, Multiplier: 0,8, Final Speed: 2,8
+
+        [SpawnEnemy]
+        Buggy | Wave: 1 | AI HP Multiplier: 1, AI Speed Multiplier: 1, Final HP:
+        160
+
+        Tower initialized with level: 1
+
+        Tower is missing
+        bulletPrefab or firePoint reference!
+
+        Tower is missing bulletPrefab
+        or firePoint reference!
+
+        [EnemyAI] Helicopter Base HP: 250, AI Multiplier:
+        0,8, Final HP: 200
+
+        [EnemyAI] Helicopter Base Speed: 2,5, Multiplier:
+        0,8, Final Speed: 2
+
+        [SpawnEnemy] Helicopter | Wave: 1 | AI HP Multiplier:
+        1, AI Speed Multiplier: 1, Final HP: 200
+
+'
+      stacktrace: 'Tower:Shoot () (at Assets/Scripts/Tower.cs:160)
+
+        Tower:Update
+        () (at Assets/Scripts/Tower.cs:115)
+
+        
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1010
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][TowerTargetingTests][suite]
+    - id: 1011
+      uniqueId: PlayModeTests.dll/TowerTargetingTests/[PlayModeTests][TowerTargetingTests.Tower_DoesNotTarget_Enemy_Outside_Range]
+      name: Tower_DoesNotTarget_Enemy_Outside_Range
+      fullName: TowerTargetingTests.Tower_DoesNotTarget_Enemy_Outside_Range
+      resultStatus: 1
+      duration: 0.0816531
+      messages: 
+      output: 'Tower initialized with level: 1
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1010
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][TowerTargetingTests][suite]
+    - id: 1011
+      uniqueId: PlayModeTests.dll/TowerTargetingTests/[PlayModeTests][TowerTargetingTests.Tower_Selects_Enemy_Closer_To_End]
+      name: Tower_Selects_Enemy_Closer_To_End
+      fullName: TowerTargetingTests.Tower_Selects_Enemy_Closer_To_End
+      resultStatus: 2
+      duration: 0.0768401
+      messages: 'Unhandled log message: ''[Error] Tower is missing bulletPrefab or
+        firePoint reference!''. Use UnityEngine.TestTools.LogAssert.Expect'
+      output: 'Tower initialized with level: 1
+
+        [EnemyAI] Buggy Base HP:
+        200, AI Multiplier: 0,8, Final HP: 160
+
+        [EnemyAI] Buggy Base Speed:
+        3,5, Multiplier: 0,8, Final Speed: 2,8
+
+        [SpawnEnemy] Buggy | Wave:
+        1 | AI HP Multiplier: 1, AI Speed Multiplier: 1, Final HP: 160
+
+        Tower
+        is missing bulletPrefab or firePoint reference!
+
+'
+      stacktrace: 'Tower:Shoot () (at Assets/Scripts/Tower.cs:160)
+
+        Tower:Update
+        () (at Assets/Scripts/Tower.cs:115)
+
+        
+
+'
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1010
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][TowerTargetingTests][suite]
+    - id: 1001
+      uniqueId: PlayModeTests.dll/[PlayModeTests][WaveSpawnerPlayModeTests][suite]
+      name: WaveSpawnerPlayModeTests
+      fullName: WaveSpawnerPlayModeTests
+      resultStatus: 1
+      duration: 1.2119842
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[PlayModeTests][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/PlayModeTests.dll][suite]'
+    - id: 1005
+      uniqueId: PlayModeTests.dll/WaveSpawnerPlayModeTests/[PlayModeTests][WaveSpawnerPlayModeTests.AIPredictionReturnsValidMultipliers]
+      name: AIPredictionReturnsValidMultipliers
+      fullName: WaveSpawnerPlayModeTests.AIPredictionReturnsValidMultipliers
+      resultStatus: 1
+      duration: 0.2709766
+      messages: 
+      output: '[EnemyAI] Buggy Base HP: 200, AI Multiplier: 0,8, Final HP: 160
+
+        [EnemyAI]
+        Buggy Base Speed: 3,5, Multiplier: 0,8, Final Speed: 2,8
+
+        [SpawnEnemy]
+        Buggy | Wave: 1 | AI HP Multiplier: 1, AI Speed Multiplier: 1, Final HP:
+        160
+
+        [EnemyAI] Buggy Base HP: 200, AI Multiplier: 0,8, Final HP:
+        160
+
+        [EnemyAI] Buggy Base Speed: 3,5, Multiplier: 0,8, Final Speed:
+        2,8
+
+        [SpawnEnemy] Buggy | Wave: 1 | AI HP Multiplier: 1, AI Speed
+        Multiplier: 1, Final HP: 160
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][WaveSpawnerPlayModeTests][suite]
+    - id: 1004
+      uniqueId: PlayModeTests.dll/WaveSpawnerPlayModeTests/[PlayModeTests][WaveSpawnerPlayModeTests.EnemyHasValidStats]
+      name: EnemyHasValidStats
+      fullName: WaveSpawnerPlayModeTests.EnemyHasValidStats
+      resultStatus: 1
+      duration: 0.2744615
+      messages: 
+      output: '[EnemyAI] Buggy Base HP: 200, AI Multiplier: 0,8, Final HP: 160
+
+        [EnemyAI]
+        Buggy Base Speed: 3,5, Multiplier: 0,8, Final Speed: 2,8
+
+        [SpawnEnemy]
+        Buggy | Wave: 1 | AI HP Multiplier: 1, AI Speed Multiplier: 1, Final HP:
+        160
+
+        [EnemyAI] Buggy Base HP: 200, AI Multiplier: 0,8, Final HP:
+        160
+
+        [EnemyAI] Buggy Base Speed: 3,5, Multiplier: 0,8, Final Speed:
+        2,8
+
+        [SpawnEnemy] Buggy | Wave: 1 | AI HP Multiplier: 1, AI Speed
+        Multiplier: 1, Final HP: 160
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][WaveSpawnerPlayModeTests][suite]
+    - id: 1003
+      uniqueId: PlayModeTests.dll/WaveSpawnerPlayModeTests/[PlayModeTests][WaveSpawnerPlayModeTests.EnemyMovesAfterSpawning]
+      name: EnemyMovesAfterSpawning
+      fullName: WaveSpawnerPlayModeTests.EnemyMovesAfterSpawning
+      resultStatus: 1
+      duration: 0.3919076
+      messages: 
+      output: '[EnemyAI] Helicopter Base HP: 250, AI Multiplier: 0,8, Final HP: 200
+
+        [EnemyAI]
+        Helicopter Base Speed: 2,5, Multiplier: 0,8, Final Speed: 2
+
+        [SpawnEnemy]
+        Helicopter | Wave: 1 | AI HP Multiplier: 1, AI Speed Multiplier: 1, Final
+        HP: 200
+
+        [EnemyAI] Helicopter Base HP: 250, AI Multiplier: 0,8,
+        Final HP: 200
+
+        [EnemyAI] Helicopter Base Speed: 2,5, Multiplier:
+        0,8, Final Speed: 2
+
+        [SpawnEnemy] Helicopter | Wave: 1 | AI HP Multiplier:
+        1, AI Speed Multiplier: 1, Final HP: 200
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][WaveSpawnerPlayModeTests][suite]
+    - id: 1002
+      uniqueId: PlayModeTests.dll/WaveSpawnerPlayModeTests/[PlayModeTests][WaveSpawnerPlayModeTests.EnemySpawnsWithinExpectedTime]
+      name: EnemySpawnsWithinExpectedTime
+      fullName: WaveSpawnerPlayModeTests.EnemySpawnsWithinExpectedTime
+      resultStatus: 1
+      duration: 0.2669634
+      messages: 
+      output: '[EnemyAI] Buggy Base HP: 200, AI Multiplier: 0,8, Final HP: 160
+
+        [EnemyAI]
+        Buggy Base Speed: 3,5, Multiplier: 0,8, Final Speed: 2,8
+
+        [SpawnEnemy]
+        Buggy | Wave: 1 | AI HP Multiplier: 1, AI Speed Multiplier: 1, Final HP:
+        160
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][WaveSpawnerPlayModeTests][suite]
+    - id: 1008
+      uniqueId: PlayModeTests.dll/[PlayModeTests][WaveUIUpdateTest][suite]
+      name: WaveUIUpdateTest
+      fullName: WaveUIUpdateTest
+      resultStatus: 1
+      duration: 0.2667314
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1010
+      parentUniqueId: '[PlayModeTests][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/PlayModeTests.dll][suite]'
+    - id: 1009
+      uniqueId: PlayModeTests.dll/WaveUIUpdateTest/[PlayModeTests][WaveUIUpdateTest.WaveNumber_UI_UpdatesCorrectly]
+      name: WaveNumber_UI_UpdatesCorrectly
+      fullName: WaveUIUpdateTest.WaveNumber_UI_UpdatesCorrectly
+      resultStatus: 1
+      duration: 0.2619286
+      messages: 
+      output: '[EnemyAI] Helicopter Base HP: 250, AI Multiplier: 0,8, Final HP: 200
+
+        [EnemyAI]
+        Helicopter Base Speed: 2,5, Multiplier: 0,8, Final Speed: 2
+
+        [SpawnEnemy]
+        Helicopter | Wave: 1 | AI HP Multiplier: 1, AI Speed Multiplier: 1, Final
+        HP: 200
+
+        [EnemyAI] Helicopter Base HP: 250, AI Multiplier: 0,8,
+        Final HP: 200
+
+        [EnemyAI] Helicopter Base Speed: 2,5, Multiplier:
+        0,8, Final Speed: 2
+
+        [SpawnEnemy] Helicopter | Wave: 1 | AI HP Multiplier:
+        1, AI Speed Multiplier: 1, Final HP: 200
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1008
+      parentUniqueId: PlayModeTests.dll/[PlayModeTests][WaveUIUpdateTest][suite]
+    m_ResultText: 'Tower_Selects_Enemy_Closer_To_End (0,077s)
+
+      ---
+
+      Unhandled
+      log message: ''[Error] Tower is missing bulletPrefab or firePoint reference!''.
+      Use UnityEngine.TestTools.LogAssert.Expect
+
+      ---
+
+      Tower:Shoot ()
+      (at Assets/Scripts/Tower.cs:160)
+
+      Tower:Update () (at Assets/Scripts/Tower.cs:115)
+
+      ---
+
+      Tower
+      initialized with level: 1
+
+      [EnemyAI] Buggy Base HP: 200, AI Multiplier:
+      0,8, Final HP: 160
+
+      [EnemyAI] Buggy Base Speed: 3,5, Multiplier: 0,8,
+      Final Speed: 2,8
+
+      [SpawnEnemy] Buggy | Wave: 1 | AI HP Multiplier: 1,
+      AI Speed Multiplier: 1, Final HP: 160
+
+      Tower is missing bulletPrefab
+      or firePoint reference!'
+    m_ResultStacktrace: 'Tower:Shoot () (at Assets/Scripts/Tower.cs:160)
+
+      Tower:Update
+      () (at Assets/Scripts/Tower.cs:115)
+
+      
+
+'
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 3984f6b2
+      m_LastClickedID: -1292467143
+      m_ExpandedIDs: 53ae35827b573885975b4f87b79f61a7899391c19467b9d61041fde289fa0ce7b600aae8d2dd49fe4365ce173b09be2522524b3affffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 1
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
+    m_SelectedOption: 0
+  m_EditModeTestListGUI:
+    m_Window: {fileID: 12}
+    m_NewResultList:
+    - id: 1000
+      uniqueId: '[TowerDefenseGame][suite]'
+      name: TowerDefenseGame
+      fullName: TowerDefenseGame
+      resultStatus: 1
+      duration: 0.0564153
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1011
+      uniqueId: '[EditMode][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/EditMode.dll][suite]'
+      name: EditMode.dll
+      fullName: D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/EditMode.dll
+      resultStatus: 1
+      duration: 0.0324491
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1006
+      parentUniqueId: '[TowerDefenseGame][suite]'
+    - id: 1001
+      uniqueId: EditMode.dll/[EditMode][PlayerStatsTests][suite]
+      name: PlayerStatsTests
+      fullName: PlayerStatsTests
+      resultStatus: 1
+      duration: 0.0208127
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1004
+      parentUniqueId: '[EditMode][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/EditMode.dll][suite]'
+    - id: 1003
+      uniqueId: EditMode.dll/PlayerStatsTests/[EditMode][PlayerStatsTests.Money_DecreasesAfterTowerPurchase]
+      name: Money_DecreasesAfterTowerPurchase
+      fullName: PlayerStatsTests.Money_DecreasesAfterTowerPurchase
+      resultStatus: 1
+      duration: 0.0115769
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][PlayerStatsTests][suite]
+    - id: 1002
+      uniqueId: EditMode.dll/PlayerStatsTests/[EditMode][PlayerStatsTests.Money_StartsWithCorrectAmount]
+      name: Money_StartsWithCorrectAmount
+      fullName: PlayerStatsTests.Money_StartsWithCorrectAmount
+      resultStatus: 1
+      duration: 0.0001168
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][PlayerStatsTests][suite]
+    - id: 1004
+      uniqueId: EditMode.dll/[EditMode][TowerOccupancyTests][suite]
+      name: TowerOccupancyTests
+      fullName: TowerOccupancyTests
+      resultStatus: 1
+      duration: 0.0045927
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1011
+      parentUniqueId: '[EditMode][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/EditMode.dll][suite]'
+    - id: 1005
+      uniqueId: EditMode.dll/TowerOccupancyTests/[EditMode][TowerOccupancyTests.CalculatesCorrectTowerOccupancyPercentage]
+      name: CalculatesCorrectTowerOccupancyPercentage
+      fullName: TowerOccupancyTests.CalculatesCorrectTowerOccupancyPercentage
+      resultStatus: 1
+      duration: 0.000897
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: EditMode.dll/[EditMode][TowerOccupancyTests][suite]
+    - id: 1004
+      uniqueId: EditMode.dll/[EditMode][TurretBlueprintTests][suite]
+      name: TurretBlueprintTests
+      fullName: TurretBlueprintTests
+      resultStatus: 1
+      duration: 0.005816
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1007
+      parentUniqueId: '[EditMode][D:/Szakdolgozat/towerdefense/TowerDefense/Library/ScriptAssemblies/EditMode.dll][suite]'
+    - id: 1008
+      uniqueId: EditMode.dll/TurretBlueprintTests/[EditMode][TurretBlueprintTests.TurretBlueprint_GetStats_ReturnsCorrectFormattedString]
+      name: TurretBlueprint_GetStats_ReturnsCorrectFormattedString
+      fullName: TurretBlueprintTests.TurretBlueprint_GetStats_ReturnsCorrectFormattedString
+      resultStatus: 1
+      duration: 0.0010161
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: EditMode.dll/[EditMode][TurretBlueprintTests][suite]
+    - id: 1006
+      uniqueId: EditMode.dll/TurretBlueprintTests/[EditMode][TurretBlueprintTests.TurretBlueprint_SellAmountCalculatesCorrectly]
+      name: TurretBlueprint_SellAmountCalculatesCorrectly
+      fullName: TurretBlueprintTests.TurretBlueprint_SellAmountCalculatesCorrectly
+      resultStatus: 1
+      duration: 0.0002379
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: EditMode.dll/[EditMode][TurretBlueprintTests][suite]
+    - id: 1007
+      uniqueId: EditMode.dll/TurretBlueprintTests/[EditMode][TurretBlueprintTests.TurretBlueprint_StatGettersReturnCorrectValues]
+      name: TurretBlueprint_StatGettersReturnCorrectValues
+      fullName: TurretBlueprintTests.TurretBlueprint_StatGettersReturnCorrectValues
+      resultStatus: 1
+      duration: 0.0006916
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: EditMode.dll/[EditMode][TurretBlueprintTests][suite]
+    - id: 1005
+      uniqueId: EditMode.dll/TurretBlueprintTests/[EditMode][TurretBlueprintTests.TurretBlueprint_UpgradeCostsCorrect]
+      name: TurretBlueprint_UpgradeCostsCorrect
+      fullName: TurretBlueprintTests.TurretBlueprint_UpgradeCostsCorrect
+      resultStatus: 1
+      duration: 0.000133
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1004
+      parentUniqueId: EditMode.dll/[EditMode][TurretBlueprintTests][suite]
+    m_ResultText: CalculatesCorrectTowerOccupancyPercentage (0,001s)
+    m_ResultStacktrace: 
+    m_TestListState:
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: e5625729
+      m_LastClickedID: 693592805
+      m_ExpandedIDs: 30a6799a899391c11e8893ca7fe5cdd3504338def78d9fdebbf8b229ffffff7f
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+        m_EditFieldRect:
+          serializedVersion: 2
+          x: 0
+          y: 0
+          width: 0
+          height: 0
+        m_UserData: 0
+        m_IsWaitingForDelay: 0
+        m_IsRenaming: 0
+        m_OriginalEventType: 11
+        m_IsRenamingFilename: 0
+        m_ClientGUIView: {fileID: 0}
+      m_SearchString: 
+    m_TestRunnerUIFilter:
+      PassedHidden: 0
+      FailedHidden: 0
+      NotRunHidden: 0
+      m_SearchString: 
+      selectedCategoryMask: 0
+      availableCategories:
+      - Uncategorized
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1072,24 +1874,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: NavigationWindow
+  m_Name: InspectorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1521
+    x: 1514
     y: 0
-    width: 399
+    width: 406
     height: 947
-  m_MinSize: {x: 301, y: 381}
-  m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 16}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 15}
   - {fileID: 16}
   - {fileID: 17}
-  m_Selected: 2
+  m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &14
 MonoBehaviour:
@@ -1111,9 +1913,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1521
+    x: 1514
     y: 73
-    width: 398
+    width: 405
     height: 926
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1131,7 +1933,7 @@ MonoBehaviour:
     m_CachedPref: -523
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 28928
+  m_LastInspectedObjectInstanceID: -1
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -1158,9 +1960,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1521
+    x: 1514
     y: 73
-    width: 398
+    width: 405
     height: 926
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1192,9 +1994,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1521
+    x: 1481
     y: 73
-    width: 398
+    width: 438
     height: 926
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1226,9 +2028,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1554
+    x: 1481
     y: 73
-    width: 365
+    width: 438
     height: 926
   m_SerializedDataModeController:
     m_DataMode: 0

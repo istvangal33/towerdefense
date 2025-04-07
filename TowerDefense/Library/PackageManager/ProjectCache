@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638755483909357411
-    m_Hash: 489404553
+      ticks: 638785818320524010
+    m_Hash: 1337168995
   m_LockFileStatus:
     m_FilePath: D:/Szakdolgozat/towerdefense/TowerDefense/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638755484017148771
-    m_Hash: 1537286162
+      ticks: 638785818321687719
+    m_Hash: 2736156210
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -602,12 +602,12 @@ m_ResolvedPackages:
   isDeprecated: 0
   deprecationMessage: 
   fingerprint: 
-- packageId: com.unity.textmeshpro@3.0.6
+- packageId: com.unity.textmeshpro@3.0.9
   testable: 0
   isDirectDependency: 1
-  version: 3.0.6
+  version: 3.0.9
   source: 1
-  resolvedPath: D:\Szakdolgozat\towerdefense\TowerDefense\Library\PackageCache\com.unity.textmeshpro@3.0.6
+  resolvedPath: D:\Szakdolgozat\towerdefense\TowerDefense\Library\PackageCache\com.unity.textmeshpro@3.0.9
   assetPath: Packages/com.unity.textmeshpro
   name: com.unity.textmeshpro
   displayName: TextMeshPro
@@ -616,7 +616,7 @@ m_ResolvedPackages:
     email: 
     url: 
   category: Text Rendering
-  type: asset
+  type: assets
   description: 'TextMeshPro is the ultimate text solution for Unity. It''s the perfect
     replacement for Unity''s UI Text and the legacy Text Mesh.
 
@@ -735,6 +735,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.9
     - 3.2.0-pre.10
     - 3.2.0-pre.11
+    - 3.2.0-pre.12
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -753,6 +754,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.9
     - 3.2.0-pre.10
     - 3.2.0-pre.11
+    - 3.2.0-pre.12
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     recommended: 3.0.9
@@ -783,13 +785,13 @@ m_ResolvedPackages:
     configSource: 0
   hideInEditor: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 637547111200000000
-  documentationUrl: 
+  datePublishedTicks: 638515173480000000
+  documentationUrl: https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.0/manual/index.html
   hasRepository: 1
   repository:
     type: git
     url: https://github.cds.internal.unity3d.com/unity/com.unity.textmeshpro.git
-    revision: 01e57e3b7de18af9dfe9baaa0a0ff5cc4765c899
+    revision: 0af193626b4f76795f7cb6c9b0f55389d0e4b1d6
     path: 
   unityLifecycle:
     version: 3.0.6
@@ -899,6 +901,7 @@ m_ResolvedPackages:
     - 1.7.4
     - 1.7.5
     - 1.7.6
+    - 1.7.7
     - 1.8.0
     - 1.8.1
     - 1.8.2
@@ -910,6 +913,7 @@ m_ResolvedPackages:
     - 1.8.8
     compatible:
     - 1.7.6
+    - 1.7.7
     - 1.8.0
     - 1.8.1
     - 1.8.2
@@ -919,7 +923,7 @@ m_ResolvedPackages:
     - 1.8.6
     - 1.8.7
     - 1.8.8
-    recommended: 1.7.6
+    recommended: 1.7.7
     deprecated: []
   dependencies:
   - name: com.unity.modules.audio
@@ -1091,17 +1095,21 @@ m_ResolvedPackages:
     - 1.7.6
     - 1.7.7
     - 1.7.8
+    - 1.8.0-pre.1
     - 1.8.0
     - 1.9.0
     - 1.9.1
     - 1.9.2
     - 1.9.4
     - 1.9.5
+    - 1.9.6
     compatible:
     - 1.9.4
     - 1.9.5
-    recommended: 1.9.5
-    deprecated: []
+    - 1.9.6
+    recommended: 1.9.6
+    deprecated:
+    - 1.8.0-pre.1
   dependencies:
   - name: com.unity.ugui
     version: 1.0.0
@@ -3936,10 +3944,12 @@ m_ResolvedPackages:
     - 3.0.28
     - 3.0.31
     - 3.0.34
+    - 3.0.35
     compatible:
     - 3.0.31
     - 3.0.34
-    recommended: 3.0.34
+    - 3.0.35
+    recommended: 3.0.35
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit

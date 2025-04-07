@@ -44,7 +44,7 @@ public class VolumeControl : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Master Volume Slider is not assigned in the Inspector!");
+            Debug.LogError("volume slider nincs hozzarendelve az inspectorban!");
         }
     }
 

@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
 
         
         filePath = Path.Combine(Application.dataPath, "GameData.csv");
-        Debug.Log($"GameData fájl helye: {filePath}");
+        Debug.Log($"GameData fajl helye: {filePath}");
     }
 
 
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         if (!File.Exists(filePath))
         {
             File.WriteAllText(filePath, "CurrentLevel;WaveNumber;StartMoney;CurrentLives;TotalEnemiesSpawned;Buggy%;Helicopter%;Hovertank%;Coverage;CoverageByTower;Timestamp\n");
-            Debug.Log("CSV fájl inicializálva: " + filePath);
+            Debug.Log("CSV fajl inicializalva: " + filePath);
 
             SaveInitialGameDataToCSV();
         }
@@ -310,12 +310,12 @@ public class GameManager : MonoBehaviour
 
         if (currentLives >= maxLives)
         {
-            Debug.Log("A játékos már maximális élettel rendelkezik.");
+            Debug.Log("A plyer mar max elettel rendelkezik.");
             return;
         }
 
         PlayerStats.Lives = Mathf.Min(currentLives + bonusLives, maxLives);
-        Debug.Log($"Bónusz életek hozzáadva: {bonusLives}. Aktuális életek: {PlayerStats.Lives}");
+        Debug.Log($"bonusz eletek hozzaadva: {bonusLives}. current lives: {PlayerStats.Lives}");
     }
 
 

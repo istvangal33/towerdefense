@@ -14,13 +14,13 @@ public class Tower : MonoBehaviour
     
     public List<Vector2Int> coveredCells = new List<Vector2Int>();
     public TowerType towerType;
-    private Transform target;
+    public Transform target;
 
     public float range = 5.0f;
     public Transform endPoint;
 
     public float fireRate = 2f;
-    private float fireCountdown = 0f;
+    public float fireCountdown = 0f;
 
     [Header("Bullet Settings")]
     public GameObject bulletPrefab;
@@ -49,7 +49,7 @@ public class Tower : MonoBehaviour
     {
         if (rotatingPart == null)
         {
-            Debug.LogError("A forgó rész nincs hozzárendelve a toronyhoz!");
+            Debug.LogError("A forgo resz nincs hozzarendelve a toronyhoz!");
         }
 
         if (lineRenderer != null)
@@ -64,7 +64,7 @@ public class Tower : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Nem található End GameObject a jelenetben!");
+            Debug.LogError("Nem talalhato End GameObject a jelenetben!");
         }
 
         transform.position += positionOffset;
@@ -165,7 +165,7 @@ public class Tower : MonoBehaviour
         }
         else
         {
-            Debug.LogError("A lövedék prefab nem tartalmaz Bullet komponenst!");
+            Debug.LogError("A lovedek prefab nem tartalmaz Bullet komponenst!");
         }
 
 
@@ -174,19 +174,23 @@ public class Tower : MonoBehaviour
 
     void PlayTowerShootSound()
     {
-        switch (towerType)
+        if (Application.isPlaying && SoundManager.Instance != null)
         {
-            case TowerType.MachineGun:
-                SoundManager.Instance.PlayMachineGunShot();
-                break;
-            case TowerType.Rocket:
-                SoundManager.Instance.PlayRocketLaunch();
-                break;
-            case TowerType.Laser:
-                SoundManager.Instance.PlayLaserShoot();
-                break;
+            switch (towerType)
+            {
+                case TowerType.MachineGun:
+                    SoundManager.Instance.PlayMachineGunShot();
+                    break;
+                case TowerType.Rocket:
+                    SoundManager.Instance.PlayRocketLaunch();
+                    break;
+                case TowerType.Laser:
+                    SoundManager.Instance.PlayLaserShoot();
+                    break;
+            }
         }
     }
+
 
 
 
@@ -316,9 +320,31 @@ public class Tower : MonoBehaviour
     public void Sell()
     {
         PlayerStats.Money += sellAmount;
-        SoundManager.Instance.StopLaserShoot();
-        Destroy(gameObject);
+
+        if (SoundManager.Instance != null)
+        {
+            SoundManager.Instance.StopLaserShoot();
+        }
+
+        
+        if (node != null)
+        {
+            Debug.Log($"[Tower.Sell()] Clearing node: {node.name}");
+            node.turret = null;
+            node.isOccupied = false;
+            node = null; 
+        }
+        else
+        {
+            Debug.LogWarning("[Tower.Sell()] Node is null!");
+        }
+
+        
+        DestroyImmediate(gameObject);
     }
+
+
+
 
     public void CalculateCoverage()
     {

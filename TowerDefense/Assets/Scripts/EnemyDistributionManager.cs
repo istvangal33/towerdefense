@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyDistributionManager : MonoBehaviour
 {
-    public float cellSize = 1.0f; // A grid cellák mérete
+    public float cellSize = 1.0f; 
     public string roadTag = "Road"; 
 
     private List<GameObject> walkableObjects = new List<GameObject>();
@@ -26,7 +26,7 @@ public class EnemyDistributionManager : MonoBehaviour
         GameObject[] allObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in allObjects)
         {
-            if (obj.CompareTag(roadTag)) // Tag checkup
+            if (obj.CompareTag(roadTag)) 
             {
                 Renderer renderer = obj.GetComponent<Renderer>();
                 Collider collider = obj.GetComponent<Collider>();
@@ -38,13 +38,13 @@ public class EnemyDistributionManager : MonoBehaviour
                 }
 
                 walkableObjects.Add(obj);
-                Debug.Log($"Járható objektum hozzáadva: {obj.name}");
+                Debug.Log($"jarhato objektum hozzaadva: {obj.name}");
             }
         }
 
         if (walkableObjects.Count == 0)
         {
-            Debug.LogError("Nem található egyetlen 'Road' taggel rendelkezõ objektum sem!");
+            Debug.LogError("Nem talalhato egyetlen 'Road' taggel rendelkezo objektum sem!");
         }
     }
 
@@ -54,14 +54,14 @@ public class EnemyDistributionManager : MonoBehaviour
 
         if (enemyDistribution.Count == 0)
         {
-            Debug.LogError("Az eloszlási adatok üresek! Ellenõrizd a grid generálást és az ellenfelek pozícióját!");
+            Debug.LogError("Az eloszalis adatok uresek! Ellenõrizd a grid generalast és az ellenfelek poziciojat!");
             return;
         }
 
-        Debug.Log($"Ellenfelek eloszlása ({enemyDistribution.Count} cella):");
+        Debug.Log($"Ellenfelek eloszlasa ({enemyDistribution.Count} cella):");
         foreach (var sector in enemyDistribution)
         {
-            Debug.Log($"Cella középpontja: {sector.Key}, Ellenfelek száma: {sector.Value}");
+            Debug.Log($"Cella kozeppontja: {sector.Key}, Ellenfelek szama: {sector.Value}");
         }
     }
 
@@ -92,14 +92,14 @@ public class EnemyDistributionManager : MonoBehaviour
 
                     enemyDistribution[cellCenter]++;
                     foundCell = true;
-                    Debug.Log($"Ellenfél {enemy.name} (Pozíció: {enemyPosition}) a cellában: {cellCenter}");
+                    Debug.Log($"Ellenfel {enemy.name} (Pozicio: {enemyPosition}) a cellaban: {cellCenter}");
                     break;
                 }
             }
 
             if (!foundCell)
             {
-                Debug.LogWarning($"Ellenfél {enemy.name} (Pozíció: {enemyPosition}) nem tartozik egyik cellához sem!");
+                Debug.LogWarning($"Ellenfél {enemy.name} (Pozicio: {enemyPosition}) nem tartozik egyik cellahoz sem!");
             }
         }
 
@@ -135,19 +135,19 @@ public class EnemyDistributionManager : MonoBehaviour
             {
                 totalBounds.Encapsulate(renderer.bounds);
                 hasValidBounds = true;
-                Debug.Log($"Renderer alapján hozzáadva: {obj.name}");
+                Debug.Log($"Renderer alapjan hozzaadva: {obj.name}");
             }
             else if (collider != null)
             {
                 totalBounds.Encapsulate(collider.bounds);
                 hasValidBounds = true;
-                Debug.LogWarning($"Collider alapján hozzáadva: {obj.name}");
+                Debug.LogWarning($"Collider alapjan hozzaadva: {obj.name}");
             }
         }
 
         if (!hasValidBounds)
         {
-            Debug.LogError("Nincs érvényes Renderer vagy Collider komponenssel rendelkezõ objektum a pályán!");
+            Debug.LogError("Nincs ervenyes Renderer vagy Collider komponenssel rendelkezo objektum a palyan!");
         }
 
         return totalBounds;

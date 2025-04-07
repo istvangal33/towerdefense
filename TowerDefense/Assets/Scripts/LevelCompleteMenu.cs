@@ -40,7 +40,7 @@ public class LevelCompleteMenu : MonoBehaviour
         
         PlayerStats.Money = 20 + bonusMoney; 
 
-        Debug.Log($"A játékos {bonusMoney} bónuszpénzt kapott. Jelenlegi pénz: {PlayerStats.Money}");
+        Debug.Log($"A player {bonusMoney} bonuszpenzt kapott. Current money: {PlayerStats.Money}");
 
         
         Time.timeScale = 1f;
@@ -54,7 +54,7 @@ public class LevelCompleteMenu : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Nincs több pálya!");
+            Debug.LogError("Nincs tobb palya!");
             GoToMainMenu();
         }
     }

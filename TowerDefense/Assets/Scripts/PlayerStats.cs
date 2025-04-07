@@ -26,20 +26,23 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
-       
+        if (GameManager.Instance == null)
+            return;
+
         if (Lives != previousLives)
         {
             GameManager.Instance.LogPlayerLivesChange(previousLives, Lives);
             previousLives = Lives;
         }
 
-        
         if (Money != previousMoney)
         {
             GameManager.Instance.LogPlayerMoneyChange(previousMoney, Money);
             previousMoney = Money;
         }
     }
+
+
 
     public static void ResetStats() 
     {

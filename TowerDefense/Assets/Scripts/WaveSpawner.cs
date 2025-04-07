@@ -71,7 +71,7 @@ public class WaveSpawner : MonoBehaviour
 
     void TestAIPredictions()
     {
-        Debug.Log("🔍 AI Prediction Testing Started...");
+        Debug.Log("AI Prediction Testing Started...");
 
         float[][] testCases = new float[][]
         {
@@ -85,11 +85,11 @@ public class WaveSpawner : MonoBehaviour
         foreach (var test in testCases)
         {
             float[] output = onnxModelLoader.Predict(test);
-            Debug.Log($"🧠 AI Prediction for Input: {string.Join(", ", test)}");
-            Debug.Log($"➡️ Health Multiplier: {output[0]:F3}, Speed Multiplier: {output[1]:F3}");
+            Debug.Log($"AI Prediction for Input: {string.Join(", ", test)}");
+            Debug.Log($"Health Multiplier: {output[0]:F3}, Speed Multiplier: {output[1]:F3}");
         }
 
-        Debug.Log("✅ AI Prediction Testing Finished.");
+        Debug.Log("AI Prediction Testing Finished.");
     }
 
 
@@ -138,7 +138,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (enemyPool.Length == 0)
         {
-            Debug.LogError("Nincs ellenség a poolban!");
+            Debug.LogError("Nincs enemy a poolban!");
             yield break;
         }
 
@@ -178,7 +178,7 @@ public class WaveSpawner : MonoBehaviour
         };
 
 
-            Debug.Log($"📥 Normalized AI Input: {string.Join(", ", aiInput)}");
+            Debug.Log($"Normalized AI Input: {string.Join(", ", aiInput)}");
 
             
             float[] output = onnxModelLoader.Predict(aiInput);
@@ -189,7 +189,7 @@ public class WaveSpawner : MonoBehaviour
             float speedMultiplier = output[1];
 
 
-            Debug.Log($"📤 Denormalized AI Output: Health={healthMultiplier}, Speed={speedMultiplier}");
+            Debug.Log($"Denormalized AI Output: Health={healthMultiplier}, Speed={speedMultiplier}");
 
 
             yield return StartCoroutine(SpawnEnemiesAndProgressBar(healthMultiplier, speedMultiplier));
@@ -204,7 +204,7 @@ public class WaveSpawner : MonoBehaviour
             if (waveNumber >= maxWaves)
             {
                 gameOver = true;
-                Debug.Log("Vége a játéknak.");
+                Debug.Log("GAME OVER.");
 
                 int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
                 int lastPlayableSceneIndex = 4;
@@ -232,7 +232,7 @@ public class WaveSpawner : MonoBehaviour
 
     void AdjustEnemyStats(float healthMultiplier, float countMultiplier)
     {
-        Debug.Log($"Életerő szorzó: {healthMultiplier}, Darabszám szorzó: {countMultiplier}");
+        Debug.Log($"eletero szorzo: {healthMultiplier}, db szorzo: {countMultiplier}");
 
         
         foreach (var enemy in FindObjectsOfType<EnemyAI>())
@@ -264,7 +264,7 @@ public class WaveSpawner : MonoBehaviour
 
         if (enemyPool.Length == 0)
         {
-            Debug.LogError("Nincs ellenség a poolban!");
+            Debug.LogError("Nincs enemy a poolban!");
             yield break;
         }
 

@@ -49,7 +49,7 @@ public class ONNXModelLoader : MonoBehaviour
     {
         if (mean == null || std == null || mean.Length != input.Length || std.Length != input.Length)
         {
-            Debug.LogError("Mean vagy STD nincs inicializálva, vagy a méretük nem megfelelő!");
+            Debug.LogError("Mean vagy STD nincs inicializalva, vagy a meretuk nem megfelelo!");
             return input;
         }
 
