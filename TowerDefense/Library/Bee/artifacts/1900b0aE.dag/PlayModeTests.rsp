@@ -335,6 +335,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.40f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Tests/PlayMode/AfterSellTheTower.cs"
+"Assets/Tests/PlayMode/AI_Test.cs"
 "Assets/Tests/PlayMode/EnemySpawnTests.cs"
 "Assets/Tests/PlayMode/LaserTower.cs"
 "Assets/Tests/PlayMode/MoneyAndLivesUITests.cs"

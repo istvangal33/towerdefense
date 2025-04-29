@@ -19,7 +19,7 @@ public class WaveSpawner : MonoBehaviour
     private float countdown = 0f;
     public int waveNumber = 1;
     public int maxWaves = 5;
-    private bool firstWave = true;
+    
 
     public LevelCompleteMenu levelCompleteMenu;
     public GameCompleteMenu gameCompleteUI;

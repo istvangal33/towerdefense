@@ -34,8 +34,8 @@ try:
     def calculate_enemy_stats(row):
         try:
             # currentlevel
-            level_effect_hp = (float(row['CurrentLevel']) ** 1.3) * 0.06  # Erősebb hatás
-            level_effect_speed = float(row['CurrentLevel']) * 0.04  # Erősebb hatás
+            level_effect_hp = (float(row['CurrentLevel']) ** 1.3) * 0.08  # Erősebb hatás
+            level_effect_speed = float(row['CurrentLevel']) * 0.06  # Erősebb hatás
 
             # wavenum 
             wave_effect = (float(row['WaveNumber']) ** 1.2) * 0.02  # Kissé növelt hatás

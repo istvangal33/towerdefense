@@ -70,21 +70,31 @@ public class ONNXModelLoader : MonoBehaviour
             return new float[0];
         }
 
-        // Normalizálás
+        
         float[] normalizedInput = NormalizeInput(inputData);
 
         int[] inputDimensions = new int[] { 1, normalizedInput.Length };
         var inputTensor = new DenseTensor<float>(normalizedInput, inputDimensions);
         var input = new List<NamedOnnxValue>
-        {
-            NamedOnnxValue.CreateFromTensor("dense_input", inputTensor)
-        };
+    {
+        NamedOnnxValue.CreateFromTensor("dense_input", inputTensor)
+    };
 
         using (var results = session.Run(input))
         {
-            return results.First(v => v.Name == "dense_3").AsTensor<float>().ToArray();
+            float[] output = results.First(v => v.Name == "dense_3").AsTensor<float>().ToArray();
+
+            
+            if (output.Length >= 2)
+            {
+                output[0] = Mathf.Clamp(output[0], 0.7f, 2.5f); 
+                output[1] = Mathf.Clamp(output[1], 0.8f, 1.6f); 
+            }
+
+            return output;
         }
     }
+
 
     void OnDestroy()
     {
