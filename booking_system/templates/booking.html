@@ -1,0 +1,286 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Időpontfoglalás - RelaxZone Masszázsstúdió{% endblock %}
+
+{% block extra_css %}
+<style>
+    .booking-header {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        color: white;
+        padding: 60px 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Booking Header -->
+<section class="booking-header">
+    <div class="container text-center">
+        <h1 class="display-5 fw-bold mb-3">
+            <i class="fas fa-calendar-check me-3"></i>Időpontfoglalás
+        </h1>
+        <p class="lead">Válassza ki a kívánt szolgáltatást és időpontot</p>
+    </div>
+</section>
+
+<!-- Booking Form -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="booking-form">
+                    {% if not user.is_authenticated %}
+                    <div class="alert alert-info">
+                        <i class="fas fa-info-circle me-2"></i>
+                        A foglaláshoz <a href="{% url 'login' %}?next={% url 'booking' %}" class="alert-link">jelentkezzen be</a> 
+                        vagy <a href="{% url 'register' %}?next={% url 'booking' %}" class="alert-link">regisztráljon</a>.
+                    </div>
+                    {% endif %}
+                    
+                    <form id="booking-form" method="post" action="{% url 'booking' %}">
+                        {% csrf_token %}
+                        
+                        <!-- Step 1: Service Selection -->
+                        <div class="booking-step mb-5">
+                            <h4 class="fw-bold text-primary mb-4">
+                                <span class="step-number">1.</span> Szolgáltatás választása
+                            </h4>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label for="service-select" class="form-label fw-bold">Szolgáltatás</label>
+                                    <select id="service-select" name="service_id" class="form-select" required>
+                                        <option value="">Válasszon szolgáltatást...</option>
+                                        {% for service in services %}
+                                        <option value="{{ service.id }}" 
+                                                data-duration="{{ service.duration }}" 
+                                                data-price="{{ service.price }}">
+                                            {{ service.name }} - {{ service.duration }} perc - {{ service.price }} Ft
+                                        </option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Service Details -->
+                            <div id="service-details" class="mt-4" style="display: none;">
+                                <div class="card border-primary">
+                                    <div class="card-body">
+                                        <h6 class="card-title text-primary" id="service-name"></h6>
+                                        <p class="card-text" id="service-description"></p>
+                                        <div class="row text-center">
+                                            <div class="col-4">
+                                                <i class="fas fa-clock text-primary"></i>
+                                                <p class="mb-0 small"><strong id="service-duration"></strong></p>
+                                            </div>
+                                            <div class="col-4">
+                                                <i class="fas fa-tag text-success"></i>
+                                                <p class="mb-0 small"><strong id="service-price"></strong></p>
+                                            </div>
+                                            <div class="col-4">
+                                                <i class="fas fa-spa text-info"></i>
+                                                <p class="mb-0 small"><strong>Professzionális</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 2: Date Selection -->
+                        <div class="booking-step mb-5">
+                            <h4 class="fw-bold text-primary mb-4">
+                                <span class="step-number">2.</span> Dátum választása
+                            </h4>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="date-input" class="form-label fw-bold">Dátum</label>
+                                    <input type="date" id="date-input" name="date" class="form-control" 
+                                           min="{{ today|date:'Y-m-d' }}" required>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 3: Time Slot Selection -->
+                        <div class="booking-step mb-5">
+                            <h4 class="fw-bold text-primary mb-4">
+                                <span class="step-number">3.</span> Időpont választása
+                            </h4>
+                            
+                            <div id="time-slots-container">
+                                <p class="text-muted">Válasszon szolgáltatást és dátumot az elérhető időpontokért.</p>
+                            </div>
+                            
+                            <input type="hidden" id="selected-time-slot" name="time_slot_id">
+                        </div>
+                        
+                        <!-- Step 4: Contact Information -->
+                        {% if user.is_authenticated %}
+                        <div class="booking-step mb-5">
+                            <h4 class="fw-bold text-primary mb-4">
+                                <span class="step-number">4.</span> Kapcsolati adatok
+                            </h4>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="customer-name" class="form-label fw-bold">Teljes név</label>
+                                    <input type="text" id="customer-name" name="customer_name" class="form-control" 
+                                           value="{{ user.get_full_name|default:user.username }}" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="customer-email" class="form-label fw-bold">E-mail cím</label>
+                                    <input type="email" id="customer-email" name="customer_email" class="form-control" 
+                                           value="{{ user.email }}" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <label for="customer-phone" class="form-label fw-bold">Telefonszám</label>
+                                    <input type="tel" id="customer-phone" name="customer_phone" class="form-control" 
+                                           value="{{ user.phone_number }}" required>
+                                </div>
+                            </div>
+                            
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <label for="notes" class="form-label fw-bold">Megjegyzések (opcionális)</label>
+                                    <textarea id="notes" name="notes" class="form-control" rows="3" 
+                                              placeholder="Különleges kérések, egészségügyi megjegyzések..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Step 5: Confirmation -->
+                        <div class="booking-step">
+                            <h4 class="fw-bold text-primary mb-4">
+                                <span class="step-number">5.</span> Foglalás véglegesítése
+                            </h4>
+                            
+                            <div class="booking-summary p-4 bg-light rounded">
+                                <h6 class="fw-bold mb-3">Foglalás összefoglalója:</h6>
+                                <div id="booking-summary-content">
+                                    <p class="text-muted">Válassza ki a szolgáltatást és időpontot a foglalás véglegesítéséhez.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg btn-book" disabled>
+                                    <i class="fas fa-check-circle me-2"></i>Foglalás véglegesítése
+                                </button>
+                            </div>
+                            
+                            <div class="text-center mt-3">
+                                <small class="text-muted">
+                                    A foglalás elküldése után e-mail megerősítést fog kapni.
+                                    A foglalás végleges megerősítése után kerül jóváhagyásra.
+                                </small>
+                            </div>
+                        </div>
+                        {% endif %}
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function() {
+    const serviceSelect = $('#service-select');
+    const serviceDetails = $('#service-details');
+    const bookingSummary = $('#booking-summary-content');
+    
+    // Service data for display
+    const services = {
+        {% for service in services %}
+        {{ service.id }}: {
+            name: '{{ service.name }}',
+            description: '{{ service.description|escapejs }}',
+            duration: {{ service.duration }},
+            price: {{ service.price }}
+        },
+        {% endfor %}
+    };
+    
+    // Handle service selection
+    serviceSelect.on('change', function() {
+        const serviceId = $(this).val();
+        if (serviceId && services[serviceId]) {
+            const service = services[serviceId];
+            
+            $('#service-name').text(service.name);
+            $('#service-description').text(service.description);
+            $('#service-duration').text(service.duration + ' perc');
+            $('#service-price').text(service.price + ' Ft');
+            
+            serviceDetails.show();
+            updateBookingSummary();
+        } else {
+            serviceDetails.hide();
+        }
+    });
+    
+    // Update booking summary
+    function updateBookingSummary() {
+        const serviceId = serviceSelect.val();
+        const selectedDate = $('#date-input').val();
+        const selectedSlot = $('.time-slot.selected');
+        
+        if (serviceId && selectedDate && selectedSlot.length) {
+            const service = services[serviceId];
+            const timeText = selectedSlot.text().trim();
+            
+            const summaryHtml = `
+                <div class="row">
+                    <div class="col-md-6">
+                        <strong>Szolgáltatás:</strong><br>
+                        ${service.name}
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Ár:</strong><br>
+                        ${service.price} Ft
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <strong>Dátum:</strong><br>
+                        ${selectedDate}
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Időpont:</strong><br>
+                        ${timeText}
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <strong>Időtartam:</strong> ${service.duration} perc
+                    </div>
+                </div>
+            `;
+            
+            bookingSummary.html(summaryHtml);
+        }
+    }
+    
+    // Update summary when date or time slot changes
+    $('#date-input').on('change', updateBookingSummary);
+    $(document).on('click', '.time-slot', updateBookingSummary);
+    
+    // Set minimum date to today
+    const today = new Date().toISOString().split('T')[0];
+    $('#date-input').attr('min', today);
+    
+    // Pre-select service if provided in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const preSelectedService = urlParams.get('service');
+    if (preSelectedService) {
+        serviceSelect.val(preSelectedService).trigger('change');
+    }
+});
+</script>
+{% endblock %}

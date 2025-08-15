@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Vállalkozói Irányítópult - RelaxZone Masszázsstúdió{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary">
+            <i class="fas fa-business-time me-2"></i>Vállalkozói Irányítópult
+        </h2>
+        <div>
+            <a href="{% url 'calendar' %}" class="btn btn-outline-primary me-2">
+                <i class="fas fa-calendar me-2"></i>Naptár nézet
+            </a>
+            <a href="/admin/" class="btn btn-primary" target="_blank">
+                <i class="fas fa-cog me-2"></i>Admin felület
+            </a>
+        </div>
+    </div>
+    
+    <!-- Stats Cards -->
+    <div class="row mb-5">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <div class="stat-icon primary mx-auto mb-3">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <h3 class="fw-bold text-primary">{{ recent_bookings.count }}</h3>
+                    <p class="text-muted mb-0">Mai foglalások</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <div class="stat-icon success mx-auto mb-3">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3 class="fw-bold text-success">
+                        {{ recent_bookings|dictsort:"status"|dictsort:"confirmed"|length }}
+                    </h3>
+                    <p class="text-muted mb-0">Megerősített</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <div class="stat-icon warning mx-auto mb-3">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="fw-bold text-warning">
+                        {{ recent_bookings|dictsort:"status"|dictsort:"pending"|length }}
+                    </h3>
+                    <p class="text-muted mb-0">Jóváhagyásra vár</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6 mb-4">
+            <div class="card dashboard-card">
+                <div class="card-body text-center">
+                    <div class="stat-icon info mx-auto mb-3">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3 class="fw-bold text-info">{{ businesses.count }}</h3>
+                    <p class="text-muted mb-0">Vállalkozás</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Business Info -->
+    {% for business in businesses %}
+    <div class="card dashboard-card mb-4">
+        <div class="card-header bg-white">
+            <h5 class="fw-bold text-primary mb-0">
+                <i class="fas fa-store me-2"></i>{{ business.name }}
+            </h5>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <p><strong>Cím:</strong> {{ business.address }}</p>
+                    <p><strong>Telefon:</strong> {{ business.phone }}</p>
+                    <p><strong>E-mail:</strong> {{ business.email }}</p>
+                </div>
+                <div class="col-md-6">
+                    <p><strong>Szolgáltatások:</strong> {{ business.services.count }} db</p>
+                    <p><strong>Státusz:</strong> 
+                        {% if business.is_active %}
+                            <span class="badge bg-success">Aktív</span>
+                        {% else %}
+                            <span class="badge bg-danger">Inaktív</span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    
+    <!-- Recent Bookings -->
+    <div class="card dashboard-card">
+        <div class="card-header bg-white">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="fw-bold text-primary mb-0">
+                    <i class="fas fa-list me-2"></i>Legutóbbi foglalások
+                </h5>
+                <button class="btn btn-sm btn-outline-primary refresh-bookings">
+                    <i class="fas fa-refresh me-2"></i>Frissítés
+                </button>
+            </div>
+        </div>
+        <div class="card-body">
+            {% if recent_bookings %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Ügyfél</th>
+                                <th>Szolgáltatás</th>
+                                <th>Dátum</th>
+                                <th>Időpont</th>
+                                <th>Státusz</th>
+                                <th>Ár</th>
+                                <th>Műveletek</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for booking in recent_bookings %}
+                            <tr class="booking-row">
+                                <td>
+                                    <div class="fw-bold">{{ booking.customer_name }}</div>
+                                    <small class="text-muted">{{ booking.customer_phone }}</small>
+                                </td>
+                                <td>
+                                    <div class="fw-bold">{{ booking.service.name }}</div>
+                                    <small class="text-muted">{{ booking.service.duration }} perc</small>
+                                </td>
+                                <td>{{ booking.time_slot.date|date:"Y.m.d" }}</td>
+                                <td>{{ booking.time_slot.start_time|time:"H:i" }} - {{ booking.time_slot.end_time|time:"H:i" }}</td>
+                                <td>
+                                    <span class="status-badge status-{{ booking.status }}">
+                                        {{ booking.get_status_display }}
+                                    </span>
+                                </td>
+                                <td class="fw-bold">{{ booking.total_price }} Ft</td>
+                                <td>
+                                    {% if booking.status == 'pending' %}
+                                        <button class="btn btn-sm btn-success confirm-booking me-1" 
+                                                data-booking-id="{{ booking.id }}">
+                                            <i class="fas fa-check me-1"></i>Megerősít
+                                        </button>
+                                    {% endif %}
+                                    {% if booking.status == 'pending' or booking.status == 'confirmed' %}
+                                        <button class="btn btn-sm btn-outline-danger cancel-booking" 
+                                                data-booking-id="{{ booking.id }}">
+                                            <i class="fas fa-times me-1"></i>Lemondás
+                                        </button>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="text-center py-5">
+                    <i class="fas fa-calendar-times text-muted mb-3" style="font-size: 3rem;"></i>
+                    <h5 class="text-muted">Nincsenek foglalások</h5>
+                    <p class="text-muted">Jelenleg nincsenek elérhető foglalások.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Quick Actions -->
+    <div class="row mt-5">
+        <div class="col-md-4 mb-3">
+            <div class="card dashboard-card text-center">
+                <div class="card-body">
+                    <i class="fas fa-plus-circle text-primary mb-3" style="font-size: 2rem;"></i>
+                    <h6 class="fw-bold">Új időpont hozzáadása</h6>
+                    <a href="/admin/bookings/timeslot/add/" class="btn btn-sm btn-primary" target="_blank">
+                        Hozzáadás
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-3">
+            <div class="card dashboard-card text-center">
+                <div class="card-body">
+                    <i class="fas fa-cog text-primary mb-3" style="font-size: 2rem;"></i>
+                    <h6 class="fw-bold">Szolgáltatások kezelése</h6>
+                    <a href="/admin/businesses/service/" class="btn btn-sm btn-primary" target="_blank">
+                        Kezelés
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-4 mb-3">
+            <div class="card dashboard-card text-center">
+                <div class="card-body">
+                    <i class="fas fa-download text-primary mb-3" style="font-size: 2rem;"></i>
+                    <h6 class="fw-bold">Foglalások exportálása</h6>
+                    <a href="/admin/bookings/booking/" class="btn btn-sm btn-primary" target="_blank">
+                        Export
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+$(document).ready(function() {
+    BookingSystem.initDashboard();
+});
+</script>
+{% endblock %}
