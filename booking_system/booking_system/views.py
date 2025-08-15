@@ -4,6 +4,7 @@ from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
 from django.http import JsonResponse
 from django.utils import timezone
+from django.contrib import messages
 from datetime import timedelta
 from businesses.models import Business, Service
 from bookings.models import TimeSlot, Booking
@@ -24,6 +25,52 @@ def booking_page(request):
     business = Business.objects.filter(is_active=True).first()
     services = Service.objects.filter(is_active=True, business=business) if business else []
     
+    if request.method == 'POST' and request.user.is_authenticated:
+        try:
+            # Get form data
+            service_id = request.POST.get('service_id')
+            time_slot_id = request.POST.get('time_slot_id')
+            customer_name = request.POST.get('customer_name')
+            customer_email = request.POST.get('customer_email')
+            customer_phone = request.POST.get('customer_phone')
+            notes = request.POST.get('notes', '')
+            
+            # Validate data
+            if not all([service_id, time_slot_id, customer_name, customer_email, customer_phone]):
+                messages.error(request, 'Kérjük, töltse ki az összes kötelező mezőt!')
+                return redirect('booking')
+            
+            # Get objects
+            service = Service.objects.get(id=service_id, business=business, is_active=True)
+            time_slot = TimeSlot.objects.get(id=time_slot_id, business=business, is_available=True)
+            
+            # Check if time slot is still available
+            if not time_slot.is_available:
+                messages.error(request, 'A kiválasztott időpont már nem elérhető!')
+                return redirect('booking')
+            
+            # Create booking
+            booking = Booking.objects.create(
+                business=business,
+                service=service,
+                time_slot=time_slot,
+                customer=request.user,
+                customer_name=customer_name,
+                customer_email=customer_email,
+                customer_phone=customer_phone,
+                notes=notes,
+                total_price=service.price,
+                status='pending'
+            )
+            
+            messages.success(request, 'Foglalás sikeresen elküldve! Hamarosan e-mail megerősítést fog kapni.')
+            return redirect('dashboard')
+            
+        except (Service.DoesNotExist, TimeSlot.DoesNotExist):
+            messages.error(request, 'Érvénytelen szolgáltatás vagy időpont!')
+        except Exception as e:
+            messages.error(request, 'Hiba történt a foglalás során. Kérjük, próbálja újra!')
+    
     # Get available time slots for the next 14 days
     today = timezone.now().date()
     end_date = today + timedelta(days=14)
@@ -39,6 +86,7 @@ def booking_page(request):
         'business': business,
         'services': services,
         'available_slots': available_slots,
+        'today': today,
     }
     return render(request, 'booking.html', context)
 
@@ -65,7 +113,8 @@ def dashboard(request):
         # Super admin dashboard
         all_businesses = Business.objects.all()
         all_bookings = Booking.objects.all().order_by('-created_at')[:20]
-        total_users = Business.objects.count()
+        from users.models import CustomUser
+        total_users = CustomUser.objects.count()
         
         context = {
             'user_type': 'super_admin',
@@ -112,6 +161,12 @@ def register(request):
             password = form.cleaned_data.get('password1')
             user = authenticate(username=username, password=password)
             login(request, user)
+            messages.success(request, 'Sikeres regisztráció! Üdvözöljük a RelaxZone-ban!')
+            
+            # Redirect to booking if that's where they came from
+            next_url = request.GET.get('next')
+            if next_url:
+                return redirect(next_url)
             return redirect('home')
     else:
         form = UserCreationForm()
@@ -135,6 +190,14 @@ def get_available_slots(request):
                 date=date,
                 is_available=True
             ).order_by('start_time')
+            
+            # Filter out past slots for today
+            now = timezone.now()
+            today = now.date()
+            current_time = now.time()
+            
+            if str(today) == date:
+                slots = slots.filter(start_time__gt=current_time)
             
             slots_data = [
                 {

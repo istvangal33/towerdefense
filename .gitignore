@@ -72,3 +72,16 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 TowerDefense/Library/PackageCache/com.unity.burst@1.8.16/.Runtime/libburst-llvm-16.dylib
+
+# Django specific
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+media/
+.env
+*.swp
+*.swo
+*~

@@ -1,0 +1,321 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Naptár - RelaxZone Masszázsstúdió{% endblock %}
+
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css" rel="stylesheet">
+<style>
+    .calendar-container {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    .fc-event {
+        border-radius: 8px;
+        border: none;
+        padding: 2px 6px;
+    }
+    
+    .fc-event-pending {
+        background-color: #ffc107;
+        color: #000;
+    }
+    
+    .fc-event-confirmed {
+        background-color: #28a745;
+        color: #fff;
+    }
+    
+    .fc-event-completed {
+        background-color: #17a2b8;
+        color: #fff;
+    }
+    
+    .fc-event-cancelled {
+        background-color: #dc3545;
+        color: #fff;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="fw-bold text-primary">
+            <i class="fas fa-calendar me-2"></i>Foglalások naptára
+        </h2>
+        <div>
+            <a href="{% url 'dashboard' %}" class="btn btn-outline-primary me-2">
+                <i class="fas fa-arrow-left me-2"></i>Vissza
+            </a>
+            {% if user.is_business_admin or user.is_super_admin %}
+                <a href="/admin/bookings/timeslot/add/" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-plus me-2"></i>Új időpont
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    
+    <!-- Legend -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card dashboard-card">
+                <div class="card-body">
+                    <h6 class="fw-bold text-primary mb-3">Jelmagyarázat:</h6>
+                    <div class="row">
+                        <div class="col-md-3 col-6 mb-2">
+                            <span class="badge bg-warning me-2">■</span>
+                            <span class="small">Függőben</span>
+                        </div>
+                        <div class="col-md-3 col-6 mb-2">
+                            <span class="badge bg-success me-2">■</span>
+                            <span class="small">Megerősítve</span>
+                        </div>
+                        <div class="col-md-3 col-6 mb-2">
+                            <span class="badge bg-info me-2">■</span>
+                            <span class="small">Befejezve</span>
+                        </div>
+                        <div class="col-md-3 col-6 mb-2">
+                            <span class="badge bg-danger me-2">■</span>
+                            <span class="small">Lemondva</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Calendar -->
+    <div class="calendar-container">
+        <div id="calendar"></div>
+    </div>
+    
+    <!-- Loading indicator -->
+    <div id="loading" class="text-center py-5" style="display: none;">
+        <i class="fas fa-spinner fa-spin text-primary" style="font-size: 2rem;"></i>
+        <p class="text-muted mt-2">Naptár betöltése...</p>
+    </div>
+</div>
+
+<!-- Booking Details Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Foglalás részletei</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="booking-details"></div>
+            </div>
+            <div class="modal-footer" id="modal-actions">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.js"></script>
+<script>
+$(document).ready(function() {
+    let calendar;
+    
+    // Initialize calendar
+    initCalendar();
+    
+    function initCalendar() {
+        const calendarEl = document.getElementById('calendar');
+        
+        calendar = new FullCalendar.Calendar(calendarEl, {
+            initialView: 'dayGridMonth',
+            locale: 'hu',
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            buttonText: {
+                today: 'Ma',
+                month: 'Hónap',
+                week: 'Hét',
+                day: 'Nap'
+            },
+            height: 'auto',
+            events: function(info, successCallback, failureCallback) {
+                loadBookings(info.startStr, info.endStr, successCallback, failureCallback);
+            },
+            eventClick: function(info) {
+                showBookingDetails(info.event);
+            },
+            loading: function(isLoading) {
+                if (isLoading) {
+                    $('#loading').show();
+                } else {
+                    $('#loading').hide();
+                }
+            }
+        });
+        
+        calendar.render();
+    }
+    
+    function loadBookings(start, end, successCallback, failureCallback) {
+        $.ajax({
+            url: '/api/bookings/calendar/',
+            method: 'GET',
+            data: {
+                date_from: start.split('T')[0],
+                date_to: end.split('T')[0]
+            },
+            success: function(response) {
+                const events = response.map(booking => ({
+                    id: booking.id,
+                    title: booking.title,
+                    start: booking.start,
+                    end: booking.end,
+                    className: `fc-event-${booking.status}`,
+                    extendedProps: {
+                        customer: booking.customer,
+                        service: booking.service,
+                        phone: booking.phone,
+                        status: booking.status
+                    }
+                }));
+                successCallback(events);
+            },
+            error: function(xhr) {
+                console.error('Error loading bookings:', xhr);
+                failureCallback(xhr);
+                BookingSystem.showAlert('danger', 'Hiba történt a foglalások betöltése során.');
+            }
+        });
+    }
+    
+    function showBookingDetails(event) {
+        const booking = event.extendedProps;
+        const startTime = new Date(event.start).toLocaleString('hu-HU');
+        const endTime = new Date(event.end).toLocaleString('hu-HU');
+        
+        const statusBadgeClass = {
+            'pending': 'bg-warning',
+            'confirmed': 'bg-success',
+            'completed': 'bg-info',
+            'cancelled': 'bg-danger'
+        };
+        
+        const detailsHtml = `
+            <div class="booking-details">
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Ügyfél:</strong></div>
+                    <div class="col-sm-8">${booking.customer}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Telefon:</strong></div>
+                    <div class="col-sm-8">
+                        <a href="tel:${booking.phone}">${booking.phone}</a>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Szolgáltatás:</strong></div>
+                    <div class="col-sm-8">${booking.service}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Kezdés:</strong></div>
+                    <div class="col-sm-8">${startTime}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Befejezés:</strong></div>
+                    <div class="col-sm-8">${endTime}</div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-4"><strong>Státusz:</strong></div>
+                    <div class="col-sm-8">
+                        <span class="badge ${statusBadgeClass[booking.status] || 'bg-secondary'}">
+                            ${getStatusText(booking.status)}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        $('#booking-details').html(detailsHtml);
+        
+        // Add action buttons for business admins
+        {% if user.is_business_admin or user.is_super_admin %}
+        let actionsHtml = '<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Bezárás</button>';
+        
+        if (booking.status === 'pending') {
+            actionsHtml = `
+                <button type="button" class="btn btn-success me-2" onclick="confirmBooking(${event.id})">
+                    <i class="fas fa-check me-1"></i>Megerősít
+                </button>
+                <button type="button" class="btn btn-danger me-2" onclick="cancelBooking(${event.id})">
+                    <i class="fas fa-times me-1"></i>Lemondás
+                </button>
+                ${actionsHtml}
+            `;
+        } else if (booking.status === 'confirmed') {
+            actionsHtml = `
+                <button type="button" class="btn btn-danger me-2" onclick="cancelBooking(${event.id})">
+                    <i class="fas fa-times me-1"></i>Lemondás
+                </button>
+                ${actionsHtml}
+            `;
+        }
+        
+        $('#modal-actions').html(actionsHtml);
+        {% endif %}
+        
+        $('#bookingModal').modal('show');
+    }
+    
+    function getStatusText(status) {
+        const statusTexts = {
+            'pending': 'Függőben',
+            'confirmed': 'Megerősítve',
+            'completed': 'Befejezve',
+            'cancelled': 'Lemondva'
+        };
+        return statusTexts[status] || status;
+    }
+    
+    // Global functions for modal actions
+    window.confirmBooking = function(bookingId) {
+        if (confirm('Biztosan megerősíti ezt a foglalást?')) {
+            BookingSystem.API.call(`/api/bookings/${bookingId}/confirm/`, 'POST', {},
+                function(response) {
+                    BookingSystem.showAlert('success', 'Foglalás megerősítve.');
+                    calendar.refetchEvents();
+                    $('#bookingModal').modal('hide');
+                },
+                function(xhr) {
+                    const error = xhr.responseJSON?.error || 'Hiba történt a megerősítés során.';
+                    BookingSystem.showAlert('danger', error);
+                }
+            );
+        }
+    };
+    
+    window.cancelBooking = function(bookingId) {
+        if (confirm('Biztosan lemondja ezt a foglalást?')) {
+            BookingSystem.API.call(`/api/bookings/${bookingId}/cancel/`, 'POST', {},
+                function(response) {
+                    BookingSystem.showAlert('success', 'Foglalás lemondva.');
+                    calendar.refetchEvents();
+                    $('#bookingModal').modal('hide');
+                },
+                function(xhr) {
+                    const error = xhr.responseJSON?.error || 'Hiba történt a lemondás során.';
+                    BookingSystem.showAlert('danger', error);
+                }
+            );
+        }
+    };
+});
+</script>
+{% endblock %}
